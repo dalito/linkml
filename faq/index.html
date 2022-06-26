@@ -14,6 +14,7 @@
         <script data-url_root="../" id="documentation_options" src="../_static/documentation_options.js"></script>
         <script src="../_static/jquery.js"></script>
         <script src="../_static/underscore.js"></script>
+        <script src="../_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="../_static/doctools.js"></script>
     <script src="../_static/js/theme.js"></script>
     <link rel="index" title="Index" href="../genindex.html" />
@@ -91,7 +92,7 @@
            <div itemprop="articleBody">
              
   <section id="faq">
-<span id="id1"></span><h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this headline"></a></h1>
+<span id="id1"></span><h1>FAQ<a class="headerlink" href="#faq" title="Permalink to this heading"></a></h1>
 <div class="toctree-wrapper compound">
 <p class="caption" role="heading"><span class="caption-text">Contents:</span></p>
 <ul>
@@ -125,8 +126,12 @@
 <li class="toctree-l2"><a class="reference internal" href="modeling.html#what-are-induced-slots">What are induced slots?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modeling.html#why-would-i-need-to-define-my-own-types">Why would I need to define my own types?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modeling.html#why-would-i-want-to-use-enums-over-strings">Why would I want to use enums over strings?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modeling.html#how-do-i-constrain-a-range-to-a-certain-ontology">How do I constrain a range to a certain ontology</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modeling.html#how-do-i-constrain-a-range-of-a-slot-to-a-certain-branch-of-an-ontology">How do I constrain a range of a slot to a certain branch of an ontology</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modeling.html#how-do-i-do-the-equivalent-of-json-schema-composition">How do I do the equivalent of JSON-Schema composition?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modeling.html#why-are-my-class-names-translated-to-camelcase">Why are my class names translated to CamelCase?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modeling.html#when-two-data-classes-are-linked-by-a-slot-in-one-class-definition-how-is-the-reciprocal-association-expressed-in-linkml">When two data classes are linked by a slot in one class definition, how is the reciprocal association expressed in LinkML?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="modeling.html#what-are-id-prefixes-used-for-and-why-do-we-want-them">What are id_prefixes used for and why do we want them?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="modeling.html#when-is-it-important-to-have-mappings">When is it important to have mappings?</a></li>
 </ul>
 </li>
@@ -144,8 +149,11 @@
 <li class="toctree-l2"><a class="reference internal" href="tools.html#are-there-tools-for-editing-my-data">Are there tools for editing my data?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#are-there-guides-for-developing-linkml-compliant-tools">Are there guides for developing LinkML compliant tools?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#can-i-generate-a-website-from-a-linkml-schema">Can I generate a website from a LinkML schema</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#how-do-i-include-uml-class-diagrams">How do I include UML class diagrams?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#can-i-include-generated-documentation-in-a-sphinx-site">Can I include generated documentation in a Sphinx site?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#can-i-customize-the-markdown-generation-for-my-schema-site">Can I customize the Markdown generation for my schema site?</a></li>
 <li class="toctree-l2"><a class="reference internal" href="tools.html#can-i-use-my-schema-to-do-reasoning-over-my-data">Can I use my schema to do reasoning over my data?</a></li>
+<li class="toctree-l2"><a class="reference internal" href="tools.html#what-does-if-missing-mean-in-my-json-output">What does _if_missing mean in my JSON output?</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="getting-help.html">FAQ: Getting Help</a><ul>

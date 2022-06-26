@@ -31,7 +31,16 @@ See the [installation guide](intro/install).
 Currently the main way to author a schema is to edit schema YAML files
 in a text editor or IDE (Integrated Development Environment).
 
-We recommend using an IDE that has support for YAML format
+We recommend using an IDE that has support for YAML format.
+
+The meta model, here: https://w3id.org/linkml/meta.schema.json can be incorporated into pycharm for model development
+syntax validation.  For more details on pycharm specifically: https://www.jetbrains.com/help/pycharm/json.html#ws_json_schema_add_custom
+
+See the section below on "Are there tools for editing my data?" for
+suggestions (note that your schema *is* data - schemas instantiate the
+schema class in the metamodel)
+
+One possible alternative to authoring schemas in YAML is to enter the schema in a *spreadsheet*, which is our next question...
 
 ## Is there a tool to manage schemas as spreadsheets?
 
@@ -173,6 +182,43 @@ gen-markdown -d docs personinfo.yaml
 
 It will place all the markdown documents you need to run a [mkdocs](https://www.mkdocs.org/) site
 
+## How do I include UML class diagrams?
+
+The docgen framework uses [Mermaid](https://mermaid-js.github.io/mermaid/#/) to generate class diagrams
+from your schema. This is included as a default when you use the docgen framework.
+
+## Can I include generated documentation in a Sphinx site?
+
+The default documentation framework for LinkML is [mkdocs](https://www.mkdocs.org/).
+
+However, you can also include generated markdown in your sphinx site. This may be desirable
+if you are incorporating LinkML into a software project that uses [Sphinx](https://www.sphinx-doc.org/).
+
+You should make sure your sphinx configuration includes:
+
+1. The [MyST](https://myst-parser.readthedocs.io/) extension, for parsing markdown
+2. The [Mermaid](https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest/) extension, for Mermaid class diagrams
+
+Your `conf.py` should include:
+
+```python
+extensions = [
+    ...
+    'myst_parser',
+    'sphinxcontrib.mermaid',
+    ...
+]
+```
+
+Consult the [sphinx configuration docs](https://www.sphinx-doc.org/en/master/usage/configuration.html) for more details.
+
+Note that in order for mermaid to render properly, you will need to tell `gen-docs` to use
+[MyST flavored Markdown](https://myst-parser.readthedocs.io/en/latest/syntax/syntax.html)
+
+```python
+gen-doc --dialect myst ...
+```
+
 ## Can I customize the Markdown generation for my schema site?
 
 For some purposes, the generic schema documentation provided by `gen-markdown` may look too... generic.
@@ -196,4 +242,13 @@ There are a number of strategies for performing deductive inference:
 * Convert your [schema to OWL](https://linkml.io/linkml/generators/owl) and your [data to RDF](https://linkml.io/linkml/data/rdf) and use an OWL reasoner
 * Use the (experimental) [linkml-datalog](https://github.com/linkml/linkml-datalog) framework
 
+## What does _if_missing mean in my JSON output?
 
+If you pass a LinkML object directly to `json.dump` you will see internal hidden fields, these start with underscore: e.g. `_if_missing`.
+
+We recommend instead using `json_dumper.dump` in the linkml-runtime package, which will give the *canonical* JSON representation of a LinkML object.
+
+See:
+
+ - [working with data - python](https://linkml.io/linkml/data/python.html)
+ - [loaders and dumpers, code docs](https://linkml.io/linkml/developers/loaders-and-dumpers.html)

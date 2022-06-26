@@ -13,6 +13,7 @@
         <script data-url_root="./" id="documentation_options" src="_static/documentation_options.js"></script>
         <script src="_static/jquery.js"></script>
         <script src="_static/underscore.js"></script>
+        <script src="_static/_sphinx_javascript_frameworks_compat.js"></script>
         <script src="_static/doctools.js"></script>
     <script src="_static/js/theme.js"></script>
     <link rel="index" title="Index" href="#" />
@@ -246,6 +247,13 @@
 
       <ul>
         <li><a href="generators/sqlalchemy.html#cmdoption-gen-sqlddl-generate-classes">gen-sqlddl command line option</a>
+</li>
+      </ul></li>
+      <li>
+    --generate-records
+
+      <ul>
+        <li><a href="generators/java.html#cmdoption-gen-java-generate-records">gen-java command line option</a>
 </li>
       </ul></li>
       <li>
@@ -572,6 +580,13 @@
 </li>
       </ul></li>
       <li>
+    --no-generate-records
+
+      <ul>
+        <li><a href="generators/java.html#cmdoption-gen-java-generate-records">gen-java command line option</a>
+</li>
+      </ul></li>
+      <li>
     --no-genmeta
 
       <ul>
@@ -774,10 +789,10 @@
 </li>
       </ul></li>
       <li>
-    --output_directory
+    --output-directory
 
       <ul>
-        <li><a href="generators/java.html#cmdoption-gen-java-output_directory">gen-java command line option</a>
+        <li><a href="generators/java.html#cmdoption-gen-java-output-directory">gen-java command line option</a>
 </li>
       </ul></li>
       <li>
@@ -823,11 +838,16 @@
 </li>
       </ul></li>
       <li>
+    --template-file
+
+      <ul>
+        <li><a href="generators/java.html#cmdoption-gen-java-template-file">gen-java command line option</a>
+</li>
+      </ul></li>
+      <li>
     --template_file
 
       <ul>
-        <li><a href="generators/java.html#cmdoption-gen-java-template_file">gen-java command line option</a>
-</li>
         <li><a href="generators/pydantic.html#cmdoption-gen-pydantic-template_file">gen-pydantic command line option</a>
 </li>
       </ul></li>
@@ -1190,13 +1210,15 @@
 </li>
       <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.all_element">all_element() (linkml_runtime.utils.schemaview.SchemaView method)</a>
 </li>
-  </ul></td>
-  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.all_elements">all_elements() (linkml_runtime.utils.schemaview.SchemaView method)</a>
 </li>
+  </ul></td>
+  <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.all_enum">all_enum() (linkml_runtime.utils.schemaview.SchemaView method)</a>
 </li>
       <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.all_enums">all_enums() (linkml_runtime.utils.schemaview.SchemaView method)</a>
+</li>
+      <li><a href="linkml.generators.html#linkml.generators.oocodegen.OOClass.all_fields">all_fields (linkml.generators.oocodegen.OOClass attribute)</a>
 </li>
       <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.all_schema">all_schema() (linkml_runtime.utils.schemaview.SchemaView method)</a>
 </li>
@@ -1438,6 +1460,8 @@
 </li>
       <li><a href="linkml.utils.html#linkml.utils.ifabsent_functions.default_uri_for">default_uri_for() (in module linkml.utils.ifabsent_functions)</a>
 </li>
+      <li><a href="linkml.generators.html#linkml.generators.oocodegen.OOField.default_value">default_value (linkml.generators.oocodegen.OOField attribute)</a>
+</li>
       <li><a href="linkml.utils.html#linkml.utils.schemasynopsis.SchemaSynopsis.definingslots">definingslots (linkml.utils.schemasynopsis.SchemaSynopsis attribute)</a>
 </li>
       <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.delete_class">delete_class() (linkml_runtime.utils.schemaview.SchemaView method)</a>
@@ -1462,10 +1486,10 @@
       </ul></li>
       <li><a href="linkml.generators.html#linkml.generators.sqlddlgen.SQLDDLGenerator.dialect">dialect (linkml.generators.sqlddlgen.SQLDDLGenerator attribute)</a>
 </li>
-      <li><a href="linkml.generators.html#linkml.generators.markdowngen.MarkdownGenerator.dir_path">dir_path() (linkml.generators.markdowngen.MarkdownGenerator method)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="linkml.generators.html#linkml.generators.markdowngen.MarkdownGenerator.dir_path">dir_path() (linkml.generators.markdowngen.MarkdownGenerator method)</a>
+</li>
       <li><a href="linkml.generators.html#linkml.generators.projectgen.ProjectConfiguration.directory">directory (linkml.generators.projectgen.ProjectConfiguration attribute)</a>
 </li>
       <li><a href="linkml.generators.html#linkml.generators.dotgen.DotGenerator.directory_output">directory_output (linkml.generators.dotgen.DotGenerator attribute)</a>
@@ -1574,11 +1598,15 @@
   <td style="width: 33%; vertical-align: top;"><ul>
       <li><a href="glossary.html#term-enum"><strong>enum</strong></a>
 </li>
+      <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.enum_ancestors">enum_ancestors() (linkml_runtime.utils.schemaview.SchemaView method)</a>
+</li>
       <li><a href="linkml.generators.html#linkml.generators.markdowngen.MarkdownGenerator.enum_hier">enum_hier() (linkml.generators.markdowngen.MarkdownGenerator method)</a>
 </li>
       <li><a href="linkml.utils.html#linkml.utils.generator.Generator.enum_identifier_path">enum_identifier_path() (linkml.utils.generator.Generator method)</a>
 </li>
       <li><a href="linkml.generators.html#linkml.generators.markdowngen.MarkdownGenerator.enum_link">enum_link() (linkml.generators.markdowngen.MarkdownGenerator method)</a>
+</li>
+      <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.enum_parents">enum_parents() (linkml_runtime.utils.schemaview.SchemaView method)</a>
 </li>
       <li><a href="linkml.utils.html#linkml.utils.schemasynopsis.SchemaSynopsis.enumrefs">enumrefs (linkml.utils.schemasynopsis.SchemaSynopsis attribute)</a>
 
@@ -1714,6 +1742,8 @@
       <ul>
         <li><a href="generators/java.html#cmdoption-gen-java-f">--format</a>
 </li>
+        <li><a href="generators/java.html#cmdoption-gen-java-generate-records">--generate-records</a>
+</li>
         <li><a href="generators/java.html#cmdoption-gen-java-im">--importmap</a>
 </li>
         <li><a href="generators/java.html#cmdoption-gen-java-log_level">--log_level</a>
@@ -1724,15 +1754,17 @@
 </li>
         <li><a href="generators/java.html#cmdoption-gen-java-useuris">--metauris</a>
 </li>
+        <li><a href="generators/java.html#cmdoption-gen-java-generate-records">--no-generate-records</a>
+</li>
         <li><a href="generators/java.html#cmdoption-gen-java-mergeimports">--no-mergeimports</a>
 </li>
         <li><a href="generators/java.html#cmdoption-gen-java-metadata">--no-metadata</a>
 </li>
-        <li><a href="generators/java.html#cmdoption-gen-java-output_directory">--output_directory</a>
+        <li><a href="generators/java.html#cmdoption-gen-java-output-directory">--output-directory</a>
 </li>
         <li><a href="generators/java.html#cmdoption-gen-java-package">--package</a>
 </li>
-        <li><a href="generators/java.html#cmdoption-gen-java-template_file">--template_file</a>
+        <li><a href="generators/java.html#cmdoption-gen-java-template-file">--template-file</a>
 </li>
         <li><a href="generators/java.html#cmdoption-gen-java-useuris">--useuris</a>
 </li>
@@ -2686,7 +2718,11 @@
 </li>
       <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.induced_class">induced_class() (linkml_runtime.utils.schemaview.SchemaView method)</a>
 </li>
+      <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.induced_enum">induced_enum() (linkml_runtime.utils.schemaview.SchemaView method)</a>
+</li>
       <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.induced_slot">induced_slot() (linkml_runtime.utils.schemaview.SchemaView method)</a>
+</li>
+      <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.induced_type">induced_type() (linkml_runtime.utils.schemaview.SchemaView method)</a>
 </li>
       <li><a href="linkml.generators.html#linkml.generators.infer_model.infer_enum_meanings">infer_enum_meanings() (in module linkml.generators.infer_model)</a>
 </li>
@@ -2704,10 +2740,10 @@
 </li>
       <li><a href="linkml.reporting.html#linkml.reporting.model.slots.info">info (linkml.reporting.model.slots attribute)</a>
 </li>
-      <li><a href="linkml.generators.html#linkml.generators.sqlddlgen.SQLDDLGenerator.inject_primary_keys">inject_primary_keys (linkml.generators.sqlddlgen.SQLDDLGenerator attribute)</a>
-</li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="linkml.generators.html#linkml.generators.sqlddlgen.SQLDDLGenerator.inject_primary_keys">inject_primary_keys (linkml.generators.sqlddlgen.SQLDDLGenerator attribute)</a>
+</li>
       <li><a href="linkml.utils.html#linkml.utils.schemasynopsis.SchemaSynopsis.inschema">inschema (linkml.utils.schemasynopsis.SchemaSynopsis attribute)</a>
 </li>
       <li><a href="linkml.reporting.html#linkml.reporting.model.CheckResult.instantiates">instantiates (linkml.reporting.model.CheckResult attribute)</a>
@@ -3746,7 +3782,11 @@
       </ul></li>
   </ul></td>
   <td style="width: 33%; vertical-align: top;"><ul>
+      <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.type_ancestors">type_ancestors() (linkml_runtime.utils.schemaview.SchemaView method)</a>
+</li>
       <li><a href="linkml.generators.html#linkml.generators.markdowngen.MarkdownGenerator.type_link">type_link() (linkml.generators.markdowngen.MarkdownGenerator method)</a>
+</li>
+      <li><a href="developers/manipulating-schemas.html#linkml_runtime.utils.schemaview.SchemaView.type_parents">type_parents() (linkml_runtime.utils.schemaview.SchemaView method)</a>
 </li>
       <li><a href="linkml.utils.html#linkml.utils.schemasynopsis.SchemaSynopsis.typebases">typebases (linkml.utils.schemasynopsis.SchemaSynopsis attribute)</a>
 </li>
