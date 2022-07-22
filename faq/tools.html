@@ -74,6 +74,7 @@
 <li class="toctree-l3"><a class="reference internal" href="#can-i-customize-the-markdown-generation-for-my-schema-site">Can I customize the Markdown generation for my schema site?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#can-i-use-my-schema-to-do-reasoning-over-my-data">Can I use my schema to do reasoning over my data?</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#what-does-if-missing-mean-in-my-json-output">What does _if_missing mean in my JSON output?</a></li>
+<li class="toctree-l3"><a class="reference internal" href="#what-does-csv-error-field-larger-than-field-limit-131072-mean">What does _csv.Error: field larger than field limit (131072) mean?</a></li>
 </ul>
 </li>
 <li class="toctree-l2"><a class="reference internal" href="getting-help.html">FAQ: Getting Help</a></li>
@@ -287,7 +288,7 @@ from your schema. This is included as a default when you use the docgen framewor
 <p>However, you can also include generated markdown in your sphinx site. This may be desirable
 if you are incorporating LinkML into a software project that uses <a class="reference external" href="https://www.sphinx-doc.org/">Sphinx</a>.</p>
 <p>You should make sure your sphinx configuration includes:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>The <a class="reference external" href="https://myst-parser.readthedocs.io/">MyST</a> extension, for parsing markdown</p></li>
 <li><p>The <a class="reference external" href="https://sphinxcontrib-mermaid-demo.readthedocs.io/en/latest/">Mermaid</a> extension, for Mermaid class diagrams</p></li>
 </ol>
@@ -312,7 +313,7 @@ if you are incorporating LinkML into a software project that uses <a class="refe
 <p>For some purposes, the generic schema documentation provided by <code class="docutils literal notranslate"><span class="pre">gen-markdown</span></code> may look too… generic.</p>
 <p>You can customize markdown generation using your own templates. This requires a basic understanding of Jinja2 templates.</p>
 <p>The protocol is:</p>
-<ol class="simple">
+<ol class="arabic simple">
 <li><p>copy the jinja templates from <a class="reference external" href="https://github.com/linkml/linkml/tree/main/linkml/generators/docgen">docgen</a> to your own repo in a folder <code class="docutils literal notranslate"><span class="pre">templates</span></code></p></li>
 <li><p>customize these templates</p></li>
 <li><p>run <code class="docutils literal notranslate"><span class="pre">gen-docs</span> <span class="pre">--template-directory</span> <span class="pre">templates</span> <span class="pre">-d</span> <span class="pre">docs</span> <span class="pre">my_schema.yaml</span></code></p></li>
@@ -338,6 +339,21 @@ if you are incorporating LinkML into a software project that uses <a class="refe
 <li><p><a class="reference external" href="https://linkml.io/linkml/data/python.html">working with data - python</a></p></li>
 <li><p><a class="reference external" href="https://linkml.io/linkml/developers/loaders-and-dumpers.html">loaders and dumpers, code docs</a></p></li>
 </ul>
+</section>
+<section id="what-does-csv-error-field-larger-than-field-limit-131072-mean">
+<h2>What does _csv.Error: field larger than field limit (131072) mean?<a class="headerlink" href="#what-does-csv-error-field-larger-than-field-limit-131072-mean" title="Permalink to this heading"></a></h2>
+<p>The Python CSV module has a built-in default limit on the size of the data
+that can fit into any one column value. This is usually enough for most purposes,
+but there may be scenarios where you have a CSV with large data values, e.g</p>
+<ul class="simple">
+<li><p>storing DNA sequence data</p></li>
+<li><p>storing image data in base64 or similar</p></li>
+</ul>
+<p>In these cases you should pass in <code class="docutils literal notranslate"><span class="pre">--csv-field-size-limit</span> <span class="pre">NUMBER</span></code></p>
+<p>E.g.</p>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>linkml-sqldb --csv-field-size-limit <span class="m">250000</span> dump  -s my-schema.yaml my-data.tsv -D my.db
+</pre></div>
+</div>
 </section>
 </section>
 
