@@ -227,7 +227,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/linkml-ws.html">LinkML Workspace Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/model-measurements.html">How to model quantities and measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../howtos/model-measurements.html#oboe">OBOE</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples.html">Examples of use</a></li>
@@ -858,7 +857,7 @@
             <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">ifabsent</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
             <span class="k">else</span> <span class="kc">None</span>
         <span class="p">)</span>
-        <span class="k">if</span> <span class="n">ifabsent_text</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">ifabsent_text</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
             <span class="n">default</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;= </span><span class="si">{</span><span class="n">ifabsent_text</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">default</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;= </span><span class="si">{</span><span class="n">default_val</span><span class="si">}</span><span class="s2">&quot;</span> <span class="k">if</span> <span class="n">default_val</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>

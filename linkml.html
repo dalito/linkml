@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="genindex.html" /><link rel="search" title="Search" href="search.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
@@ -228,7 +228,6 @@
 <li class="toctree-l2"><a class="reference internal" href="howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="howtos/linkml-ws.html">LinkML Workspace Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="howtos/model-measurements.html">How to model quantities and measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="howtos/model-measurements.html#oboe">OBOE</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples of use</a></li>
@@ -498,12 +497,20 @@
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchema.add_property"><code class="docutils literal notranslate"><span class="pre">JsonSchema.add_property()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchema.array_of"><code class="docutils literal notranslate"><span class="pre">JsonSchema.array_of()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchema.ref_for"><code class="docutils literal notranslate"><span class="pre">JsonSchema.ref_for()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchema.to_json"><code class="docutils literal notranslate"><span class="pre">JsonSchema.to_json()</span></code></a></li>
 </ul>
 </li>
 <li class="toctree-l3"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.generatorname"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.generatorname</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.generatorversion"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.generatorversion</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.get_subschema_for_anonymous_class"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.get_subschema_for_anonymous_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.get_subschema_for_slot"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.get_subschema_for_slot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.get_type_info_for_slot_subschema"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.get_type_info_for_slot_subschema()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.handle_class"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.handle_class()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.handle_class_slot"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.handle_class_slot()</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.handle_enum"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.handle_enum()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.include_range_class_descendants"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.include_range_class_descendants</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.indent"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.indent</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.inline"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.inline</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.not_closed"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.not_closed</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.serialize"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.serialize()</span></code></a></li>
@@ -513,11 +520,6 @@
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.top_level_schema"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.top_level_schema</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.uses_schemaloader"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.uses_schemaloader</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.valid_formats"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.valid_formats</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.visit_all_class_slots"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.visit_all_class_slots</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.visit_all_slots"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.visit_all_slots</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.visit_class"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.visit_class()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.visit_class_slot"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.visit_class_slot()</span></code></a></li>
-<li class="toctree-l4"><a class="reference internal" href="linkml.generators.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.visit_enum"><code class="docutils literal notranslate"><span class="pre">JsonSchemaGenerator.visit_enum()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1103,6 +1105,7 @@
 <li class="toctree-l2"><a class="reference internal" href="linkml.utils.html#module-linkml.utils.datavalidator">linkml.utils.datavalidator module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="linkml.utils.html#linkml.utils.datavalidator.DataValidator"><code class="docutils literal notranslate"><span class="pre">DataValidator</span></code></a><ul>
 <li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.datavalidator.DataValidator.schema"><code class="docutils literal notranslate"><span class="pre">DataValidator.schema</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.datavalidator.DataValidator.validate_dict"><code class="docutils literal notranslate"><span class="pre">DataValidator.validate_dict()</span></code></a></li>
 </ul>
 </li>
 </ul>
@@ -1179,6 +1182,7 @@
 <li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.generator.Generator.sort_class_slots"><code class="docutils literal notranslate"><span class="pre">Generator.sort_class_slots</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.generator.Generator.source_file_date"><code class="docutils literal notranslate"><span class="pre">Generator.source_file_date</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.generator.Generator.source_file_size"><code class="docutils literal notranslate"><span class="pre">Generator.source_file_size</span></code></a></li>
+<li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.generator.Generator.stacktrace"><code class="docutils literal notranslate"><span class="pre">Generator.stacktrace</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.generator.Generator.subset_for"><code class="docutils literal notranslate"><span class="pre">Generator.subset_for()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.generator.Generator.subset_name"><code class="docutils literal notranslate"><span class="pre">Generator.subset_name()</span></code></a></li>
 <li class="toctree-l4"><a class="reference internal" href="linkml.utils.html#linkml.utils.generator.Generator.uses_schemaloader"><code class="docutils literal notranslate"><span class="pre">Generator.uses_schemaloader</span></code></a></li>
@@ -1207,7 +1211,6 @@
 <li class="toctree-l2"><a class="reference internal" href="linkml.utils.html#module-linkml.utils.ifabsent_functions">linkml.utils.ifabsent_functions module</a><ul>
 <li class="toctree-l3"><a class="reference internal" href="linkml.utils.html#linkml.utils.ifabsent_functions.curie_for"><code class="docutils literal notranslate"><span class="pre">curie_for()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="linkml.utils.html#linkml.utils.ifabsent_functions.default_curie_or_uri"><code class="docutils literal notranslate"><span class="pre">default_curie_or_uri()</span></code></a></li>
-<li class="toctree-l3"><a class="reference internal" href="linkml.utils.html#linkml.utils.ifabsent_functions.default_ns_for"><code class="docutils literal notranslate"><span class="pre">default_ns_for()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="linkml.utils.html#linkml.utils.ifabsent_functions.default_uri_for"><code class="docutils literal notranslate"><span class="pre">default_uri_for()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="linkml.utils.html#linkml.utils.ifabsent_functions.ifabsent_postinit_declaration"><code class="docutils literal notranslate"><span class="pre">ifabsent_postinit_declaration()</span></code></a></li>
 <li class="toctree-l3"><a class="reference internal" href="linkml.utils.html#linkml.utils.ifabsent_functions.ifabsent_value_declaration"><code class="docutils literal notranslate"><span class="pre">ifabsent_value_declaration()</span></code></a></li>

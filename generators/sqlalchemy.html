@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="LinkML Generators" href="linkml.html" /><link rel="prev" title="SQL DDL" href="sqlddl.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
@@ -228,7 +228,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/linkml-ws.html">LinkML Workspace Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html">How to model quantities and measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html#oboe">OBOE</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples of use</a></li>
@@ -405,7 +404,7 @@ section of the SQLA docs.</p>
 <span id="cmdoption-gen-sqlddl-no-use-foreign-keys"></span><span class="sig-name descname"><span class="pre">--use-foreign-keys</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-use-foreign-keys</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-use-foreign-keys" title="Permalink to this definition">#</a></dt>
 <dd><p>Emit FK declarations</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
 </dd>
 </dl>
@@ -416,7 +415,7 @@ section of the SQLA docs.</p>
 <span id="cmdoption-gen-sqlddl-no-pydantic"></span><span class="sig-name descname"><span class="pre">--pydantic</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-pydantic</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-pydantic" title="Permalink to this definition">#</a></dt>
 <dd><p>If True, generate Pydantic classes (imperative mode only)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>False</p>
 </dd>
 </dl>
@@ -427,7 +426,7 @@ section of the SQLA docs.</p>
 <span id="cmdoption-gen-sqlddl-no-generate-classes"></span><span class="sig-name descname"><span class="pre">--generate-classes</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-generate-classes</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-generate-classes" title="Permalink to this definition">#</a></dt>
 <dd><p>If True, generate Python datamodel (imperative mode only)</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>False</p>
 </dd>
 </dl>
@@ -438,7 +437,7 @@ section of the SQLA docs.</p>
 <span id="cmdoption-gen-sqlddl-no-declarative"></span><span class="sig-name descname"><span class="pre">--declarative</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-declarative</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-declarative" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate SQL Alchemy declarative vs imperative</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
 </dd>
 </dl>
@@ -449,10 +448,10 @@ section of the SQLA docs.</p>
 <span id="cmdoption-gen-sqlddl-format"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--format</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;format&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sqlddl-f" title="Permalink to this definition">#</a></dt>
 <dd><p>Output format</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>sqla</p>
 </dd>
-<dt class="field-even">Options</dt>
+<dt class="field-even">Options<span class="colon">:</span></dt>
 <dd class="field-even"><p>sqla</p>
 </dd>
 </dl>
@@ -463,7 +462,7 @@ section of the SQLA docs.</p>
 <span id="cmdoption-gen-sqlddl-no-metadata"></span><span class="sig-name descname"><span class="pre">--metadata</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-metadata</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-metadata" title="Permalink to this definition">#</a></dt>
 <dd><p>Include metadata in output</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
 </dd>
 </dl>
@@ -474,7 +473,7 @@ section of the SQLA docs.</p>
 <span id="cmdoption-gen-sqlddl-metauris"></span><span class="sig-name descname"><span class="pre">--useuris</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--metauris</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-useuris" title="Permalink to this definition">#</a></dt>
 <dd><p>Include metadata in output</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
 </dd>
 </dl>
@@ -491,10 +490,10 @@ section of the SQLA docs.</p>
 <span id="cmdoption-gen-sqlddl-log-level"></span><span class="sig-name descname"><span class="pre">--log_level</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;log_level&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sqlddl-log_level" title="Permalink to this definition">#</a></dt>
 <dd><p>Logging level</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>WARNING</p>
 </dd>
-<dt class="field-even">Options</dt>
+<dt class="field-even">Options<span class="colon">:</span></dt>
 <dd class="field-even"><p>CRITICAL | ERROR | WARNING | INFO | DEBUG</p>
 </dd>
 </dl>
@@ -512,6 +511,12 @@ section of the SQLA docs.</p>
 <dd><p>Merge imports into source file (default=mergeimports)</p>
 </dd></dl>
 
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-stacktrace">
+<span id="cmdoption-gen-sqlddl-no-stacktrace"></span><span class="sig-name descname"><span class="pre">--stacktrace</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-stacktrace</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-stacktrace" title="Permalink to this definition">#</a></dt>
+<dd><p>Print a stack trace when an error occurs (default=stacktrace)</p>
+</dd></dl>
+
 <p class="rubric">Arguments</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-gen-sqlddl-arg-YAMLFILE">
@@ -525,7 +530,7 @@ section of the SQLA docs.</p>
 <h3>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="linkml.generators.sqlalchemygen.SQLAlchemyGenerator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">linkml.generators.sqlalchemygen.</span></span><span class="sig-name descname"><span class="pre">SQLAlchemyGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">schema:</span> <span class="pre">~typing.Union[str,</span> <span class="pre">~typing.TextIO,</span> <span class="pre">~linkml_runtime.linkml_model.meta.SchemaDefinition,</span> <span class="pre">~linkml.utils.generator.Generator],</span> <span class="pre">schemaview:</span> <span class="pre">~typing.Optional[~linkml_runtime.utils.schemaview.SchemaView]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">format:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">metadata:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">useuris:</span> <span class="pre">~typing.Optional[bool]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">log_level:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">30,</span> <span class="pre">mergeimports:</span> <span class="pre">~typing.Optional[bool]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">source_file_date:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">source_file_size:</span> <span class="pre">~typing.Optional[int]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">logger:</span> <span class="pre">~typing.Optional[~logging.Logger]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">verbose:</span> <span class="pre">~typing.Optional[bool]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">output:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">namespaces:</span> <span class="pre">~typing.Optional[~linkml_runtime.utils.namespaces.Namespaces]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">directory_output:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">base_dir:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">metamodel_name_map:</span> <span class="pre">~typing.Optional[~typing.Dict[str,</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">importmap:</span> <span class="pre">~typing.Optional[~typing.Union[str,</span> <span class="pre">~typing.Mapping[str,</span> <span class="pre">str]]]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">emit_prefixes:</span> <span class="pre">~typing.Set[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">metamodel:</span> <span class="pre">~typing.Optional[~linkml.utils.schemaloader.SchemaLoader]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">original_schema:</span> <span class="pre">~typing.Optional[~typing.Union[~linkml_runtime.linkml_model.meta.SchemaDefinition,</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">**_kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/linkml/generators/sqlalchemygen.html#SQLAlchemyGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#linkml.generators.sqlalchemygen.SQLAlchemyGenerator" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">linkml.generators.sqlalchemygen.</span></span><span class="sig-name descname"><span class="pre">SQLAlchemyGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="pre">schema:</span> <span class="pre">~typing.Union[str,</span> <span class="pre">~typing.TextIO,</span> <span class="pre">~linkml_runtime.linkml_model.meta.SchemaDefinition,</span> <span class="pre">~linkml.utils.generator.Generator],</span> <span class="pre">schemaview:</span> <span class="pre">~typing.Optional[~linkml_runtime.utils.schemaview.SchemaView]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">format:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">metadata:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">useuris:</span> <span class="pre">~typing.Optional[bool]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">log_level:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">30,</span> <span class="pre">mergeimports:</span> <span class="pre">~typing.Optional[bool]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">source_file_date:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">source_file_size:</span> <span class="pre">~typing.Optional[int]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">logger:</span> <span class="pre">~typing.Optional[~logging.Logger]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">verbose:</span> <span class="pre">~typing.Optional[bool]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">output:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">namespaces:</span> <span class="pre">~typing.Optional[~linkml_runtime.utils.namespaces.Namespaces]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">directory_output:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">base_dir:</span> <span class="pre">~typing.Optional[str]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">metamodel_name_map:</span> <span class="pre">~typing.Optional[~typing.Dict[str,</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">importmap:</span> <span class="pre">~typing.Optional[~typing.Union[str,</span> <span class="pre">~typing.Mapping[str,</span> <span class="pre">str]]]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">emit_prefixes:</span> <span class="pre">~typing.Set[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;,</span> <span class="pre">metamodel:</span> <span class="pre">~typing.Optional[~linkml.utils.schemaloader.SchemaLoader]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">stacktrace:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False,</span> <span class="pre">original_schema:</span> <span class="pre">~typing.Optional[~typing.Union[~linkml_runtime.linkml_model.meta.SchemaDefinition,</span> <span class="pre">str]]</span> <span class="pre">=</span> <span class="pre">None,</span> <span class="pre">**_kwargs</span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/linkml/generators/sqlalchemygen.html#SQLAlchemyGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#linkml.generators.sqlalchemygen.SQLAlchemyGenerator" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates SQL Alchemy classes</p>
 <p>See also: <span class="xref std std-ref">SQLTableGenerator</span></p>
 <dl class="py method">
@@ -533,10 +538,10 @@ section of the SQLA docs.</p>
 <span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="headerlink" href="#linkml.generators.sqlalchemygen.SQLAlchemyGenerator.serialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate output in the required format</p>
 <dl class="field-list simple">
-<dt class="field-odd">Parameters</dt>
+<dt class="field-odd">Parameters<span class="colon">:</span></dt>
 <dd class="field-odd"><p><strong>kwargs</strong> – Generater specific parameters</p>
 </dd>
-<dt class="field-even">Returns</dt>
+<dt class="field-even">Returns<span class="colon">:</span></dt>
 <dd class="field-even"><p>Generated output</p>
 </dd>
 </dl>

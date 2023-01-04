@@ -2,7 +2,7 @@
 <html class="no-js" lang="en">
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
-    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.17.1: http://docutils.sourceforge.net/" />
+    <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
 <link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="TerminusDB" href="terminusdb.html" /><link rel="prev" title="LinkML Generators" href="linkml.html" />
 
     <meta name="generator" content="sphinx-5.3.0, furo 2022.09.29"/>
@@ -228,7 +228,6 @@
 <li class="toctree-l2"><a class="reference internal" href="../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/linkml-ws.html">LinkML Workspace Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html">How to model quantities and measurements</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html#oboe">OBOE</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples of use</a></li>
@@ -332,10 +331,10 @@ For details of the SSSOM standard</p>
 <span id="cmdoption-gen-sssom-format"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--format</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;format&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sssom-f" title="Permalink to this definition">#</a></dt>
 <dd><p>Output format</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>tsv</p>
 </dd>
-<dt class="field-even">Options</dt>
+<dt class="field-even">Options<span class="colon">:</span></dt>
 <dd class="field-even"><p>tsv</p>
 </dd>
 </dl>
@@ -346,7 +345,7 @@ For details of the SSSOM standard</p>
 <span id="cmdoption-gen-sssom-no-metadata"></span><span class="sig-name descname"><span class="pre">--metadata</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-metadata</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sssom-metadata" title="Permalink to this definition">#</a></dt>
 <dd><p>Include metadata in output</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
 </dd>
 </dl>
@@ -357,7 +356,7 @@ For details of the SSSOM standard</p>
 <span id="cmdoption-gen-sssom-metauris"></span><span class="sig-name descname"><span class="pre">--useuris</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--metauris</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sssom-useuris" title="Permalink to this definition">#</a></dt>
 <dd><p>Include metadata in output</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>True</p>
 </dd>
 </dl>
@@ -374,10 +373,10 @@ For details of the SSSOM standard</p>
 <span id="cmdoption-gen-sssom-log-level"></span><span class="sig-name descname"><span class="pre">--log_level</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;log_level&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sssom-log_level" title="Permalink to this definition">#</a></dt>
 <dd><p>Logging level</p>
 <dl class="field-list simple">
-<dt class="field-odd">Default</dt>
+<dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p>WARNING</p>
 </dd>
-<dt class="field-even">Options</dt>
+<dt class="field-even">Options<span class="colon">:</span></dt>
 <dd class="field-even"><p>CRITICAL | ERROR | WARNING | INFO | DEBUG</p>
 </dd>
 </dl>
@@ -393,6 +392,12 @@ For details of the SSSOM standard</p>
 <dt class="sig sig-object std" id="cmdoption-gen-sssom-mergeimports">
 <span id="cmdoption-gen-sssom-no-mergeimports"></span><span class="sig-name descname"><span class="pre">--mergeimports</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-mergeimports</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sssom-mergeimports" title="Permalink to this definition">#</a></dt>
 <dd><p>Merge imports into source file (default=mergeimports)</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gen-sssom-stacktrace">
+<span id="cmdoption-gen-sssom-no-stacktrace"></span><span class="sig-name descname"><span class="pre">--stacktrace</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-stacktrace</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sssom-stacktrace" title="Permalink to this definition">#</a></dt>
+<dd><p>Print a stack trace when an error occurs (default=stacktrace)</p>
 </dd></dl>
 
 <p class="rubric">Arguments</p>
