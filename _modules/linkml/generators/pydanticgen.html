@@ -223,11 +223,11 @@
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/yq-for-schemas.html">Using yq for querying and manipulating schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/using-jsonld.html">Using JSON-LD</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/model-measurements.html">How to model quantities and measurements</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples.html">Examples of use</a></li>
@@ -239,6 +239,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/why-linkml.html">FAQ: Why LinkML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/modeling.html">FAQ: Modeling</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/tools.html">FAQ: Tools</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq/python.html">FAQ: Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/getting-help.html">FAQ: Getting Help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/contributing.html">FAQ: Contributing</a></li>
 </ul>
@@ -251,6 +252,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/manipulating-schemas.html">Manipulating Schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/schemaview.html">SchemaView</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/schemabuilder.html">SchemaBuilder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/loaders-and-dumpers.html">Data Conversion: Loaders and Dumpers</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/inference.html">Inferring Missing Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/using-sql-dbs.html">Using SQL Databases</a></li>
@@ -310,6 +312,7 @@
 <span class="kn">from</span> <span class="nn">linkml_runtime.utils.formatutils</span> <span class="kn">import</span> <span class="n">camelcase</span><span class="p">,</span> <span class="n">underscore</span>
 <span class="kn">from</span> <span class="nn">linkml_runtime.utils.schemaview</span> <span class="kn">import</span> <span class="n">SchemaView</span>
 
+<span class="kn">from</span> <span class="nn">linkml.generators.common.type_designators</span> <span class="kn">import</span> <span class="n">get_type_designator_value</span>
 <span class="kn">from</span> <span class="nn">linkml._version</span> <span class="kn">import</span> <span class="n">__version__</span>
 <span class="kn">from</span> <span class="nn">linkml.generators.oocodegen</span> <span class="kn">import</span> <span class="n">OOCodeGenerator</span>
 <span class="kn">from</span> <span class="nn">linkml.utils.generator</span> <span class="kn">import</span> <span class="n">shared_arguments</span>
@@ -322,7 +325,7 @@
 <span class="s2">from __future__ import annotations</span>
 <span class="s2">from datetime import datetime, date</span>
 <span class="s2">from enum import Enum</span>
-<span class="s2">from typing import List, Dict, Optional, Any</span>
+<span class="s2">from typing import List, Dict, Optional, Any, Union</span>
 <span class="s2">from pydantic import BaseModel as BaseModel, Field</span>
 <span class="s2">from linkml_runtime.linkml_model import Decimal</span>
 
@@ -496,15 +499,17 @@
             <span class="k">for</span> <span class="n">slot_name</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">class_slots</span><span class="p">(</span><span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
                 <span class="n">slot</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">induced_slot</span><span class="p">(</span><span class="n">slot_name</span><span class="p">,</span> <span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">designates_type</span><span class="p">:</span>
+                    <span class="n">target_value</span> <span class="o">=</span> <span class="n">get_type_designator_value</span><span class="p">(</span><span class="n">sv</span><span class="p">,</span> <span class="n">slot</span><span class="p">,</span> <span class="n">class_def</span><span class="p">)</span>
                     <span class="n">slot_values</span><span class="p">[</span><span class="n">camelcase</span><span class="p">(</span><span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">)][</span>
                         <span class="n">slot</span><span class="o">.</span><span class="n">name</span>
-                    <span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">default_prefix</span><span class="si">}</span><span class="s1">:</span><span class="si">{</span><span class="n">camelcase</span><span class="p">(</span><span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">)</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
+                    <span class="p">]</span> <span class="o">=</span> <span class="sa">f</span><span class="s1">&#39;&quot;</span><span class="si">{</span><span class="n">target_value</span><span class="si">}</span><span class="s1">&quot;&#39;</span>
                     <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">multivalued</span><span class="p">:</span>
                         <span class="n">slot_values</span><span class="p">[</span><span class="n">camelcase</span><span class="p">(</span><span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">)][</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
                             <span class="s2">&quot;[&quot;</span>
                             <span class="o">+</span> <span class="n">slot_values</span><span class="p">[</span><span class="n">camelcase</span><span class="p">(</span><span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">)][</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span>
                             <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
                         <span class="p">)</span>
+                    <span class="n">slot_values</span><span class="p">[</span><span class="n">camelcase</span><span class="p">(</span><span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">)][</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">slot_values</span><span class="p">[</span><span class="n">camelcase</span><span class="p">(</span><span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">)][</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">+</span> <span class="s2">&quot;, const=True&quot;</span>
                 <span class="c1"># Multivalued slots that are either not inlined (just an identifier) or are</span>
                 <span class="c1"># inlined as lists should get default_factory list, if they&#39;re inlined but</span>
                 <span class="c1"># not as a list, that means a dictionary</span>
@@ -564,11 +569,14 @@
 
         <span class="c1"># Inline the class itself only if the class is defined as inline, or if the class has no</span>
         <span class="c1"># identifier slot and also isn&#39;t a mixin.</span>
-        <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">inlined</span> <span class="ow">or</span> <span class="p">(</span>
+        <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">inlined</span> <span class="ow">or</span> <span class="n">slot</span><span class="o">.</span><span class="n">inlined_as_list</span> <span class="ow">or</span> <span class="p">(</span>
             <span class="n">sv</span><span class="o">.</span><span class="n">get_identifier_slot</span><span class="p">(</span><span class="n">range_cls</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span>
             <span class="ow">and</span> <span class="ow">not</span> <span class="n">sv</span><span class="o">.</span><span class="n">is_mixin</span><span class="p">(</span><span class="n">range_cls</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="p">):</span>
-            <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">camelcase</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
+            <span class="k">if</span> <span class="nb">len</span><span class="p">([</span><span class="n">x</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">class_induced_slots</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="p">)</span> <span class="k">if</span> <span class="n">x</span><span class="o">.</span><span class="n">designates_type</span><span class="p">])</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">class_descendants</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="p">))</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;Union[&quot;</span> <span class="o">+</span> <span class="s2">&quot;,&quot;</span><span class="o">.</span><span class="n">join</span><span class="p">([</span><span class="n">camelcase</span><span class="p">(</span><span class="n">c</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">class_descendants</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="p">)])</span> <span class="o">+</span> <span class="s2">&quot;]&quot;</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">camelcase</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="p">)</span><span class="si">}</span><span class="s2">&quot;</span>
 
         <span class="c1"># For the more difficult cases, set string as the default and attempt to improve it</span>
         <span class="n">range_cls_identifier_slot_range</span> <span class="o">=</span> <span class="s2">&quot;str&quot;</span>
@@ -608,7 +616,7 @@
         <span class="n">pyschema</span> <span class="o">=</span> <span class="n">SchemaDefinition</span><span class="p">(</span>
             <span class="nb">id</span><span class="o">=</span><span class="n">schema</span><span class="o">.</span><span class="n">id</span><span class="p">,</span>
             <span class="n">name</span><span class="o">=</span><span class="n">schema</span><span class="o">.</span><span class="n">name</span><span class="p">,</span>
-            <span class="n">description</span><span class="o">=</span><span class="n">schema</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&quot;&#39;</span><span class="p">),</span>
+            <span class="n">description</span><span class="o">=</span><span class="n">schema</span><span class="o">.</span><span class="n">description</span><span class="o">.</span><span class="n">replace</span><span class="p">(</span><span class="s1">&#39;&quot;&#39;</span><span class="p">,</span> <span class="s1">&#39;</span><span class="se">\\</span><span class="s1">&quot;&#39;</span><span class="p">)</span> <span class="k">if</span> <span class="n">schema</span><span class="o">.</span><span class="n">description</span> <span class="k">else</span> <span class="kc">None</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="n">enums</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_enums</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">all_enums</span><span class="p">())</span>
 
@@ -659,7 +667,7 @@
                     <span class="c1"># logging.error(f&#39;range: {s.range} is unknown&#39;)</span>
                     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;range: </span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">range</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">multivalued</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">collection_key</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">s</span><span class="o">.</span><span class="n">inlined</span> <span class="ow">or</span> <span class="n">collection_key</span> <span class="ow">is</span> <span class="kc">None</span> <span class="ow">or</span> <span class="n">s</span><span class="o">.</span><span class="n">inlined_as_list</span><span class="p">:</span>
                         <span class="n">pyrange</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;List[</span><span class="si">{</span><span class="n">pyrange</span><span class="si">}</span><span class="s2">]&quot;</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="n">pyrange</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;Dict[</span><span class="si">{</span><span class="n">collection_key</span><span class="si">}</span><span class="s2">, </span><span class="si">{</span><span class="n">pyrange</span><span class="si">}</span><span class="s2">]&quot;</span>
