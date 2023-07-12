@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>linkml.generators.jsonldcontextgen - linkml documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -181,12 +181,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/enums.html">Semantic Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/inlining.html">Inlining objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/constraints.html">Adding constraints and rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/type-designators.html">Type designators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/subsets.html">Subsets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/imports.html">Imports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/advanced.html">Advanced features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/generators.html">Mapping schemas to other frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/linter.html">Schema Linter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/derived-models.html">Derived models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/annotations.html">Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/metamodel.html">The metamodel</a></li>
 </ul>
 </li>
@@ -228,6 +230,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/model-measurements.html">How to model quantities and measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/multidimensional-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/generate-ai-prompts.html">How to Generate AI prompts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples.html">Examples of use</a></li>
@@ -303,15 +307,13 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">import</span> <span class="nn">re</span>
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">TextIO</span><span class="p">,</span> <span class="n">Union</span><span class="p">,</span> <span class="n">Dict</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span>
 
 <span class="kn">import</span> <span class="nn">click</span>
 <span class="kn">from</span> <span class="nn">jsonasobj2</span> <span class="kn">import</span> <span class="n">JsonObj</span><span class="p">,</span> <span class="n">as_json</span>
-<span class="kn">from</span> <span class="nn">linkml_runtime.linkml_model.meta</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ClassDefinition</span><span class="p">,</span> <span class="n">Definition</span><span class="p">,</span>
-                                              <span class="n">Element</span><span class="p">,</span> <span class="n">SchemaDefinition</span><span class="p">,</span>
-                                              <span class="n">SlotDefinition</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">linkml_runtime.linkml_model.meta</span> <span class="kn">import</span> <span class="n">ClassDefinition</span><span class="p">,</span> <span class="n">SlotDefinition</span>
 <span class="kn">from</span> <span class="nn">linkml_runtime.linkml_model.types</span> <span class="kn">import</span> <span class="n">SHEX</span>
-<span class="kn">from</span> <span class="nn">linkml_runtime.utils.formatutils</span> <span class="kn">import</span> <span class="n">be</span><span class="p">,</span> <span class="n">camelcase</span><span class="p">,</span> <span class="n">underscore</span>
+<span class="kn">from</span> <span class="nn">linkml_runtime.utils.formatutils</span> <span class="kn">import</span> <span class="n">camelcase</span><span class="p">,</span> <span class="n">underscore</span>
 <span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">SKOS</span><span class="p">,</span> <span class="n">XSD</span>
 
 <span class="kn">from</span> <span class="nn">linkml._version</span> <span class="kn">import</span> <span class="n">__version__</span>
@@ -330,7 +332,6 @@
 
 <div class="viewcode-block" id="ContextGenerator"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.jsonldcontextgen.ContextGenerator">[docs]</a><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">ContextGenerator</span><span class="p">(</span><span class="n">Generator</span><span class="p">):</span>
-
     <span class="c1"># ClassVars</span>
     <span class="n">generatorname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
     <span class="n">generatorversion</span> <span class="o">=</span> <span class="s2">&quot;0.1.1&quot;</span>
@@ -358,9 +359,7 @@
                 <span class="s2">&quot;Schema text must be supplied to context generator.  Preparsed schema will not work&quot;</span>
             <span class="p">)</span>
 
-<div class="viewcode-block" id="ContextGenerator.visit_schema"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.jsonldcontextgen.ContextGenerator.visit_schema">[docs]</a>    <span class="k">def</span> <span class="nf">visit_schema</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span>
-    <span class="p">):</span>
+<div class="viewcode-block" id="ContextGenerator.visit_schema"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.jsonldcontextgen.ContextGenerator.visit_schema">[docs]</a>    <span class="k">def</span> <span class="nf">visit_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">base</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="n">output</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">_</span><span class="p">):</span>
         <span class="c1"># Add any explicitly declared prefixes</span>
         <span class="k">for</span> <span class="n">prefix</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">prefixes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">emit_prefixes</span><span class="o">.</span><span class="n">add</span><span class="p">(</span><span class="n">prefix</span><span class="o">.</span><span class="n">prefix_prefix</span><span class="p">)</span>
@@ -402,20 +401,6 @@
             <span class="n">comments</span><span class="o">.</span><span class="n">description</span> <span class="o">=</span> <span class="s2">&quot;Auto generated by LinkML jsonld context generator&quot;</span>
             <span class="n">comments</span><span class="o">.</span><span class="n">generation_date</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">generation_date</span>
             <span class="n">comments</span><span class="o">.</span><span class="n">source</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">source_file</span>
-    <span class="c1">#</span>
-    <span class="c1">#         comments = f&quot;&quot;&quot;Auto generated from {self.schema.source_file} by {self.generatorname} version: {self.generatorversion}&quot;&quot;&quot;</span>
-    <span class="c1">#         if self.schema.generation_date:</span>
-    <span class="c1">#             comments += f&quot;&quot;&quot;</span>
-    <span class="c1">#</span>
-    <span class="c1"># Schema: {self.schema.name}</span>
-    <span class="c1"># metamodel version: {self.schema.metamodel_version}</span>
-    <span class="c1"># model version: {self.schema.version if self.schema.version else None}</span>
-    <span class="c1"># &quot;&quot;&quot;</span>
-    <span class="c1">#         comments += f&quot;&quot;&quot;</span>
-    <span class="c1"># id: {self.schema.id}</span>
-    <span class="c1"># description: {be(self.schema.description)}</span>
-    <span class="c1"># license: {be(self.schema.license)}</span>
-    <span class="c1"># &quot;&quot;&quot;</span>
             <span class="n">context</span><span class="o">.</span><span class="n">comments</span> <span class="o">=</span> <span class="n">comments</span>
         <span class="n">context_content</span> <span class="o">=</span> <span class="p">{}</span>
         <span class="k">if</span> <span class="n">base</span><span class="p">:</span>
@@ -453,15 +438,9 @@
         <span class="n">cn</span> <span class="o">=</span> <span class="n">camelcase</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">add_mappings</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
         <span class="n">cls_uri_prefix</span><span class="p">,</span> <span class="n">cls_uri_suffix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">namespaces</span><span class="o">.</span><span class="n">prefix_suffix</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">class_uri</span><span class="p">)</span>
-        <span class="k">if</span> <span class="p">(</span>
-            <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_ns</span>
-            <span class="ow">or</span> <span class="ow">not</span> <span class="n">cls_uri_prefix</span>
-            <span class="ow">or</span> <span class="n">cls_uri_prefix</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_ns</span>
-        <span class="p">):</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_ns</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">cls_uri_prefix</span> <span class="ow">or</span> <span class="n">cls_uri_prefix</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_ns</span><span class="p">:</span>
             <span class="n">class_def</span><span class="p">[</span><span class="s2">&quot;@id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="p">(</span><span class="n">cls_uri_prefix</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">cls_uri_suffix</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">cls_uri_prefix</span>
-                <span class="k">else</span> <span class="bp">cls</span><span class="o">.</span><span class="n">class_uri</span>
+                <span class="p">(</span><span class="n">cls_uri_prefix</span> <span class="o">+</span> <span class="s2">&quot;:&quot;</span> <span class="o">+</span> <span class="n">cls_uri_suffix</span><span class="p">)</span> <span class="k">if</span> <span class="n">cls_uri_prefix</span> <span class="k">else</span> <span class="bp">cls</span><span class="o">.</span><span class="n">class_uri</span>
             <span class="p">)</span>
             <span class="k">if</span> <span class="n">cls_uri_prefix</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">add_prefix</span><span class="p">(</span><span class="n">cls_uri_prefix</span><span class="p">)</span>
@@ -496,11 +475,7 @@
                     <span class="k">else</span><span class="p">:</span>
                         <span class="n">slot_def</span><span class="p">[</span><span class="s2">&quot;@type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">range_type</span><span class="o">.</span><span class="n">uri</span>
                 <span class="n">slot_prefix</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">namespaces</span><span class="o">.</span><span class="n">prefix_for</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">slot_uri</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span>
-                    <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_ns</span>
-                    <span class="ow">or</span> <span class="ow">not</span> <span class="n">slot_prefix</span>
-                    <span class="ow">or</span> <span class="n">slot_prefix</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_ns</span>
-                <span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_ns</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">slot_prefix</span> <span class="ow">or</span> <span class="n">slot_prefix</span> <span class="o">!=</span> <span class="bp">self</span><span class="o">.</span><span class="n">default_ns</span><span class="p">:</span>
                     <span class="n">slot_def</span><span class="p">[</span><span class="s2">&quot;@id&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">slot</span><span class="o">.</span><span class="n">slot_uri</span>
                     <span class="k">if</span> <span class="n">slot_prefix</span><span class="p">:</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">add_prefix</span><span class="p">(</span><span class="n">slot_prefix</span><span class="p">)</span>
@@ -550,7 +525,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2021, LinkML Authors
+                Copyright &#169; 2021-2023, LinkML Authors
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             

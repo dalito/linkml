@@ -4,10 +4,10 @@
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><link rel="index" title="Index" href="../../../genindex.html" /><link rel="search" title="Search" href="../../../search.html" />
 
-    <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2022.12.07 -->
+    <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>linkml.generators.sqlddlgen - linkml documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css" />
-    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=91d0f0d1c444bdcb17a68e833c7a53903343c195" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?digest=fad236701ea90a88636c2a8c73b44ae642ed2a53" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?digest=30d1aed668e5c3a91c3e3bf6a60b675221979f0e" />
     
     
@@ -181,12 +181,14 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/enums.html">Semantic Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/inlining.html">Inlining objects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/constraints.html">Adding constraints and rules</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/type-designators.html">Type designators</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/subsets.html">Subsets</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/imports.html">Imports</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/advanced.html">Advanced features</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/generators.html">Mapping schemas to other frameworks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/linter.html">Schema Linter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/derived-models.html">Derived models</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/annotations.html">Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/metamodel.html">The metamodel</a></li>
 </ul>
 </li>
@@ -228,6 +230,8 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/model-measurements.html">How to model quantities and measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/multidimensional-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/generate-ai-prompts.html">How to Generate AI prompts</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples.html">Examples of use</a></li>
@@ -300,16 +304,32 @@
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">contextlib</span> <span class="kn">import</span> <span class="n">redirect_stdout</span>
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">TextIO</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">TextIO</span><span class="p">,</span> <span class="n">Union</span>
 
 <span class="kn">import</span> <span class="nn">click</span>
 <span class="kn">from</span> <span class="nn">deprecated.classic</span> <span class="kn">import</span> <span class="n">deprecated</span>
-<span class="kn">from</span> <span class="nn">linkml_runtime.linkml_model.meta</span> <span class="kn">import</span> <span class="p">(</span><span class="n">ClassDefinition</span><span class="p">,</span>
-                                              <span class="n">ClassDefinitionName</span><span class="p">,</span>
-                                              <span class="n">SchemaDefinition</span><span class="p">,</span> <span class="n">SlotDefinition</span><span class="p">,</span>
-                                              <span class="n">SlotDefinitionName</span><span class="p">)</span>
+<span class="kn">from</span> <span class="nn">linkml_runtime.linkml_model.meta</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">ClassDefinition</span><span class="p">,</span>
+    <span class="n">ClassDefinitionName</span><span class="p">,</span>
+    <span class="n">SchemaDefinition</span><span class="p">,</span>
+    <span class="n">SlotDefinition</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="kn">from</span> <span class="nn">linkml_runtime.utils.formatutils</span> <span class="kn">import</span> <span class="n">camelcase</span><span class="p">,</span> <span class="n">underscore</span>
-<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="o">*</span>
+<span class="kn">from</span> <span class="nn">sqlalchemy</span> <span class="kn">import</span> <span class="p">(</span>
+    <span class="n">Boolean</span><span class="p">,</span>
+    <span class="n">Column</span><span class="p">,</span>
+    <span class="n">Date</span><span class="p">,</span>
+    <span class="n">DateTime</span><span class="p">,</span>
+    <span class="n">Enum</span><span class="p">,</span>
+    <span class="n">Float</span><span class="p">,</span>
+    <span class="n">ForeignKey</span><span class="p">,</span>
+    <span class="n">Integer</span><span class="p">,</span>
+    <span class="n">MetaData</span><span class="p">,</span>
+    <span class="n">Table</span><span class="p">,</span>
+    <span class="n">Text</span><span class="p">,</span>
+    <span class="n">Time</span><span class="p">,</span>
+    <span class="n">create_mock_engine</span><span class="p">,</span>
+<span class="p">)</span>
 
 <span class="kn">from</span> <span class="nn">linkml._version</span> <span class="kn">import</span> <span class="n">__version__</span>
 <span class="kn">from</span> <span class="nn">linkml.utils.generator</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">shared_arguments</span>
@@ -500,7 +520,7 @@
     <span class="n">generatorversion</span> <span class="o">=</span> <span class="s2">&quot;0.1.1&quot;</span>
     <span class="n">valid_formats</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;sql&quot;</span><span class="p">]</span>
     <span class="n">visit_all_class_slots</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
-    <span class="n">use_inherits</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1">## postgresql supports inheritance</span>
+    <span class="n">use_inherits</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>  <span class="c1"># postgresql supports inheritance</span>
     <span class="n">dialect</span><span class="p">:</span> <span class="nb">str</span>
     <span class="n">inject_primary_keys</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">sqlschema</span><span class="p">:</span> <span class="n">SQLSchema</span> <span class="o">=</span> <span class="n">SQLSchema</span><span class="p">()</span>
@@ -546,7 +566,7 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">_is_hidden</span><span class="p">(</span><span class="bp">cls</span><span class="p">):</span>
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">description</span><span class="p">:</span>
-            <span class="kc">None</span>  <span class="c1">## TODO</span>
+            <span class="kc">None</span>  <span class="c1"># TODO</span>
         <span class="n">tname</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_class_name_to_table</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
         <span class="c1"># add table</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sqlschema</span><span class="o">.</span><span class="n">tables</span><span class="p">[</span><span class="n">tname</span><span class="p">]</span> <span class="o">=</span> <span class="n">SQLTable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">tname</span><span class="p">,</span> <span class="n">mapped_to</span><span class="o">=</span><span class="bp">cls</span><span class="p">)</span>
@@ -559,7 +579,7 @@
             <span class="c1"># postgresql supports inheritance</span>
             <span class="c1"># if you want to use plain SQL DDL then use sqlutils to unfold hierarchy</span>
             <span class="c1"># TODO: raise error if the target is standard SQL</span>
-            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;PostgreSQL Inheritance not yet supported&quot;</span><span class="p">)</span></div>
+            <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;PostgreSQL Inheritance not yet supported&quot;</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="SQLDDLGenerator.visit_class_slot"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.sqlddlgen.SQLDDLGenerator.visit_class_slot">[docs]</a>    <span class="k">def</span> <span class="nf">visit_class_slot</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">ClassDefinition</span><span class="p">,</span> <span class="n">aliased_slot_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">SlotDefinition</span>
@@ -618,17 +638,11 @@
                     <span class="n">linktable_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">sqlcol</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
                     <span class="n">backref_col_name</span> <span class="o">=</span> <span class="s2">&quot;backref_id&quot;</span>
                     <span class="n">linktable</span> <span class="o">=</span> <span class="n">SQLTable</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">linktable_name</span><span class="p">)</span>
-                    <span class="n">linktable</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span>
-                        <span class="n">SQLColumn</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">backref_col_name</span><span class="p">,</span> <span class="n">foreign_key</span><span class="o">=</span><span class="n">table_pk</span><span class="p">)</span>
-                    <span class="p">)</span>
+                    <span class="n">linktable</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">SQLColumn</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">backref_col_name</span><span class="p">,</span> <span class="n">foreign_key</span><span class="o">=</span><span class="n">table_pk</span><span class="p">))</span>
                     <span class="n">linktable</span><span class="o">.</span><span class="n">add_column</span><span class="p">(</span><span class="n">sqlcol</span><span class="p">)</span>
                     <span class="n">sqlschema</span><span class="o">.</span><span class="n">add_table</span><span class="p">(</span><span class="n">linktable</span><span class="p">)</span>
                     <span class="n">table</span><span class="o">.</span><span class="n">remove_column</span><span class="p">(</span><span class="n">sqlcol</span><span class="p">)</span>
-                <span class="k">if</span> <span class="p">(</span>
-                    <span class="ow">not</span> <span class="n">is_primitive</span>
-                    <span class="ow">and</span> <span class="n">table_pk</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span>
-                    <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">ref</span><span class="o">.</span><span class="n">referenced_by</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span>
-                <span class="p">):</span>
+                <span class="k">if</span> <span class="ow">not</span> <span class="n">is_primitive</span> <span class="ow">and</span> <span class="n">table_pk</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">ref</span><span class="o">.</span><span class="n">referenced_by</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
                     <span class="c1"># e.g. user-&gt;addresses</span>
                     <span class="n">backref_col_name</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">table</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">_</span><span class="si">{</span><span class="n">table_pk</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span>
                     <span class="n">backref_col</span> <span class="o">=</span> <span class="n">SQLColumn</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="n">backref_col_name</span><span class="p">,</span> <span class="n">foreign_key</span><span class="o">=</span><span class="n">table_pk</span><span class="p">)</span>
@@ -690,12 +704,9 @@
         <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="o">*</span><span class="n">multiparams</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
             <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="nb">str</span><span class="p">(</span><span class="n">sql</span><span class="o">.</span><span class="n">compile</span><span class="p">(</span><span class="n">dialect</span><span class="o">=</span><span class="n">engine</span><span class="o">.</span><span class="n">dialect</span><span class="p">))</span><span class="o">.</span><span class="n">rstrip</span><span class="p">()</span><span class="si">}</span><span class="s2">;&quot;</span><span class="p">)</span>
 
-        <span class="n">engine</span> <span class="o">=</span> <span class="n">create_mock_engine</span><span class="p">(</span>
-            <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dialect</span><span class="si">}</span><span class="s2">://./MyDb&quot;</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;mock&quot;</span><span class="p">,</span> <span class="n">executor</span><span class="o">=</span><span class="n">dump</span>
-        <span class="p">)</span>
+        <span class="n">engine</span> <span class="o">=</span> <span class="n">create_mock_engine</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">dialect</span><span class="si">}</span><span class="s2">://./MyDb&quot;</span><span class="p">,</span> <span class="n">strategy</span><span class="o">=</span><span class="s2">&quot;mock&quot;</span><span class="p">,</span> <span class="n">executor</span><span class="o">=</span><span class="n">dump</span><span class="p">)</span>
         <span class="n">schema_metadata</span> <span class="o">=</span> <span class="n">MetaData</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">t</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">sqlschema</span><span class="o">.</span><span class="n">tables</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-            <span class="bp">cls</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">mapped_to</span>
             <span class="n">sqlcols</span> <span class="o">=</span> <span class="n">t</span><span class="o">.</span><span class="n">columns</span><span class="o">.</span><span class="n">values</span><span class="p">()</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">sqlcols</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
                 <span class="n">cols</span> <span class="o">=</span> <span class="p">[]</span>
@@ -713,7 +724,7 @@
                     <span class="p">)</span>
 
                     <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
-                <span class="n">alchemy_tbl</span> <span class="o">=</span> <span class="n">Table</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">schema_metadata</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">)</span>
+                <span class="n">Table</span><span class="p">(</span><span class="n">t</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">schema_metadata</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">)</span>
         <span class="nb">print</span><span class="p">()</span>
         <span class="n">schema_metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span></div>
 
@@ -789,8 +800,8 @@
                     <span class="n">backref_slot_range</span> <span class="o">=</span> <span class="n">camelcase</span><span class="p">(</span><span class="n">backref_slot</span><span class="o">.</span><span class="n">range</span><span class="p">)</span>
                     <span class="nb">print</span><span class="p">(</span>
                         <span class="sa">f</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">    &#39;</span><span class="si">{</span><span class="n">underscore</span><span class="p">(</span><span class="n">original_col</span><span class="o">.</span><span class="n">mapped_to_alias</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;: </span>
-<span class="s2">        relationship(</span><span class="si">{</span><span class="n">backref_slot_range</span><span class="si">}</span><span class="s2">, </span>
+<span class="s2">    &#39;</span><span class="si">{</span><span class="n">underscore</span><span class="p">(</span><span class="n">original_col</span><span class="o">.</span><span class="n">mapped_to_alias</span><span class="p">)</span><span class="si">}</span><span class="s2">&#39;:</span>
+<span class="s2">        relationship(</span><span class="si">{</span><span class="n">backref_slot_range</span><span class="si">}</span><span class="s2">,</span>
 <span class="s2">                      foreign_keys=</span><span class="si">{</span><span class="n">backref</span><span class="o">.</span><span class="n">backref_column</span><span class="o">.</span><span class="n">table</span><span class="o">.</span><span class="n">as_var</span><span class="p">()</span><span class="si">}</span><span class="s2">.columns[&quot;</span><span class="si">{</span><span class="n">backref</span><span class="o">.</span><span class="n">backref_column</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;],</span>
 <span class="s2">                      backref=&#39;</span><span class="si">{</span><span class="n">cn</span><span class="si">}</span><span class="s2">&#39;),</span>
 <span class="s2">&quot;&quot;&quot;</span>
@@ -825,7 +836,7 @@
     <span class="n">default</span><span class="o">=</span><span class="kc">False</span><span class="p">,</span>
     <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">Map classes directly to </span>
+<span class="s2">Map classes directly to</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
 <span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
@@ -862,7 +873,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2021, LinkML Authors
+                Copyright &#169; 2021-2023, LinkML Authors
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
