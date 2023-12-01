@@ -227,6 +227,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howtos/collaborative-development.html">How to run a collaborative data modeling project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/yq-for-schemas.html">Using yq for querying and manipulating schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html">How to model quantities and measurements</a></li>
@@ -262,7 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/inference.html">Inferring Missing Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/using-sql-dbs.html">Using SQL Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/sqlstore.html">SQLStore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementor Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/contributing-code.html">Contributing Code</a></li>
 </ul>
 </li>
@@ -373,7 +374,7 @@ text.</p>
 <span class="w">    </span><span class="nt">description</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">A symbol is a string used as a shorthand identifier that is restricted to a subset of characters</span>
 </pre></div>
 </div>
-<p>Some applications may choose to interpret this in particular ways. E.g. you may want to define all narrative text fields as being amenable to spellchecking, or machine learning natual language processing, or special kinds of indexing in ElasticSearch/Solr</p>
+<p>Some applications may choose to interpret this in particular ways. E.g. you may want to define all narrative text fields as being amenable to spellchecking, or machine learning natural language processing, or special kinds of indexing in ElasticSearch/Solr</p>
 </section>
 <section id="why-would-i-want-to-use-enums-over-strings">
 <h2>Why would I want to use enums over strings?<a class="headerlink" href="#why-would-i-want-to-use-enums-over-strings" title="Permalink to this heading">#</a></h2>
@@ -388,7 +389,7 @@ text.</p>
 <p>The fundamental question is whether you want to either:</p>
 <ol class="arabic simple">
 <li><p>define a fixed set of terms in the schema in advance</p></li>
-<li><p>specify the set of terms via a query (e.g. a particular ontology brannch)</p></li>
+<li><p>specify the set of terms via a query (e.g. a particular ontology branch)</p></li>
 </ol>
 <p>See the two questions below for answers to each</p>
 <section id="how-do-i-constrain-a-slot-to-a-fixed-set-of-ontology-terms">
@@ -524,6 +525,49 @@ occupation ontology, any body part from an anatomical ontology.</p>
 </div>
 <p>See <a class="reference external" href="https://linkml.io/linkml/schemas/enums.html#dynamic-enums">dynamic enums</a> for more details.</p>
 </section>
+<section id="can-i-use-linkml-to-develop-ontologies">
+<h3>Can I use LinkML to develop ontologies?<a class="headerlink" href="#can-i-use-linkml-to-develop-ontologies" title="Permalink to this heading">#</a></h3>
+<p>LinkML is intended as a schema modeling framework, rather than an ontology modeling framework.
+Schemas are intended for modeling and constraining the structure of <em>data</em>, whereas ontologies
+and ontology modeling frameworks like OWL are for modeling and constraining models of the <em>world</em>.</p>
+<p>LinkML is intended to be <em>combined</em> with OWLs and other controlled vocabularies, using terms from
+these resources as mappings in enumerations.</p>
+<p>However, the distinction here is frequently blurred, and there are many examples of schemas that
+have been modeled using OWL - e.g. BioPAX, FOAF.</p>
+<p>LinkML allows any schema to be translated to OWL using the <code class="docutils literal notranslate"><span class="pre">gen-owl</span> <span class="pre">&lt;https://linkml.io/linkml/generators/owl&gt;</span></code>_
+generator. There are a number of reasons to do this:</p>
+<ul class="simple">
+<li><p>take advantage of ontology exploration and browsing tools such as BioPortal and Protege</p></li>
+<li><p>use OWL reasoning over schemas and data (with the caveat that OWL uses <em>Open World</em> reasoning)</p></li>
+</ul>
+<p>You can also use <code class="docutils literal notranslate"><span class="pre">Schema</span> <span class="pre">Automator</span> <span class="pre">&lt;https://linkml.io/schema-automator&gt;</span></code>_ to do the reverse translation.</p>
+<p>It doesn’t make sense to develop a large terminological-style ontology such as an OBO
+ontology as LinkML classes, since LinkML is intended for data modeling.</p>
+<p>One option is to use the <code class="docutils literal notranslate"><span class="pre">linkml-owl</span> <span class="pre">&lt;https://linkml.io/linkml-owl&gt;</span></code>_ framework to generate OWL
+classes from LinkML <em>data</em></p>
+</section>
+<section id="are-curies-used-in-schema-definitions-checked-for-expandability-and-resolution">
+<h3>Are CURIEs used in schema definitions checked for expandability and resolution?<a class="headerlink" href="#are-curies-used-in-schema-definitions-checked-for-expandability-and-resolution" title="Permalink to this heading">#</a></h3>
+<p>No, not at this time.  However, linkml_runtime does have methods to help you expand the CURIEs in your data
+using the prefixes in your model (see: linkml_runtime.utils.namespaces.py) into URIs.  In addition, the
+<code class="docutils literal notranslate"><span class="pre">curies</span></code> <a class="reference external" href="https://github.com/cthoyt/curies/">python package</a> which provides a standalone CURIE expansion service.
+There are many ways to check if a URI is resolvable.  One open source python package to do this
+is: <a class="reference external" href="https://pypi.org/project/LinkChecker/">LinkChecker</a>.</p>
+</section>
+<section id="are-curies-used-in-data-that-validates-against-a-given-linkml-schema-checked-for-expandability-and-resolution">
+<h3>Are CURIEs used in data that validates against a given LinkML schema checked for expandability and resolution?<a class="headerlink" href="#are-curies-used-in-data-that-validates-against-a-given-linkml-schema-checked-for-expandability-and-resolution" title="Permalink to this heading">#</a></h3>
+<p>No, not at this time.  However, linkml_runtime does have methods to help you expand the CURIEs in your data
+using the prefixes in your model (see: linkml_runtime.utils.namespaces.py) into URIs.  Specifying a regular expression
+to constrain the CURIEs in your data to a particular pattern is also possible.<br />
+See the <a class="reference external" href="https://w3id.org/linkml/regular_expression">regular expression</a> metaslot.  However, validating a CURIE
+that matches the regular expression, but is invalid in some other way (e.g. is an obsolete ontology term) is not
+currently supported.</p>
+</section>
+<section id="is-it-possible-for-us-to-import-only-a-subset-of-an-existing-linkml-model">
+<h3>Is it possible for us to import only a subset of an existing LinkML model?<a class="headerlink" href="#is-it-possible-for-us-to-import-only-a-subset-of-an-existing-linkml-model" title="Permalink to this heading">#</a></h3>
+<p>Not yet, but we are working on a tool to this, please check out
+<a class="reference external" href="https://github.com/linkml/linkml-transformer">linkml-transformer</a> for more details.</p>
+</section>
 <section id="can-i-combine-dynamic-enums-using-boolean-expressions">
 <h3>Can I combine dynamic enums using boolean expressions<a class="headerlink" href="#can-i-combine-dynamic-enums-using-boolean-expressions" title="Permalink to this heading">#</a></h3>
 <p>Yes, this is possible.</p>
@@ -599,7 +643,7 @@ JSON-Schema, RDF, Python then those naming conventions are applied.</p>
 </ul>
 <p>Note in the RDF/OWL representation, separate <code class="docutils literal notranslate"><span class="pre">rdfs:label</span></code> triples will be generated retaining the original human-friendly name.</p>
 <p>This has the advantage of keeping human-friendly nomenclature in the appropriate places without specifying redundant computer names and human names</p>
-<p>However, the autotmatic translation can be confusing, so some schemas opt to follow standard naming conventions in the schema:</p>
+<p>However, the automatic translation can be confusing, so some schemas opt to follow standard naming conventions in the schema:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">default_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">my_schema</span>
 
 <span class="nt">classes</span><span class="p">:</span>
@@ -876,6 +920,10 @@ will need to answer:</p>
 <li><a class="reference internal" href="#how-do-i-constrain-the-value-of-a-slot-using-an-ontology-or-vocabulary">How do I constrain the value of a slot using an ontology or vocabulary?</a><ul>
 <li><a class="reference internal" href="#how-do-i-constrain-a-slot-to-a-fixed-set-of-ontology-terms">How do I constrain a slot to a fixed set of ontology terms?</a></li>
 <li><a class="reference internal" href="#how-do-i-constrain-a-slot-to-a-branch-of-an-ontology-or-a-whole-ontology">How do I constrain a slot to a branch of an ontology or a whole ontology?</a></li>
+<li><a class="reference internal" href="#can-i-use-linkml-to-develop-ontologies">Can I use LinkML to develop ontologies?</a></li>
+<li><a class="reference internal" href="#are-curies-used-in-schema-definitions-checked-for-expandability-and-resolution">Are CURIEs used in schema definitions checked for expandability and resolution?</a></li>
+<li><a class="reference internal" href="#are-curies-used-in-data-that-validates-against-a-given-linkml-schema-checked-for-expandability-and-resolution">Are CURIEs used in data that validates against a given LinkML schema checked for expandability and resolution?</a></li>
+<li><a class="reference internal" href="#is-it-possible-for-us-to-import-only-a-subset-of-an-existing-linkml-model">Is it possible for us to import only a subset of an existing LinkML model?</a></li>
 <li><a class="reference internal" href="#can-i-combine-dynamic-enums-using-boolean-expressions">Can I combine dynamic enums using boolean expressions</a></li>
 </ul>
 </li>

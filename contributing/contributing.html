@@ -227,6 +227,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howtos/collaborative-development.html">How to run a collaborative data modeling project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/yq-for-schemas.html">Using yq for querying and manipulating schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html">How to model quantities and measurements</a></li>
@@ -262,7 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/inference.html">Inferring Missing Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/using-sql-dbs.html">Using SQL Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/sqlstore.html">SQLStore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementor Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/contributing-code.html">Contributing Code</a></li>
 </ul>
 </li>
@@ -333,7 +334,7 @@
 <li><p>If you want to isolate specific test functions from within your Python unit test file, then you can use the <a class="reference external" href="https://docs.pytest.org/en/stable/reference/reference.html#command-line-flags"><code class="docutils literal notranslate"><span class="pre">-k</span></code> command line option</a>.</p></li>
 </ul>
 <p>To run a single test file using <code class="docutils literal notranslate"><span class="pre">pytest</span></code>:</p>
-<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poetry</span> <span class="n">run</span> <span class="n">pytset</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_issues</span><span class="o">/</span><span class="n">test_linkml_issue_NNN</span><span class="o">.</span><span class="n">py</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">poetry</span> <span class="n">run</span> <span class="n">pytest</span> <span class="n">tests</span><span class="o">/</span><span class="n">test_issues</span><span class="o">/</span><span class="n">test_linkml_issue_NNN</span><span class="o">.</span><span class="n">py</span>
 </pre></div>
 </div>
 <p>You can run the full test suite in the following way:</p>
@@ -427,6 +428,19 @@ issues are with reference to the old <a class="reference external" href="https:/
 <p>If you make a change that intentionally causes some output to not match the saved snapshot file(s), you should update the snapshots by running <code class="docutils literal notranslate"><span class="pre">pytest</span></code> with the <code class="docutils literal notranslate"><span class="pre">--generate-snapshots</span></code> flag. You should try to run only a single or small group of tests with this flag (as opposed to the entire test suite). The updated snapshot files should be checked in to Git alongside your other code changes.</p>
 </li>
 </ul>
+</section>
+<section id="testing-multiple-pydantic-versions">
+<h3>Testing multiple Pydantic versions<a class="headerlink" href="#testing-multiple-pydantic-versions" title="Permalink to this heading">#</a></h3>
+<p>LinkML both generates and depends on Pydantic. <a class="reference external" href="https://docs.pydantic.dev/2.4/migration/">Pydantic V2</a> brought a number of breaking changes, but we intend to support both V1 and V2. By default, the <code class="docutils literal notranslate"><span class="pre">PydanticGenerator</span></code> class will generate code compatible with the version of Pydantic that is installed in your environment. This can be overridden by explicitly setting the <code class="docutils literal notranslate"><span class="pre">pydantic_version</span></code> field.</p>
+<p>As of October 2023, our default development environment still specifies Pydantic 1 (as determined by the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file). But since we also support Pydantic 2 (as specified in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>), it is important to test with Pydantic 2 in your environment. To facilitate that there is a <code class="docutils literal notranslate"><span class="pre">tox</span></code> environment called <code class="docutils literal notranslate"><span class="pre">pydantic2</span></code>. To run all tests with Pydantic 2 installed:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>tox<span class="w"> </span>-e<span class="w"> </span>pydantic2
+</pre></div>
+</div>
+<p>Additional arguments will be passed to <code class="docutils literal notranslate"><span class="pre">pytest</span></code>. For example, to run a specific test:</p>
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>tox<span class="w"> </span>-e<span class="w"> </span>pydantic2<span class="w"> </span>--<span class="w"> </span>tests/test_compliance/test_core_compliance.py
+</pre></div>
+</div>
+<p>Our main GitHub Actions testing workflow will also automatically perform one test run with Pydantic 2 in the environment.</p>
 </section>
 </section>
 <section id="code-formatting-and-linting">
@@ -561,6 +575,7 @@ insight into your work and allows them to provide feedback early on.</p></li>
 <li><a class="reference internal" href="#ide-tips">IDE Tips</a></li>
 <li><a class="reference internal" href="#unittest-to-pytest-conversion">Unittest to pytest conversion</a></li>
 <li><a class="reference internal" href="#custom-pytest-fixtures">Custom pytest fixtures</a></li>
+<li><a class="reference internal" href="#testing-multiple-pydantic-versions">Testing multiple Pydantic versions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#code-formatting-and-linting">Code formatting and linting</a></li>

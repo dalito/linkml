@@ -227,6 +227,7 @@
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">How-to Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="collaborative-development.html">How to run a collaborative data modeling project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yq-for-schemas.html">Using yq for querying and manipulating schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="model-measurements.html">How to model quantities and measurements</a></li>
@@ -262,7 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/inference.html">Inferring Missing Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/using-sql-dbs.html">Using SQL Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/sqlstore.html">SQLStore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementor Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/contributing-code.html">Contributing Code</a></li>
 </ul>
 </li>
@@ -346,7 +347,7 @@ from the <a class="reference external" href="https://linkml.io/linkml/intro/tuto
 <span class="w">      </span><span class="nt">&quot;type&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;SIBLING_OF&quot;</span>
 <span class="w">    </span><span class="p">}</span>
 <span class="w">  </span><span class="p">],</span>
-<span class="w">  </span><span class="nt">&quot;has)employment_history&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
+<span class="w">  </span><span class="nt">&quot;has_employment_history&quot;</span><span class="p">:</span><span class="w"> </span><span class="p">[</span>
 <span class="w">    </span><span class="p">{</span>
 <span class="w">      </span><span class="nt">&quot;employed_at&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;University of Tokyo&quot;</span><span class="p">,</span>
 <span class="w">      </span><span class="nt">&quot;start_date&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;2017-01-01&quot;</span>
@@ -574,7 +575,7 @@ one run to the next!</p>
 <p>Additionally, there are aspects of current LLMs that go against certain parts of the Open Science ethos of LinkML.
 The examples in this tutorial require subscription access to use proprietary models, with inscrutable training
 data. On top of that there are environmental costs in training them and running them.</p>
-<p>If this <em>isn’t</em> your reaction, then we encourage reading the <a class="reference external" href="https://dl.acm.org/doi/10.1145/3442188.3445922">Stochastic Parrots</a>
+<p>If this <em>isn’t</em> your reaction, then we encourage reading the Stochastic Parrots: https://dl.acm.org/doi/10.1145/3442188.3445922
 paper which goes into these issues in more detail.</p>
 <p>If it <em>is</em> your reaction, then rest assured that LLMs will not be a part of the core LinkML framework (although
 they may be used in ancillary parts like schema-automator). But we do

@@ -227,6 +227,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howtos/collaborative-development.html">How to run a collaborative data modeling project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/yq-for-schemas.html">Using yq for querying and manipulating schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html">How to model quantities and measurements</a></li>
@@ -262,7 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/inference.html">Inferring Missing Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/using-sql-dbs.html">Using SQL Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/sqlstore.html">SQLStore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementor Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/contributing-code.html">Contributing Code</a></li>
 </ul>
 </li>
@@ -313,7 +314,7 @@
 <li><p>you have a knowledge graph in Neo4J</p></li>
 <li><p>you are working with linked data in RDF</p></li>
 </ul>
-<p>LinkML is designed to be flexible enough to cover all these use cases, allowing for lighweight semantic data dictionaries for tabular data, through rich interlinked schemas for knowledge graphs and triplestores</p>
+<p>LinkML is designed to be flexible enough to cover all these use cases, allowing for lightweight semantic data dictionaries for tabular data, through rich interlinked schemas for knowledge graphs and triplestores</p>
 </section>
 <section id="my-data-is-a-simple-spreadsheet-tsv-why-should-i-use-linkml">
 <h2>My data is a simple spreadsheet/TSV, why should I use LinkML?<a class="headerlink" href="#my-data-is-a-simple-spreadsheet-tsv-why-should-i-use-linkml" title="Permalink to this heading">#</a></h2>
@@ -432,7 +433,7 @@
 <h2>Why should I use LinkML over JSON-LD?<a class="headerlink" href="#why-should-i-use-linkml-over-json-ld" title="Permalink to this heading">#</a></h2>
 <p>JSON-LD is a lightweight way of exchanging RDF data as JSON files. Different groups use JSON-LD
 in different ways. In some cases, JSON-LD contexts are provided as a way to map from developer-friendly
-JSON files to less familiar RDF/Turtle formats. In other cases, the JSON-LD files are operator on
+JSON files to less familiar RDF/Turtle formats. In other cases, the JSON-LD files are operated on
 directly as JSON objects.</p>
 <p>Note that JSON-LD doesn’t in itself describe how data should be <em>structured</em> - e.g. which fields
 are expected, what the expected range is of different fields, etc. Some groups combine a JSON-LD
@@ -559,7 +560,7 @@ similarities to LinkML.</p>
 <p>There are a number of reasons to use LinkML over UML</p>
 <ul class="simple">
 <li><p>The UML standard is large and complex</p></li>
-<li><p>UML serializaton in XMI is hard to work with</p></li>
+<li><p>UML serialization in XMI is hard to work with</p></li>
 <li><p>UML is more geared towards software engineering and includes features not needed for data modeling, such as operations</p></li>
 <li><p>UML tools are complex and expensive (both financially and in terms of learning curves)</p></li>
 <li><p>In contrast LinkML makes it easy to author schemas using nothing more than a text editor</p></li>
@@ -573,7 +574,7 @@ similarities to LinkML.</p>
 <section id="why-should-i-use-linkml-over-owl">
 <h2>Why should I use LinkML over OWL?<a class="headerlink" href="#why-should-i-use-linkml-over-owl" title="Permalink to this heading">#</a></h2>
 <p>The Web Ontology Language (OWL) is a Description Logic formalism for representing
-ontological knowldge.</p>
+ontological knowledge.</p>
 <p>LinkML is in a very different class of languages from OWL. LinkML is a
 <em>schema language</em>, with features in common with JSON-Schema, XML Schema,
 UML, SQL DDL, shape languages such as ShEx/SHACL. OWL is a subset of first-order logic,
@@ -625,7 +626,7 @@ which can be off-putting to non-technical metadata curators. SchemaSheets allows
 (CSVW) Working Group have developed standard ways to express metadata about
 CSVs and other kinds of tabular data.</p>
 <p>An example use of CSVW is to semantically describe the columns in a
-CSV/TSV, for example a CSV about country locations and nomenculature. The following in Example 10 from the CSVW primer:</p>
+CSV/TSV, for example a CSV about country locations and nomenclature. The following in Example 10 from the CSVW primer:</p>
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w">  </span><span class="nt">&quot;@context&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;http://www.w3.org/ns/csvw&quot;</span><span class="p">,</span>
 <span class="w">  </span><span class="nt">&quot;url&quot;</span><span class="p">:</span><span class="w"> </span><span class="nt">&quot;countries.csv&quot;</span>

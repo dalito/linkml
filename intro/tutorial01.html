@@ -227,6 +227,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howtos/collaborative-development.html">How to run a collaborative data modeling project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/yq-for-schemas.html">Using yq for querying and manipulating schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html">How to model quantities and measurements</a></li>
@@ -262,7 +263,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/inference.html">Inferring Missing Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/using-sql-dbs.html">Using SQL Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/sqlstore.html">SQLStore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementor Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/contributing-code.html">Contributing Code</a></li>
 </ul>
 </li>
@@ -332,7 +333,7 @@ pip<span class="w"> </span>install<span class="w"> </span>linkml
 <span class="w">  </span><span class="p p-Indicator">-</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">linkml:types</span>
 <span class="nt">default_range</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">string</span>
 <span class="nt">default_prefix</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">personinfo</span>
-<span class="w">  </span>
+
 <span class="nt">classes</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">Person</span><span class="p">:</span>
 <span class="w">    </span><span class="nt">attributes</span><span class="p">:</span>
@@ -348,7 +349,7 @@ pip<span class="w"> </span>install<span class="w"> </span>linkml
 <section id="converting-to-json-schema">
 <h2>Converting to JSON-Schema<a class="headerlink" href="#converting-to-json-schema" title="Permalink to this heading">#</a></h2>
 <p>Now run the following command on the file you just created:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gen-json-schema<span class="w"> </span>personinfo.yaml<span class="w"> </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gen-json-schema<span class="w"> </span>personinfo.yaml
 </pre></div>
 </div>
 <p>Outputs:</p>
@@ -399,20 +400,22 @@ pip<span class="w"> </span>install<span class="w"> </span>linkml
 <p>data.yaml:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ORCID:1234</span>
 <span class="nt">full_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Clark Kent</span>
-<span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32</span>
+<span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;32&quot;</span>
 <span class="nt">phone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">555-555-5555</span>
 </pre></div>
 </div>
+<p>note the values of all these fields are strings, even age; we will later return
+to this example and show how we could model this more naturally as a number.</p>
 <p>Validate:</p>
-<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>linkml-validate<span class="w"> </span>-s<span class="w"> </span>personinfo.yaml<span class="w"> </span>data.yaml<span class="w"> </span>
+<div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>linkml-validate<span class="w"> </span>-s<span class="w"> </span>personinfo.yaml<span class="w"> </span>data.yaml
 </pre></div>
 </div>
-<p>You should see no errors. This means your data is valid. Success!</p>
+<p>You should see a message indicating there were no validation issues found. Success!</p>
 <p>To see an example of data not validating:</p>
 <p>bad-data.yaml:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">id</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">ORCID:1234</span>
 <span class="nt">full_name</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">Clark Kent</span>
-<span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">32</span>
+<span class="nt">age</span><span class="p">:</span><span class="w"> </span><span class="s">&quot;32&quot;</span>
 <span class="nt">phone</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">555-555-5555</span>
 <span class="nt">made_up_field</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">hello</span>
 </pre></div>
@@ -421,7 +424,7 @@ pip<span class="w"> </span>install<span class="w"> </span>linkml
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>linkml-validate<span class="w"> </span>-s<span class="w"> </span>personinfo.yaml<span class="w"> </span>bad-data.yaml
 </pre></div>
 </div>
-<p>This should report an error to the effect that <code class="docutils literal notranslate"><span class="pre">made_up_field</span></code> is not known.</p>
+<p>This should report an error to the effect that <code class="docutils literal notranslate"><span class="pre">made_up_field</span></code> is not allowed.</p>
 </section>
 <section id="working-with-json">
 <h2>Working with JSON<a class="headerlink" href="#working-with-json" title="Permalink to this heading">#</a></h2>
@@ -437,7 +440,7 @@ pip<span class="w"> </span>install<span class="w"> </span>linkml
 <div class="highlight-json notranslate"><div class="highlight"><pre><span></span><span class="p">{</span>
 <span class="w"> </span><span class="nt">&quot;id&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;ORCID:1234&quot;</span><span class="p">,</span>
 <span class="w"> </span><span class="nt">&quot;full_name&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;Clark Kent&quot;</span><span class="p">,</span>
-<span class="w"> </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="mi">32</span><span class="p">,</span>
+<span class="w"> </span><span class="nt">&quot;age&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;32&quot;</span><span class="p">,</span>
 <span class="w"> </span><span class="nt">&quot;phone&quot;</span><span class="p">:</span><span class="w"> </span><span class="s2">&quot;555-555-5555&quot;</span>
 <span class="p">}</span>
 </pre></div>

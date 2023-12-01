@@ -226,6 +226,7 @@
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/collaborative-development.html">How to run a collaborative data modeling project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/yq-for-schemas.html">Using yq for querying and manipulating schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/model-measurements.html">How to model quantities and measurements</a></li>
@@ -261,7 +262,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/inference.html">Inferring Missing Values</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/using-sql-dbs.html">Using SQL Databases</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/sqlstore.html">SQLStore</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../developers/tool-developer-guide.html">Tool Implementor Guide</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/contributing-code.html">Contributing Code</a></li>
 </ul>
 </li>
@@ -328,9 +329,7 @@
         <span class="p">)</span></div>
 
 <div class="viewcode-block" id="NamespaceGenerator.gen_schema"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.namespacegen.NamespaceGenerator.gen_schema">[docs]</a>    <span class="k">def</span> <span class="nf">gen_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="n">split_descripton</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#              &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span>
-            <span class="n">split_line</span><span class="p">(</span><span class="n">be</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">description</span><span class="p">),</span> <span class="n">split_len</span><span class="o">=</span><span class="mi">100</span><span class="p">)</span>
-        <span class="p">)</span>
+        <span class="n">split_descripton</span> <span class="o">=</span> <span class="s2">&quot;</span><span class="se">\n</span><span class="s2">#              &quot;</span><span class="o">.</span><span class="n">join</span><span class="p">(</span><span class="n">split_line</span><span class="p">(</span><span class="n">be</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">description</span><span class="p">),</span> <span class="n">split_len</span><span class="o">=</span><span class="mi">100</span><span class="p">))</span>
         <span class="n">head</span> <span class="o">=</span> <span class="p">(</span>
             <span class="sa">f</span><span class="s2">&quot;&quot;&quot;# Auto generated from </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">source_file</span><span class="si">}</span><span class="s2"> by </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">generatorname</span><span class="si">}</span><span class="s2"> version: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">generatorversion</span><span class="si">}</span>
 <span class="s2"># Generation date: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">generation_date</span><span class="si">}</span>
