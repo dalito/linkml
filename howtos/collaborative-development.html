@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Using yq for querying and manipulating schemas" href="yq-for-schemas.html" /><link rel="prev" title="LinkML Project Cookiecutter" href="linkml-project-cookiecutter.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="How to recognize and work with different structural forms" href="recognize-structural-forms.html" /><link rel="prev" title="LinkML Project Cookiecutter" href="linkml-project-cookiecutter.html" />
 
     <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>How to run a collaborative data modeling project - linkml documentation</title>
@@ -228,6 +228,7 @@
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">How-to Guides</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle child pages in navigation</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
 <li class="toctree-l2"><a class="reference internal" href="linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">How to run a collaborative data modeling project</a></li>
+<li class="toctree-l2"><a class="reference internal" href="recognize-structural-forms.html">How to recognize and work with different structural forms</a></li>
 <li class="toctree-l2"><a class="reference internal" href="yq-for-schemas.html">Using yq for querying and manipulating schemas</a></li>
 <li class="toctree-l2"><a class="reference internal" href="using-jsonld.html">Using JSON-LD</a></li>
 <li class="toctree-l2"><a class="reference internal" href="model-measurements.html">How to model quantities and measurements</a></li>
@@ -331,7 +332,7 @@ and pull requests.</p>
 <h2>Principles<a class="headerlink" href="#principles" title="Permalink to this heading">#</a></h2>
 <section id="version-control-your-schema">
 <h3>Version Control Your Schema<a class="headerlink" href="#version-control-your-schema" title="Permalink to this heading">#</a></h3>
-<p>(adapted from <a class="reference external" href="https://osf.io/vuzt3/">O3 guidelines</a>))</p>
+<p>(adapted from <a class="reference external" href="https://osf.io/vuzt3/">O3 guidelines</a>)</p>
 <p>Version control systems like git track changes in files and enable multiple users to collaborate. They are widely used for maintaining code,
 but can (and should) also be used to maintain and manage data, metadata, ontologies, schemas, and other semantic artifacts.</p>
 <p>Some projects may opt to manage their data alongside the schema in the same repo. This may be a good pattern
@@ -340,14 +341,14 @@ store or a repository like Zenodo or Figshare.</p>
 </section>
 <section id="permissively-license-your-code-and-data">
 <h3>Permissively License Your Code and Data<a class="headerlink" href="#permissively-license-your-code-and-data" title="Permalink to this heading">#</a></h3>
-<p>(adapted from <a class="reference external" href="https://osf.io/vuzt3/">O3 guidelines</a>))</p>
+<p>(adapted from <a class="reference external" href="https://osf.io/vuzt3/">O3 guidelines</a>)</p>
 <p>Using recognizable, permissive licenses (e.g., CC0, CC BY) encourages contribution and ensures content longevity.
 Non-permissive licenses or custom terms can hinder reuse and engagement.
 Permissive licensing doesn’t typically lead to a lack of credit for the original resource.</p>
 </section>
 <section id="use-technical-workflows-automation-and-social-workflows">
 <h3>Use Technical Workflows (Automation) and Social Workflows<a class="headerlink" href="#use-technical-workflows-automation-and-social-workflows" title="Permalink to this heading">#</a></h3>
-<p>(adapted from <a class="reference external" href="https://osf.io/vuzt3/">O3 guidelines</a>))</p>
+<p>(adapted from <a class="reference external" href="https://osf.io/vuzt3/">O3 guidelines</a>)</p>
 <p>Automating quality control, generation of artifacts, releases, and deployment helps in maintaining and contributing to projects.
 This includes using continuous integration for quality checks, automating the generation of data views, and packaging data and code for easy deployment.</p>
 <p>The <a class="reference external" href="https://github.com/linkml/linkml-project-cookiecutter/">LinkML Cookiecutter</a> provides a template for a project that
@@ -359,7 +360,7 @@ as <a class="reference external" href="https://codeinthehole.com/tips/advanced-p
 </section>
 <section id="establish-project-governance">
 <h3>Establish Project Governance<a class="headerlink" href="#establish-project-governance" title="Permalink to this heading">#</a></h3>
-<p>(adapted from <a class="reference external" href="https://osf.io/vuzt3/">O3 guidelines</a>) and TisLab guide)</p>
+<p>(adapted from <a class="reference external" href="https://osf.io/vuzt3/">O3 guidelines</a> and TisLab guide)</p>
 <p>Clear governance defines roles, responsibilities, and behavior expectations in a project.
 Establishing codes of conduct, standard operating procedures, and guidelines for administration and contribution roles is vital.
 Governance should evolve over time to meet the project’s needs.</p>
@@ -400,7 +401,7 @@ or it could be a separate document, or something interwoven into your deployed d
 </li>
 <li><p><strong>Style guide for documentation</strong></p>
 <ul>
-<li><p>How should <code class="docutils literal notranslate"><span class="pre">description</span></code> field be written? US or UK spelling? Long or short? Technical or layperson?</p></li>
+<li><p>How should the information in the <code class="docutils literal notranslate"><span class="pre">description</span></code> field be written? US or UK spelling? Long or short? Technical or layperson?</p></li>
 <li><p>We recommend setting standards for minimizing jargon and ensuring clear language</p></li>
 <li><p>It is a good idea to set up GitHub actions to incorpore spell checking and other checks, e.g. codespell</p></li>
 </ul>
@@ -600,12 +601,12 @@ open ecosystem. The <a class="reference external" href="https://oboacademy.githu
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="yq-for-schemas.html">
+          <a class="next-page" href="recognize-structural-forms.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Using yq for querying and manipulating schemas</div>
+                <div class="title">How to recognize and work with different structural forms</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
