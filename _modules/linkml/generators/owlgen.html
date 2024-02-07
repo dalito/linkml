@@ -211,6 +211,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/markdown.html">Markdown</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/erdiagram.html">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/pydantic.html">Pydantic</a></li>
@@ -303,9 +304,11 @@
         <article role="main">
           <h1>Source code for linkml.generators.owlgen</h1><div class="highlight"><pre>
 <span></span><span class="sd">&quot;&quot;&quot;Generate OWL ontology representation of a LinkML schema.&quot;&quot;&quot;</span>
+
 <span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">collections</span> <span class="kn">import</span> <span class="n">defaultdict</span>
+<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">copy</span>
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span><span class="p">,</span> <span class="n">field</span>
 <span class="kn">from</span> <span class="nn">enum</span> <span class="kn">import</span> <span class="n">Enum</span><span class="p">,</span> <span class="n">unique</span>
 <span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Mapping</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Set</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
@@ -707,6 +710,48 @@
             <span class="k">else</span><span class="p">:</span>
                 <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">subject_expr</span><span class="p">,</span> <span class="n">RDFS</span><span class="o">.</span><span class="n">subClassOf</span><span class="p">,</span> <span class="n">superclass_expr</span><span class="p">))</span></div>
 
+<div class="viewcode-block" id="OwlSchemaGenerator.get_own_slots"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.owlgen.OwlSchemaGenerator.get_own_slots">[docs]</a>    <span class="k">def</span> <span class="nf">get_own_slots</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ClassDefinition</span><span class="p">,</span> <span class="n">AnonymousClassExpression</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">List</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">]:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Get the slots that are defined on a class, excluding those that are inherited.</span>
+
+<span class="sd">        :param cls:</span>
+<span class="sd">        :return:</span>
+<span class="sd">        &quot;&quot;&quot;</span>
+        <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ClassDefinition</span><span class="p">):</span>
+            <span class="n">own_slots</span> <span class="o">=</span> <span class="p">(</span>
+                <span class="nb">list</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">slot_usage</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">slot_conditions</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+            <span class="p">)</span>
+            <span class="k">for</span> <span class="n">slot_name</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">slots</span><span class="p">:</span>
+                <span class="c1"># if slot_name not in cls.slot_usage:</span>
+                <span class="n">slot</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_slot</span><span class="p">(</span><span class="n">slot_name</span><span class="p">)</span>
+                <span class="k">if</span> <span class="n">slot</span><span class="p">:</span>
+                    <span class="n">own_slots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown top-level slot </span><span class="si">{</span><span class="n">slot_name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">own_slots</span> <span class="o">=</span> <span class="p">[]</span>
+        <span class="n">own_slots</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">slot_conditions</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
+        <span class="c1"># merge slots with the same name</span>
+        <span class="n">slot_map</span> <span class="o">=</span> <span class="p">{}</span>
+        <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="n">own_slots</span><span class="p">:</span>
+            <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">slot_map</span><span class="p">:</span>
+                <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
+                    <span class="n">curr</span> <span class="o">=</span> <span class="n">slot_map</span><span class="p">[</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+                    <span class="c1"># print(f&quot;MERGE={slot.name}.{k} = {v} // CURR={curr}&quot;)</span>
+                    <span class="k">if</span> <span class="n">v</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">curr</span><span class="p">:</span>
+                        <span class="n">slot_map</span><span class="p">[</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
+                        <span class="c1"># print(f&quot;OVERRIDE={slot.name}, k={k}, v={v}&quot;)</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">slot_map</span><span class="p">[</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
+                <span class="c1"># print(f&quot;INIT={slot.name}, vals={slot_map[slot.name]}&quot;)</span>
+
+            <span class="c1"># print(f&quot;SN={slot.name}, vals={slot_map[slot.name]}&quot;)</span>
+        <span class="n">own_slots</span> <span class="o">=</span> <span class="p">[</span><span class="n">SlotDefinition</span><span class="p">(</span><span class="o">**</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">slot_map</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
+        <span class="c1"># sort by name</span>
+        <span class="n">own_slots</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="k">return</span> <span class="n">own_slots</span></div>
+
 <div class="viewcode-block" id="OwlSchemaGenerator.transform_class_expression"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.owlgen.OwlSchemaGenerator.transform_class_expression">[docs]</a>    <span class="k">def</span> <span class="nf">transform_class_expression</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span>
         <span class="bp">cls</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">ClassDefinition</span><span class="p">,</span> <span class="n">AnonymousClassExpression</span><span class="p">],</span>
@@ -724,20 +769,7 @@
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span>
         <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
-        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">ClassDefinition</span><span class="p">):</span>
-            <span class="n">own_slots</span> <span class="o">=</span> <span class="p">(</span>
-                <span class="nb">list</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">slot_usage</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">attributes</span><span class="o">.</span><span class="n">values</span><span class="p">())</span> <span class="o">+</span> <span class="nb">list</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">slot_conditions</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-            <span class="p">)</span>
-            <span class="k">for</span> <span class="n">slot_name</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">slots</span><span class="p">:</span>
-                <span class="k">if</span> <span class="n">slot_name</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">slot_usage</span><span class="p">:</span>
-                    <span class="n">slot</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_slot</span><span class="p">(</span><span class="n">slot_name</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">slot</span><span class="p">:</span>
-                        <span class="n">own_slots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-        <span class="k">else</span><span class="p">:</span>
-            <span class="n">own_slots</span> <span class="o">=</span> <span class="p">[]</span>
-        <span class="n">own_slots</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">slot_conditions</span><span class="o">.</span><span class="n">values</span><span class="p">())</span>
-        <span class="c1"># sort by name</span>
-        <span class="n">own_slots</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
+        <span class="n">own_slots</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_own_slots</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
         <span class="n">owl_exprs</span> <span class="o">=</span> <span class="p">[]</span>
         <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">any_of</span><span class="p">:</span>
             <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_union_of</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_expression</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">any_of</span><span class="p">]))</span>
@@ -773,7 +805,7 @@
                     <span class="k">elif</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_enums</span><span class="p">():</span>
                         <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enum_uri</span><span class="p">(</span><span class="nb">range</span><span class="p">)</span>
                     <span class="k">elif</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_classes</span><span class="p">():</span>
-                        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_enum_uri</span><span class="p">(</span><span class="nb">range</span><span class="p">)</span>
+                        <span class="n">x</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_class_uri</span><span class="p">(</span><span class="nb">range</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
                         <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown range </span><span class="si">{</span><span class="nb">range</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                         <span class="c1"># x = self._class_uri(range)</span>
@@ -804,6 +836,9 @@
                 <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">max_card_expr</span><span class="p">,</span> <span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">OWL</span><span class="o">.</span><span class="n">Restriction</span><span class="p">))</span>
                 <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">max_card_expr</span><span class="p">,</span> <span class="n">OWL</span><span class="o">.</span><span class="n">maxCardinality</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="mi">1</span><span class="p">)))</span>
                 <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">max_card_expr</span><span class="p">,</span> <span class="n">OWL</span><span class="o">.</span><span class="n">onProperty</span><span class="p">,</span> <span class="n">slot_uri</span><span class="p">))</span>
+            <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">has_member</span><span class="p">:</span>
+                <span class="n">has_member_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">transform_class_slot_expression</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">has_member</span><span class="p">,</span> <span class="n">slot</span><span class="p">)</span>
+                <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_some_values_from</span><span class="p">(</span><span class="n">slot_uri</span><span class="p">,</span> <span class="n">has_member_expr</span><span class="p">))</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_intersection_of</span><span class="p">(</span><span class="n">owl_exprs</span><span class="p">)</span></div>
 
 <div class="viewcode-block" id="OwlSchemaGenerator.slot_node_owltypes"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.owlgen.OwlSchemaGenerator.slot_node_owltypes">[docs]</a>    <span class="k">def</span> <span class="nf">slot_node_owltypes</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">,</span> <span class="n">AnonymousSlotExpression</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">Set</span><span class="p">[</span><span class="n">URIRef</span><span class="p">]:</span>
@@ -845,18 +880,8 @@
 
         <span class="n">owl_exprs</span> <span class="o">=</span> <span class="p">[]</span>
 
-        <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">has_member</span><span class="p">:</span>
-            <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_union_of</span><span class="p">(</span>
-                    <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_slot_expression</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">main_slot</span><span class="p">,</span> <span class="n">owl_types</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">has_member</span><span class="p">]</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
         <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">all_members</span><span class="p">:</span>
-            <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_union_of</span><span class="p">(</span>
-                    <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_slot_expression</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">main_slot</span><span class="p">,</span> <span class="n">owl_types</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">all_members</span><span class="p">]</span>
-                <span class="p">)</span>
-            <span class="p">)</span>
+            <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_slot_expression</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">all_members</span><span class="p">,</span> <span class="n">main_slot</span><span class="p">,</span> <span class="n">owl_types</span><span class="p">))</span>
 
         <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">any_of</span><span class="p">:</span>
             <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
@@ -1493,6 +1518,12 @@
     <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;If true, then mixins are represented as existential expressions&quot;</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--use-native-uris/--no-use-native-uris&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use model URIs rather than class/slot URIs&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">(</span><span class="n">__version__</span><span class="p">,</span> <span class="s2">&quot;-V&quot;</span><span class="p">,</span> <span class="s2">&quot;--version&quot;</span><span class="p">)</span>
 <span class="k">def</span> <span class="nf">cli</span><span class="p">(</span><span class="n">yamlfile</span><span class="p">,</span> <span class="n">metadata_profile</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate an OWL representation of a LinkML model</span>
@@ -1512,7 +1543,8 @@
         <span class="n">metadata_profiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">MetadataProfile</span><span class="p">(</span><span class="n">metadata_profile</span><span class="p">)]</span>
     <span class="k">else</span><span class="p">:</span>
         <span class="n">metadata_profiles</span> <span class="o">=</span> <span class="p">[</span><span class="n">MetadataProfile</span><span class="o">.</span><span class="n">linkml</span><span class="p">]</span>
-    <span class="nb">print</span><span class="p">(</span><span class="n">OwlSchemaGenerator</span><span class="p">(</span><span class="n">yamlfile</span><span class="p">,</span> <span class="n">metadata_profiles</span><span class="o">=</span><span class="n">metadata_profiles</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
+    <span class="n">gen</span> <span class="o">=</span> <span class="n">OwlSchemaGenerator</span><span class="p">(</span><span class="n">yamlfile</span><span class="p">,</span> <span class="n">metadata_profiles</span><span class="o">=</span><span class="n">metadata_profiles</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+    <span class="nb">print</span><span class="p">(</span><span class="n">gen</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
 
 
 <span class="k">if</span> <span class="vm">__name__</span> <span class="o">==</span> <span class="s2">&quot;__main__&quot;</span><span class="p">:</span>

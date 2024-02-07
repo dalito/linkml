@@ -3,7 +3,7 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="generator" content="Docutils 0.19: https://docutils.sourceforge.io/" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="Project Generator" href="project-generator.html" /><link rel="prev" title="Markdown" href="markdown.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="PlantUML Diagram Generator" href="plantumlgen.html" /><link rel="prev" title="Markdown" href="markdown.html" />
 
     <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 5.3.0 and Furo 2023.03.27 -->
         <title>ER Diagrams - linkml documentation</title>
@@ -212,6 +212,7 @@
 <li class="toctree-l2"><a class="reference internal" href="owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="markdown.html">Markdown</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pydantic.html">Pydantic</a></li>
@@ -308,7 +309,7 @@
 <section id="overview">
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <p>Entity-Relationship (ER) Diagrams are a graphical representation of the structure of a schema.</p>
-<p>LinkML uses the [Mermaid ER Diagram](<a class="reference external" href="https://mermaid.js.org/syntax/entityRelationshipDiagram.html">https://mermaid.js.org/syntax/entityRelationshipDiagram.html</a>)
+<p>LinkML uses the <a class="reference external" href="https://mermaid.js.org/syntax/entityRelationshipDiagram.html">Mermaid ER Diagram</a>
 syntax to represent ER diagrams.</p>
 <p>To run:</p>
 <div class="highlight-bash notranslate"><div class="highlight"><pre><span></span>gen-erdiagram<span class="w"> </span>personinfo.yaml
@@ -360,7 +361,7 @@ follow non-inlined references.</p>
 <h2>Limitations<a class="headerlink" href="#limitations" title="Permalink to this heading">#</a></h2>
 <ul class="simple">
 <li><p>There is currently no way to directly generate PNGs/PDFs/etc from the mermaid code.
-You can use the [mermaid live editor](<a class="reference external" href="https://mermaid-js.github.io/mermaid-live-editor">https://mermaid-js.github.io/mermaid-live-editor</a>)
+You can use the <a class="reference external" href="https://mermaid-js.github.io/mermaid-live-editor">mermaid live editor</a>
 to generate these.</p></li>
 <li><p>The mermaid diagrams are not yet directly integrated into the documentation generated
 by <code class="docutils literal notranslate"><span class="pre">gen-docs</span></code>.</p></li>
@@ -444,7 +445,7 @@ present, then all entities are included.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-gen-erdiagram-useuris">
 <span id="cmdoption-gen-erdiagram-metauris"></span><span class="sig-name descname"><span class="pre">--useuris</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--metauris</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-erdiagram-useuris" title="Permalink to this definition">#</a></dt>
-<dd><p>Include metadata in output</p>
+<dd><p>Use class and slot URIs over model uris</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
@@ -475,7 +476,7 @@ present, then all entities are included.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-gen-erdiagram-0">
 <span id="cmdoption-gen-erdiagram-verbose"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-erdiagram-0" title="Permalink to this definition">#</a></dt>
-<dd><p>verbosity</p>
+<dd><p>Verbosity. Takes precedence over –log_level.</p>
 </dd></dl>
 
 <dl class="std option">
@@ -558,12 +559,12 @@ specified classes.</p>
       <footer>
         
         <div class="related-pages">
-          <a class="next-page" href="project-generator.html">
+          <a class="next-page" href="plantumlgen.html">
               <div class="page-info">
                 <div class="context">
                   <span>Next</span>
                 </div>
-                <div class="title">Project Generator</div>
+                <div class="title">PlantUML Diagram Generator</div>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>

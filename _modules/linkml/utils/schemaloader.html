@@ -211,6 +211,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/markdown.html">Markdown</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/erdiagram.html">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/pydantic.html">Pydantic</a></li>
@@ -995,7 +996,7 @@
                         <span class="bp">cls</span><span class="o">.</span><span class="n">is_a</span><span class="p">,</span>
                     <span class="p">)</span>
             <span class="k">for</span> <span class="n">mixin</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">mixins</span><span class="p">:</span>
-                <span class="c1"># Note that apply_to has ben injected as a faux mixin so it gets covered here</span>
+                <span class="c1"># Note that apply_to has been injected as a faux mixin, so it gets covered here</span>
                 <span class="k">if</span> <span class="n">mixin</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">classes</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">merge_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">classes</span><span class="p">[</span><span class="n">mixin</span><span class="p">],</span> <span class="n">merged_classes</span><span class="p">)</span>
                     <span class="n">merge_classes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">classes</span><span class="p">[</span><span class="n">mixin</span><span class="p">],</span> <span class="kc">True</span><span class="p">)</span>

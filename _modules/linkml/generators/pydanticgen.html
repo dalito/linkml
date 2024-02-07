@@ -211,6 +211,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/markdown.html">Markdown</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/erdiagram.html">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/pydantic.html">Pydantic</a></li>
@@ -347,15 +348,18 @@
 <span class="s2">from __future__ import annotations</span>
 <span class="s2">from datetime import datetime, date</span>
 <span class="s2">from enum import Enum</span>
+<span class="s2">{</span><span class="si">% i</span><span class="s2">f uses_numpy -%}</span>
+<span class="s2">import numpy as np</span>
+<span class="s2">{</span><span class="si">%- e</span><span class="s2">ndif %}</span>
 <span class="s2">from typing import List, Dict, Optional, Any, Union&quot;&quot;&quot;</span>
-    <span class="k">if</span> <span class="n">pydantic_ver</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
+    <span class="k">if</span> <span class="n">pydantic_ver</span> <span class="o">==</span> <span class="s2">&quot;1&quot;</span><span class="p">:</span>
         <span class="n">template</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">from pydantic import BaseModel as BaseModel, Field&quot;&quot;&quot;</span>
-    <span class="k">else</span><span class="p">:</span>
+<span class="s2">from pydantic import BaseModel as BaseModel, Field, validator&quot;&quot;&quot;</span>
+    <span class="k">elif</span> <span class="n">pydantic_ver</span> <span class="o">==</span> <span class="s2">&quot;2&quot;</span><span class="p">:</span>
         <span class="n">template</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
-<span class="s2">from pydantic import BaseModel as BaseModel, ConfigDict, Field&quot;&quot;&quot;</span>
-
+<span class="s2">from pydantic import BaseModel as BaseModel, ConfigDict,  Field, field_validator&quot;&quot;&quot;</span>
     <span class="n">template</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">import re</span>
 <span class="s2">import sys</span>
 <span class="s2">if sys.version_info &gt;= (3, 8):</span>
 <span class="s2">    from typing import Literal</span>
@@ -390,7 +394,9 @@
 <span class="s2">        extra = &#39;</span><span class="si">{</span><span class="n">extra_fields</span><span class="si">}</span><span class="s2">&#39;,</span>
 <span class="s2">        arbitrary_types_allowed=True,</span>
 <span class="s2">        use_enum_values = True)</span>
+<span class="s2">    pass</span>
 <span class="s2">&quot;&quot;&quot;</span>
+
     <span class="c1">### ENUMS ###</span>
     <span class="n">template</span> <span class="o">+=</span> <span class="s2">&quot;&quot;&quot;</span>
 <span class="s2">{</span><span class="si">% f</span><span class="s2">or e in enums.values() %}</span>
@@ -429,7 +435,7 @@
 <span class="s2">    {</span><span class="si">%- e</span><span class="s2">ndif %}</span>
 <span class="s2">    {</span><span class="si">% f</span><span class="s2">or attr in c.attributes.values() if c.attributes -%}</span>
 <span class="s2">    {{attr.name}}: {{ attr.annotations[&#39;python_range&#39;].value }} = Field(</span>
-<span class="s2">    {</span><span class="si">%- i</span><span class="s2">f predefined_slot_values[c.name][attr.name] -%}</span>
+<span class="s2">    {</span><span class="si">%- i</span><span class="s2">f predefined_slot_values[c.name][attr.name] is not callable -%}</span>
 <span class="s2">        {{ predefined_slot_values[c.name][attr.name] }}</span>
 <span class="s2">    {</span><span class="si">%- e</span><span class="s2">lif (attr.required or attr.identifier or attr.key) -%}</span>
 <span class="s2">        ...</span>
@@ -438,7 +444,6 @@
 <span class="s2">    {</span><span class="si">%- e</span><span class="s2">ndif -%}</span>
 <span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.title != None %}, title=&quot;{{attr.title}}&quot;{</span><span class="si">% e</span><span class="s2">ndif -%}</span>
 <span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.description %}, description=</span><span class="se">\&quot;\&quot;\&quot;</span><span class="s2">{{attr.description}}</span><span class="se">\&quot;\&quot;\&quot;</span><span class="s2">{</span><span class="si">% e</span><span class="s2">ndif -%}</span>
-<span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.pattern %}, regex=</span><span class="se">\&quot;</span><span class="s2">{{attr.pattern}}</span><span class="se">\&quot;</span><span class="s2">{</span><span class="si">% e</span><span class="s2">ndif -%}</span>
 <span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.equals_number != None %}, le={{attr.equals_number}}, ge={{attr.equals_number}}</span>
 <span class="s2">    {</span><span class="si">%- e</span><span class="s2">lse -%}</span>
 <span class="s2">     {</span><span class="si">%- i</span><span class="s2">f attr.minimum_value != None %}, ge={{attr.minimum_value}}{</span><span class="si">% e</span><span class="s2">ndif -%}</span>
@@ -447,6 +452,21 @@
 <span class="s2">    )</span>
 <span class="s2">    {</span><span class="si">% e</span><span class="s2">lse -%}</span>
 <span class="s2">    None</span>
+<span class="s2">    {</span><span class="si">% e</span><span class="s2">ndfor %}</span>
+<span class="s2">    {</span><span class="si">% f</span><span class="s2">or attr in c.attributes.values() if c.attributes -%}</span>
+<span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.pattern %}</span>
+<span class="s2">    @validator(&#39;{{attr.name}}&#39;, allow_reuse=True)</span>
+<span class="s2">    def pattern_{{attr.name}}(cls, v):</span>
+<span class="s2">        pattern=re.compile(r&quot;{{attr.pattern}}&quot;)</span>
+<span class="s2">        if isinstance(v,list):</span>
+<span class="s2">            for element in v:</span>
+<span class="s2">                if not pattern.match(element):</span>
+<span class="s2">                    raise ValueError(f&quot;Invalid {{attr.name}} format: </span><span class="si">{element}</span><span class="s2">&quot;)</span>
+<span class="s2">        elif isinstance(v,str):</span>
+<span class="s2">            if not pattern.match(v):</span>
+<span class="s2">                raise ValueError(f&quot;Invalid {{attr.name}} format: </span><span class="si">{v}</span><span class="s2">&quot;)</span>
+<span class="s2">        return v</span>
+<span class="s2">    {</span><span class="si">% e</span><span class="s2">ndif -%}</span>
 <span class="s2">    {</span><span class="si">% e</span><span class="s2">ndfor %}</span>
 <span class="s2">{</span><span class="si">% e</span><span class="s2">ndfor %}</span>
 <span class="s2">&quot;&quot;&quot;</span>
@@ -467,7 +487,7 @@
 <span class="s2">    {</span><span class="si">%- e</span><span class="s2">ndif %}</span>
 <span class="s2">    {</span><span class="si">% f</span><span class="s2">or attr in c.attributes.values() if c.attributes -%}</span>
 <span class="s2">    {{attr.name}}: {{ attr.annotations[&#39;python_range&#39;].value }} = Field(</span>
-<span class="s2">    {</span><span class="si">%- i</span><span class="s2">f predefined_slot_values[c.name][attr.name] -%}</span>
+<span class="s2">    {</span><span class="si">%- i</span><span class="s2">f predefined_slot_values[c.name][attr.name] is not callable -%}</span>
 <span class="s2">        {{ predefined_slot_values[c.name][attr.name] }}</span>
 <span class="s2">    {</span><span class="si">%- e</span><span class="s2">lif (attr.required or attr.identifier or attr.key) -%}</span>
 <span class="s2">        ...</span>
@@ -476,7 +496,6 @@
 <span class="s2">    {</span><span class="si">%- e</span><span class="s2">ndif -%}</span>
 <span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.title != None %}, title=&quot;{{attr.title}}&quot;{</span><span class="si">% e</span><span class="s2">ndif -%}</span>
 <span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.description %}, description=</span><span class="se">\&quot;\&quot;\&quot;</span><span class="s2">{{attr.description}}</span><span class="se">\&quot;\&quot;\&quot;</span><span class="s2">{</span><span class="si">% e</span><span class="s2">ndif -%}</span>
-<span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.pattern %}, pattern=</span><span class="se">\&quot;</span><span class="s2">{{attr.pattern}}</span><span class="se">\&quot;</span><span class="s2">{</span><span class="si">% e</span><span class="s2">ndif -%}</span>
 <span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.equals_number != None %}, le={{attr.equals_number}}, ge={{attr.equals_number}}</span>
 <span class="s2">    {</span><span class="si">%- e</span><span class="s2">lse -%}</span>
 <span class="s2">     {</span><span class="si">%- i</span><span class="s2">f attr.minimum_value != None %}, ge={{attr.minimum_value}}{</span><span class="si">% e</span><span class="s2">ndif -%}</span>
@@ -485,6 +504,21 @@
 <span class="s2">    )</span>
 <span class="s2">    {</span><span class="si">% e</span><span class="s2">lse -%}</span>
 <span class="s2">    None</span>
+<span class="s2">    {</span><span class="si">% e</span><span class="s2">ndfor %}</span>
+<span class="s2">    {</span><span class="si">% f</span><span class="s2">or attr in c.attributes.values() if c.attributes -%}</span>
+<span class="s2">    {</span><span class="si">%- i</span><span class="s2">f attr.pattern %}</span>
+<span class="s2">    @field_validator(&#39;{{attr.name}}&#39;)</span>
+<span class="s2">    def pattern_{{attr.name}}(cls, v):</span>
+<span class="s2">        pattern=re.compile(r&quot;{{attr.pattern}}&quot;)</span>
+<span class="s2">        if isinstance(v,list):</span>
+<span class="s2">            for element in v:</span>
+<span class="s2">                if not pattern.match(element):</span>
+<span class="s2">                    raise ValueError(f&quot;Invalid {{attr.name}} format: </span><span class="si">{element}</span><span class="s2">&quot;)</span>
+<span class="s2">        elif isinstance(v,str):</span>
+<span class="s2">            if not pattern.match(v):</span>
+<span class="s2">                raise ValueError(f&quot;Invalid {{attr.name}} format: </span><span class="si">{v}</span><span class="s2">&quot;)</span>
+<span class="s2">        return v</span>
+<span class="s2">    {</span><span class="si">% e</span><span class="s2">ndif -%}</span>
 <span class="s2">    {</span><span class="si">% e</span><span class="s2">ndfor %}</span>
 <span class="s2">{</span><span class="si">% e</span><span class="s2">ndfor %}</span>
 <span class="s2">&quot;&quot;&quot;</span>
@@ -620,6 +654,8 @@
                 <span class="c1"># Multivalued slots that are either not inlined (just an identifier) or are</span>
                 <span class="c1"># inlined as lists should get default_factory list, if they&#39;re inlined but</span>
                 <span class="c1"># not as a list, that means a dictionary</span>
+                <span class="k">elif</span> <span class="s2">&quot;linkml:elements&quot;</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">implements</span><span class="p">:</span>
+                    <span class="n">slot_values</span><span class="p">[</span><span class="n">camelcase</span><span class="p">(</span><span class="n">class_def</span><span class="o">.</span><span class="n">name</span><span class="p">)][</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
                 <span class="k">elif</span> <span class="n">slot</span><span class="o">.</span><span class="n">multivalued</span><span class="p">:</span>
                     <span class="n">has_identifier_slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">range_class_has_identifier_slot</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
 
@@ -811,6 +847,8 @@
         <span class="p">)</span>
         <span class="n">enums</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_enums</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">all_enums</span><span class="p">())</span>
 
+        <span class="n">uses_numpy</span> <span class="o">=</span> <span class="kc">False</span>
+
         <span class="n">sorted_classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">sort_classes</span><span class="p">(</span><span class="nb">list</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">all_classes</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">()))</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">sorted_class_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">camelcase</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">c</span> <span class="ow">in</span> <span class="n">sorted_classes</span><span class="p">]</span>
 
@@ -863,7 +901,13 @@
                 <span class="k">else</span><span class="p">:</span>
                     <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Could not generate python range for </span><span class="si">{</span><span class="n">class_name</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">s</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-                <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">multivalued</span><span class="p">:</span>
+                <span class="k">if</span> <span class="s2">&quot;linkml:elements&quot;</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">implements</span><span class="p">:</span>
+                    <span class="c1"># TODO add support for xarray</span>
+                    <span class="n">pyrange</span> <span class="o">=</span> <span class="s2">&quot;np.ndarray&quot;</span>
+                    <span class="k">if</span> <span class="s2">&quot;linkml:ColumnOrderedArray&quot;</span> <span class="ow">in</span> <span class="n">class_def</span><span class="o">.</span><span class="n">implements</span><span class="p">:</span>
+                        <span class="k">raise</span> <span class="ne">NotImplementedError</span><span class="p">(</span><span class="s2">&quot;Cannot generate Pydantic code for ColumnOrderedArrays.&quot;</span><span class="p">)</span>
+                    <span class="n">uses_numpy</span> <span class="o">=</span> <span class="kc">True</span>
+                <span class="k">elif</span> <span class="n">s</span><span class="o">.</span><span class="n">multivalued</span><span class="p">:</span>
                     <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">inlined</span> <span class="ow">or</span> <span class="n">s</span><span class="o">.</span><span class="n">inlined_as_list</span><span class="p">:</span>
                         <span class="n">collection_key</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_collection_key</span><span class="p">(</span><span class="n">slot_ranges</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">class_def</span><span class="p">)</span>
                     <span class="k">else</span><span class="p">:</span>
@@ -885,6 +929,7 @@
             <span class="n">metamodel_version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">metamodel_version</span><span class="p">,</span>
             <span class="n">version</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">version</span><span class="p">,</span>
             <span class="n">class_isa_plus_mixins</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">get_class_isa_plus_mixins</span><span class="p">(),</span>
+            <span class="n">uses_numpy</span><span class="o">=</span><span class="n">uses_numpy</span><span class="p">,</span>
         <span class="p">)</span>
         <span class="k">return</span> <span class="n">code</span></div>
 

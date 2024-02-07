@@ -212,6 +212,7 @@
 <li class="toctree-l2"><a class="reference internal" href="owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="markdown.html">Markdown</a></li>
 <li class="toctree-l2"><a class="reference internal" href="erdiagram.html">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pydantic.html">Pydantic</a></li>
@@ -329,15 +330,15 @@ from the LinkML schema.</p>
 that is of enum type will have associated drop downs for all cells corresponding to that slot in the excel spreadsheet.</p>
 <p>Note: It works best for “flat” or denormalized schemas.</p>
 <p>Caveat:
-One of the features of <code class="docutils literal notranslate"><span class="pre">gen-doc</span></code> is that it has the ability to add Data Validation to columns
+One of the features of <code class="docutils literal notranslate"><span class="pre">gen-excel</span></code> is that it has the ability to add Data Validation to columns
 that have a range of an enumeration type in the form of dropdowns. A caveat within Microsoft Excel
 is that the Data Validation list formula is limited to 255 characters, meaning, if the length of
-all strings (permissible values) in your enumeration exceed 255 characters (combined), then it will
-result in the creation of a “corrputed” Excel file. You will notice this when you try to open up
-the Excel file, and Excel will prompt you with an error message saying: <em>We found a problem with some
-content in ‘xyz.xlsx’. Do you want us to try to recover as much as we can?</em> In order to avoid any
-warning pop ups, we are simply turning off dropdown Data Validation for columns constrained by
-enumerations with total length &gt; 255 characters.</p>
+all strings (permissible values) in your enumeration exceed 255 characters (combined, with separators),
+then it will result in the creation of a “corrputed” Excel file. You will notice this when you try to
+open up the Excel file, and Excel will prompt you with an error message saying: <em>We found a problem
+with some content in ‘xyz.xlsx’. Do you want us to try to recover as much as we can?</em> In order to
+avoid any warning pop ups, we are simply turning off dropdown Data Validation for columns constrained
+by enumerations with total length &gt; 255 characters.</p>
 <p>Additional validation support to be added:</p>
 <ul class="simple">
 <li><p>Color schemes to indicate whether a field is required or recommended</p></li>
@@ -360,6 +361,12 @@ enumerations with total length &gt; 255 characters.</p>
 <dt class="sig sig-object std" id="cmdoption-gen-excel-split-workbook-by-class">
 <span class="sig-name descname"><span class="pre">--split-workbook-by-class</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-excel-split-workbook-by-class" title="Permalink to this definition">#</a></dt>
 <dd><p>Split model into separate Excel workbooks/files, one for each class</p>
+</dd></dl>
+
+<dl class="std option">
+<dt class="sig sig-object std" id="cmdoption-gen-excel-include-mixins">
+<span class="sig-name descname"><span class="pre">--include-mixins</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-excel-include-mixins" title="Permalink to this definition">#</a></dt>
+<dd><p>Include mixin classes in the generated Excel workbook/workbooks</p>
 </dd></dl>
 
 <dl class="std option">
@@ -402,7 +409,7 @@ enumerations with total length &gt; 255 characters.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-gen-excel-useuris">
 <span id="cmdoption-gen-excel-metauris"></span><span class="sig-name descname"><span class="pre">--useuris</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--metauris</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-excel-useuris" title="Permalink to this definition">#</a></dt>
-<dd><p>Include metadata in output</p>
+<dd><p>Use class and slot URIs over model uris</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
 <dd class="field-odd"><p><code class="docutils literal notranslate"><span class="pre">True</span></code></p>
@@ -433,7 +440,7 @@ enumerations with total length &gt; 255 characters.</p>
 <dl class="std option">
 <dt class="sig sig-object std" id="cmdoption-gen-excel-0">
 <span id="cmdoption-gen-excel-verbose"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-excel-0" title="Permalink to this definition">#</a></dt>
-<dd><p>verbosity</p>
+<dd><p>Verbosity. Takes precedence over –log_level.</p>
 </dd></dl>
 
 <dl class="std option">
