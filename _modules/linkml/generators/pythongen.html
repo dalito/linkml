@@ -1271,7 +1271,8 @@
             <span class="k">return</span> <span class="kc">False</span>
         <span class="k">if</span> <span class="n">slot_range</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">enums</span><span class="p">:</span>
             <span class="k">return</span> <span class="kc">True</span>
-        <span class="k">for</span> <span class="n">cname</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">classes</span><span class="p">:</span>
+        <span class="n">clist</span> <span class="o">=</span> <span class="p">[</span><span class="n">x</span><span class="o">.</span><span class="n">name</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">_sort_classes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">classes</span><span class="o">.</span><span class="n">values</span><span class="p">())]</span>
+        <span class="k">for</span> <span class="n">cname</span> <span class="ow">in</span> <span class="n">clist</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">cname</span> <span class="o">==</span> <span class="n">owning_class</span><span class="p">:</span>
                 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;TRUE: OCCURS SAME: </span><span class="si">{</span><span class="n">cname</span><span class="si">}</span><span class="s2"> == </span><span class="si">{</span><span class="n">slot_range</span><span class="si">}</span><span class="s2"> owning: </span><span class="si">{</span><span class="n">owning_class</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="k">return</span> <span class="kc">True</span>  <span class="c1"># Occurs on or after</span>
@@ -1538,7 +1539,7 @@
         <div class="bottom-of-page">
           <div class="left-details">
             <div class="copyright">
-                Copyright &#169; 2021-2023, LinkML Authors
+                Copyright &#169; 2021-2024, LinkML Authors
             </div>
             Made with <a href="https://www.sphinx-doc.org/">Sphinx</a> and <a class="muted-link" href="https://pradyunsg.me">@pradyunsg</a>'s
             
