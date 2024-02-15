@@ -423,29 +423,29 @@
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;By default, use the linkml metadata profile,</span>
 <span class="sd">    this allows for overrides.&quot;&quot;&quot;</span>
 
-    <span class="n">metaclasses</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">metaclasses</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;if True, include OWL representations of ClassDefinition, SlotDefinition, etc. Introduces punning&quot;&quot;&quot;</span>
 
-    <span class="n">add_root_classes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">add_root_classes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 
-    <span class="n">add_ols_annotations</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">add_ols_annotations</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
     <span class="n">graph</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Graph</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Mutable graph that is being built up during OWL generation.&quot;&quot;&quot;</span>
 
     <span class="n">top_value_uri</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">URIRef</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;If metaclasses=True, then this property is used to connect object shadows to literals&quot;&quot;&quot;</span>
 
-    <span class="n">type_objects</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">type_objects</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;if True, represents types as classes (and thus all slots are object properties);</span>
 <span class="sd">    typed object classes effectively shadow the main xsd literal types.</span>
 <span class="sd">    The purpose of this is to allow a uniform ObjectProperty representation for all slots,</span>
 <span class="sd">    without having to commit to being either Data or Object property (OWL-DL does not</span>
 <span class="sd">    allow a property to be both.&quot;&quot;&quot;</span>
 
-    <span class="n">assert_equivalent_classes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">assert_equivalent_classes</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;If True, assert equivalence between definition_uris and class_uris&quot;&quot;&quot;</span>
 
-    <span class="n">use_native_uris</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">use_native_uris</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;If True, use the definition_uris, otherwise use class_uris.&quot;&quot;&quot;</span>
 
     <span class="n">mixins_as_expressions</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span>
@@ -457,10 +457,10 @@
     <span class="n">node_owltypes</span><span class="p">:</span> <span class="n">Mapping</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BNode</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">],</span> <span class="n">Set</span><span class="p">[</span><span class="n">OWL_TYPE</span><span class="p">]]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">set</span><span class="p">))</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;rdfs:Datatype, owl:Thing&quot;&quot;&quot;</span>
 
-    <span class="n">simplify</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">True</span><span class="p">)</span>
+    <span class="n">simplify</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Reduce complex expressions to simpler forms&quot;&quot;&quot;</span>
 
-    <span class="n">use_swrl</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="kc">False</span><span class="p">)</span>
+    <span class="n">use_swrl</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Use of SWRL is experimental&quot;&quot;&quot;</span>
 
     <span class="n">target_profile</span><span class="p">:</span> <span class="n">OWLProfile</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">OWLProfile</span><span class="o">.</span><span class="n">dl</span><span class="p">)</span>
@@ -683,8 +683,12 @@
         <span class="c1"># rules yield OWL GCI subClassOf axioms</span>
         <span class="k">for</span> <span class="n">rule</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">rules</span><span class="p">:</span>
             <span class="n">pre_node</span> <span class="o">=</span> <span class="n">condition_to_bnode</span><span class="p">(</span><span class="n">rule</span><span class="o">.</span><span class="n">preconditions</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">pre_node</span><span class="p">:</span>
+                <span class="k">continue</span>
             <span class="n">pre_node</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_intersection_of</span><span class="p">([</span><span class="n">pre_node</span><span class="p">,</span> <span class="n">subject_expr</span><span class="p">])</span>
             <span class="n">post_node</span> <span class="o">=</span> <span class="n">condition_to_bnode</span><span class="p">(</span><span class="n">rule</span><span class="o">.</span><span class="n">postconditions</span><span class="p">)</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">post_node</span><span class="p">:</span>
+                <span class="k">continue</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">pre_node</span><span class="p">,</span> <span class="n">RDFS</span><span class="o">.</span><span class="n">subClassOf</span><span class="p">,</span> <span class="n">post_node</span><span class="p">))</span>
         <span class="c1"># classification rules yield OWL GCI subClassOf axioms</span>
         <span class="k">for</span> <span class="n">expr</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">classification_rules</span><span class="p">:</span>
@@ -738,15 +742,10 @@
             <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">name</span> <span class="ow">in</span> <span class="n">slot_map</span><span class="p">:</span>
                 <span class="k">for</span> <span class="n">k</span><span class="p">,</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="vm">__dict__</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
                     <span class="n">curr</span> <span class="o">=</span> <span class="n">slot_map</span><span class="p">[</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="n">k</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
-                    <span class="c1"># print(f&quot;MERGE={slot.name}.{k} = {v} // CURR={curr}&quot;)</span>
                     <span class="k">if</span> <span class="n">v</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">curr</span><span class="p">:</span>
                         <span class="n">slot_map</span><span class="p">[</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">][</span><span class="n">k</span><span class="p">]</span> <span class="o">=</span> <span class="n">v</span>
-                        <span class="c1"># print(f&quot;OVERRIDE={slot.name}, k={k}, v={v}&quot;)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">slot_map</span><span class="p">[</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="p">]</span> <span class="o">=</span> <span class="n">copy</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="vm">__dict__</span><span class="p">)</span>
-                <span class="c1"># print(f&quot;INIT={slot.name}, vals={slot_map[slot.name]}&quot;)</span>
-
-            <span class="c1"># print(f&quot;SN={slot.name}, vals={slot_map[slot.name]}&quot;)</span>
         <span class="n">own_slots</span> <span class="o">=</span> <span class="p">[</span><span class="n">SlotDefinition</span><span class="p">(</span><span class="o">**</span><span class="n">v</span><span class="p">)</span> <span class="k">for</span> <span class="n">v</span> <span class="ow">in</span> <span class="n">slot_map</span><span class="o">.</span><span class="n">values</span><span class="p">()]</span>
         <span class="c1"># sort by name</span>
         <span class="n">own_slots</span><span class="o">.</span><span class="n">sort</span><span class="p">(</span><span class="n">key</span><span class="o">=</span><span class="k">lambda</span> <span class="n">x</span><span class="p">:</span> <span class="n">x</span><span class="o">.</span><span class="n">name</span><span class="p">)</span>
@@ -767,6 +766,8 @@
 <span class="sd">        :param cls: LinkML class expression (anonymous if called recursively)</span>
 <span class="sd">        :return: blank node representing the OWL expression</span>
 <span class="sd">        &quot;&quot;&quot;</span>
+        <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="bp">cls</span> <span class="o">=</span> <span class="n">AnonymousClassExpression</span><span class="p">()</span>
         <span class="n">graph</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">graph</span>
         <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
         <span class="n">own_slots</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_own_slots</span><span class="p">(</span><span class="bp">cls</span><span class="p">)</span>
@@ -782,11 +783,13 @@
                 <span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">cls_uri</span><span class="p">,</span> <span class="n">OWL</span><span class="o">.</span><span class="n">disjointUnionOf</span><span class="p">,</span> <span class="n">listnode</span><span class="p">))</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">sub_sub_exprs</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">sub_exprs</span><span class="p">):</span>
-                    <span class="n">rest</span> <span class="o">=</span> <span class="n">sub_exprs</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">sub_exprs</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span>
-                    <span class="n">neg_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_complement_of_union_of</span><span class="p">(</span><span class="n">rest</span><span class="p">)</span>
-                    <span class="n">sub_sub_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_intersection_of</span><span class="p">([</span><span class="n">x</span><span class="p">,</span> <span class="n">neg_expr</span><span class="p">]))</span>
-                <span class="n">sub_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_union_of</span><span class="p">(</span><span class="n">sub_sub_exprs</span><span class="p">))</span>
+                <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">x</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">):</span>
+                    <span class="n">rest</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="bp">cls</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span>
+                    <span class="n">neg_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_complement_of_union_of</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_expression</span><span class="p">(</span><span class="n">nx</span><span class="p">)</span> <span class="k">for</span> <span class="n">nx</span> <span class="ow">in</span> <span class="n">rest</span><span class="p">])</span>
+                    <span class="n">pos_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_intersection_of</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_expression</span><span class="p">(</span><span class="n">x</span><span class="p">),</span> <span class="n">neg_expr</span><span class="p">])</span>
+                    <span class="n">sub_sub_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos_expr</span><span class="p">)</span>
+                <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_union_of</span><span class="p">(</span><span class="n">sub_sub_exprs</span><span class="p">))</span>
+                <span class="c1"># owl_exprs.extend(sub_exprs)</span>
         <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">all_of</span><span class="p">:</span>
             <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_intersection_of</span><span class="p">([</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_expression</span><span class="p">(</span><span class="n">x</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">all_of</span><span class="p">]))</span>
         <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">none_of</span><span class="p">:</span>
@@ -903,11 +906,19 @@
                 <span class="p">)</span>
             <span class="p">)</span>
         <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">:</span>
-            <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
-                <span class="bp">self</span><span class="o">.</span><span class="n">_exactly_one_of</span><span class="p">(</span>
-                    <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_slot_expression</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">main_slot</span><span class="p">,</span> <span class="n">owl_types</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">]</span>
+            <span class="n">disj_exprs</span> <span class="o">=</span> <span class="p">[]</span>
+            <span class="k">for</span> <span class="n">i</span><span class="p">,</span> <span class="n">operand</span> <span class="ow">in</span> <span class="nb">enumerate</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">):</span>
+                <span class="n">rest</span> <span class="o">=</span> <span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">[</span><span class="mi">0</span><span class="p">:</span><span class="n">i</span><span class="p">]</span> <span class="o">+</span> <span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">[</span><span class="n">i</span> <span class="o">+</span> <span class="mi">1</span> <span class="p">:]</span>
+                <span class="n">neg_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_complement_of_union_of</span><span class="p">(</span>
+                    <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_slot_expression</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">x</span><span class="p">,</span> <span class="n">main_slot</span><span class="p">,</span> <span class="n">owl_types</span><span class="p">)</span> <span class="k">for</span> <span class="n">x</span> <span class="ow">in</span> <span class="n">rest</span><span class="p">],</span>
+                    <span class="n">owl_types</span><span class="o">=</span><span class="n">owl_types</span><span class="p">,</span>
                 <span class="p">)</span>
-            <span class="p">)</span>
+                <span class="n">pos_expr</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_intersection_of</span><span class="p">(</span>
+                    <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">transform_class_slot_expression</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">operand</span><span class="p">,</span> <span class="n">main_slot</span><span class="p">,</span> <span class="n">owl_types</span><span class="p">),</span> <span class="n">neg_expr</span><span class="p">],</span>
+                    <span class="n">owl_types</span><span class="o">=</span><span class="n">owl_types</span><span class="p">,</span>
+                <span class="p">)</span>
+                <span class="n">disj_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">pos_expr</span><span class="p">)</span>
+            <span class="n">owl_exprs</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">_union_of</span><span class="p">(</span><span class="n">disj_exprs</span><span class="p">,</span> <span class="n">owl_types</span><span class="o">=</span><span class="n">owl_types</span><span class="p">))</span>
         <span class="nb">range</span> <span class="o">=</span> <span class="n">slot</span><span class="o">.</span><span class="n">range</span>
         <span class="c1"># if not range and not owl_exprs:</span>
         <span class="c1">#    range = sv.schema.default_range</span>
@@ -1280,11 +1291,14 @@
     <span class="k">def</span> <span class="nf">_metaslot_uri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">URIRef</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;https://w3id.org/linkml/&quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">_complement_of_union_of</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BNode</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">]],</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BNode</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">]]:</span>
+    <span class="k">def</span> <span class="nf">_complement_of_union_of</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">exprs</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BNode</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">]],</span> <span class="n">owl_types</span><span class="p">:</span> <span class="n">Set</span><span class="p">[</span><span class="n">OWL_TYPE</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">BNode</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">]]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">exprs</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">ValueError</span><span class="p">(</span><span class="s2">&quot;Must pass at least one&quot;</span><span class="p">)</span>
         <span class="n">neg_expr</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">()</span>
-        <span class="n">owl_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_owltypes</span><span class="p">(</span><span class="nb">set</span><span class="p">(),</span> <span class="n">exprs</span><span class="p">)</span>
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">owl_types</span><span class="p">:</span>
+            <span class="n">owl_types</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_owltypes</span><span class="p">(</span><span class="nb">set</span><span class="p">(),</span> <span class="n">exprs</span><span class="p">)</span>
         <span class="n">complement_predicate</span> <span class="o">=</span> <span class="n">OWL</span><span class="o">.</span><span class="n">complementOf</span>
         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">owl_types</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">RDFS</span><span class="o">.</span><span class="n">Literal</span> <span class="ow">in</span> <span class="n">owl_types</span><span class="p">:</span>
