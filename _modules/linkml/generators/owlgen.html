@@ -764,6 +764,7 @@
 <span class="sd">        an anonymous expression)</span>
 
 <span class="sd">        :param cls: LinkML class expression (anonymous if called recursively)</span>
+<span class="sd">        :param quantifier_predicate:</span>
 <span class="sd">        :return: blank node representing the OWL expression</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="k">if</span> <span class="bp">cls</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
@@ -874,6 +875,7 @@
 <span class="sd">        :param cls:</span>
 <span class="sd">        :param slot:</span>
 <span class="sd">        :param main_slot:</span>
+<span class="sd">        :param owl_types:</span>
 <span class="sd">        :return:</span>
 <span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
@@ -1263,7 +1265,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">node</span><span class="p">,</span> <span class="n">OWL</span><span class="o">.</span><span class="n">hasValue</span><span class="p">,</span> <span class="n">filler</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">node</span>
 
-    <span class="k">def</span> <span class="nf">_swrl_var</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">var</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">URIRef</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_swrl_var</span><span class="p">(</span><span class="n">var</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">URIRef</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">URIRef</span><span class="p">(</span><span class="n">var</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_swrl_class_atom</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cls_ref</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">BNode</span><span class="p">,</span> <span class="n">URIRef</span><span class="p">],</span> <span class="n">var</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">BNode</span><span class="p">:</span>
@@ -1288,7 +1291,8 @@
         <span class="bp">self</span><span class="o">.</span><span class="n">graph</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">node</span><span class="p">,</span> <span class="n">SWRL</span><span class="o">.</span><span class="n">head</span><span class="p">,</span> <span class="n">head</span><span class="p">))</span>
         <span class="k">return</span> <span class="n">node</span>
 
-    <span class="k">def</span> <span class="nf">_metaslot_uri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">URIRef</span><span class="p">:</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_metaslot_uri</span><span class="p">(</span><span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">URIRef</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;https://w3id.org/linkml/&quot;</span> <span class="o">+</span> <span class="n">name</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_complement_of_union_of</span><span class="p">(</span>
@@ -1391,7 +1395,8 @@
         <span class="k">else</span><span class="p">:</span>
             <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">_class_uri</span><span class="p">(</span><span class="n">ClassDefinitionName</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="p">))</span>
 
-    <span class="k">def</span> <span class="nf">_mixin_grouping_class_uri</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="nd">@staticmethod</span>
+    <span class="k">def</span> <span class="nf">_mixin_grouping_class_uri</span><span class="p">():</span>
         <span class="k">return</span> <span class="n">URIRef</span><span class="p">(</span><span class="n">ClassDefinition</span><span class="o">.</span><span class="n">class_class_uri</span> <span class="o">+</span> <span class="s2">&quot;#Mixin&quot;</span><span class="p">)</span>
 
     <span class="k">def</span> <span class="nf">_class_uri</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">cn</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">ClassDefinitionName</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">URIRef</span><span class="p">:</span>
