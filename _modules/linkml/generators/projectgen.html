@@ -8,7 +8,12 @@
         <title>linkml.generators.projectgen - linkml documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/common.css?v=b029f2e4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/notebooks.css?v=8a1ccf7d" />
     
     
 
@@ -170,6 +175,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial07.html">Part 7: Slots and inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial08.html">Part 8: Generating Projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial09.html">Part 9: Working with SQL databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial10.html">Part 10: Working with SQL databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../schemas/index.html">LinkML Schemas</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of LinkML Schemas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -177,6 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/metadata.html">Schema Element Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/inheritance.html">Inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/slots.html">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/uris-and-mappings.html">URIs and Mappings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/enums.html">Semantic Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/inlining.html">Inlining objects</a></li>
@@ -190,6 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/derived-models.html">Derived models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/annotations.html">Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/metamodel.html">The metamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/expression-language.html">Expression Language</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../data/index.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Working with Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -198,6 +206,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../data/rdf.html">Working with RDF and LinkML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data/csvs.html">CSVs and Tabular Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/sql-databases.html">Working with data in SQL Databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../generators/index.html">Generators</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Generators</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -205,24 +214,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/protobuf.html">ProtoBuf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/graphql.html">GraphQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/jsonld-context.html">JSON-LD Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/jsonld.html">JSON-LD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/rdf.html">RDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sparql.html">SPARQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/shex.html">ShEx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/shacl.html">SHACL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/markdown.html">Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/docgen.html">Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/erdiagram.html">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/yuml.html">YUML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/pydantic.html">Pydantic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/typescript.html">Typescript</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../generators/sqlddl.html">SQL DDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/sqltable.html">SQL DDL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sqlalchemy.html">SQL Alchemy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/linkml.html">LinkML Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/prefixmap.html">Prefix Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sssom.html">SSSOM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/terminusdb.html">TerminusDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/excel.html">Excel Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/csv.html">CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/yaml.html">Yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of How-to Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -249,6 +265,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/python.html">FAQ: Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/getting-help.html">FAQ: Getting Help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/contributing.html">FAQ: Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq/tricky_choices.html">FAQ: Tricky Choices</a></li>
 </ul>
 </li>
 </ul>
@@ -258,6 +275,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/organization.html">GitHub Organization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/manipulating-schemas.html">Manipulating Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/manage-releases.html">How to Manage Releases of your LinkML Schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/schemaview.html">SchemaView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/schemabuilder.html">SchemaBuilder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/loaders-and-dumpers.html">Data Conversion: Loaders and Dumpers</a></li>
@@ -266,9 +284,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/sqlstore.html">SQLStore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/contributing-code.html">Contributing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/deprecation.html">Deprecations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../code.html">Code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../code/index.html">Code</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/metamodel.html">MetaModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/validator.html">Validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/deprecation.html">Deprecation Log</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -327,7 +352,7 @@
 <span class="kn">from</span> <span class="nn">linkml.generators.pythongen</span> <span class="kn">import</span> <span class="n">PythonGenerator</span>
 <span class="kn">from</span> <span class="nn">linkml.generators.shaclgen</span> <span class="kn">import</span> <span class="n">ShaclGenerator</span>
 <span class="kn">from</span> <span class="nn">linkml.generators.shexgen</span> <span class="kn">import</span> <span class="n">ShExGenerator</span>
-<span class="kn">from</span> <span class="nn">linkml.generators.sqlddlgen</span> <span class="kn">import</span> <span class="n">SQLDDLGenerator</span>
+<span class="kn">from</span> <span class="nn">linkml.generators.sqltablegen</span> <span class="kn">import</span> <span class="n">SQLTableGenerator</span>
 <span class="kn">from</span> <span class="nn">linkml.utils.cli_utils</span> <span class="kn">import</span> <span class="n">log_level_option</span>
 <span class="kn">from</span> <span class="nn">linkml.utils.generator</span> <span class="kn">import</span> <span class="n">Generator</span>
 
@@ -358,7 +383,7 @@
     <span class="c1">#    &#39;rdf&#39;: (RDFGenerator, &#39;rdf/{name}.ttl&#39;, {&#39;context&#39;: &#39;{parent}/../jsonld/{name}.context.jsonld&#39;}),</span>
     <span class="s2">&quot;shex&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">ShExGenerator</span><span class="p">,</span> <span class="s2">&quot;shex/</span><span class="si">{name}</span><span class="s2">.shex&quot;</span><span class="p">,</span> <span class="p">{}),</span>
     <span class="s2">&quot;shacl&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">ShaclGenerator</span><span class="p">,</span> <span class="s2">&quot;shacl/</span><span class="si">{name}</span><span class="s2">.shacl.ttl&quot;</span><span class="p">,</span> <span class="p">{}),</span>
-    <span class="s2">&quot;sqlddl&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">SQLDDLGenerator</span><span class="p">,</span> <span class="s2">&quot;sqlschema/</span><span class="si">{name}</span><span class="s2">.sql&quot;</span><span class="p">,</span> <span class="p">{}),</span>
+    <span class="s2">&quot;sqltable&quot;</span><span class="p">:</span> <span class="p">(</span><span class="n">SQLTableGenerator</span><span class="p">,</span> <span class="s2">&quot;sqlschema/</span><span class="si">{name}</span><span class="s2">.sql&quot;</span><span class="p">,</span> <span class="p">{}),</span>
     <span class="c1"># # linkml/generators/javagen.py uses different architecture from most of the other generators</span>
     <span class="c1"># # also linkml/generators/excelgen.py, which has a different mechanism for determining the output path</span>
     <span class="c1"># &#39;java&#39;: (JavaGenerator, &#39;java/{name}.java&#39;, {&#39;directory&#39;: &#39;{parent}&#39;}),</span>
@@ -366,7 +391,7 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="get_local_imports"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.projectgen.get_local_imports">[docs]</a><span class="nd">@lru_cache</span><span class="p">()</span>
+<span class="nd">@lru_cache</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">get_local_imports</span><span class="p">(</span><span class="n">schema_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="nb">dir</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
     <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;GETTING IMPORTS = </span><span class="si">{</span><span class="n">schema_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
     <span class="n">all_imports</span> <span class="o">=</span> <span class="p">[</span><span class="n">schema_path</span><span class="p">]</span>
@@ -378,10 +403,10 @@
                 <span class="n">logging</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot; IMP=</span><span class="si">{</span><span class="n">imp</span><span class="si">}</span><span class="s2"> //  path=</span><span class="si">{</span><span class="n">imp_path</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
                 <span class="k">if</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">isfile</span><span class="p">(</span><span class="n">imp_path</span><span class="p">):</span>
                     <span class="n">all_imports</span> <span class="o">+=</span> <span class="n">get_local_imports</span><span class="p">(</span><span class="n">imp_path</span><span class="p">,</span> <span class="nb">dir</span><span class="p">)</span>
-    <span class="k">return</span> <span class="n">all_imports</span></div>
+    <span class="k">return</span> <span class="n">all_imports</span>
 
 
-<div class="viewcode-block" id="ProjectConfiguration"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.projectgen.ProjectConfiguration">[docs]</a><span class="nd">@dataclass</span>
+<span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">ProjectConfiguration</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Global project configuration, and per-generator configurations</span>
@@ -391,17 +416,17 @@
     <span class="n">generator_args</span><span class="p">:</span> <span class="n">Dict</span><span class="p">[</span><span class="n">GENERATOR_NAME</span><span class="p">,</span> <span class="n">ARG_DICT</span><span class="p">]</span> <span class="o">=</span> <span class="n">field</span><span class="p">(</span><span class="n">default_factory</span><span class="o">=</span><span class="k">lambda</span><span class="p">:</span> <span class="n">defaultdict</span><span class="p">(</span><span class="nb">dict</span><span class="p">))</span>
     <span class="n">includes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
     <span class="n">excludes</span><span class="p">:</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
-    <span class="n">mergeimports</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span></div>
+    <span class="n">mergeimports</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">None</span>
 
 
-<div class="viewcode-block" id="ProjectGenerator"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.projectgen.ProjectGenerator">[docs]</a><span class="k">class</span> <span class="nc">ProjectGenerator</span><span class="p">:</span>
+<div class="viewcode-block" id="ProjectGenerator"><a class="viewcode-back" href="../../../generators/project-generator.html#linkml.generators.projectgen.ProjectGenerator">[docs]</a><span class="k">class</span> <span class="nc">ProjectGenerator</span><span class="p">:</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generates complete project folders</span>
 
 <span class="sd">    Note this doesn&#39;t conform to overall generator framework, as it is a meta-generator</span>
 <span class="sd">    &quot;&quot;&quot;</span>
 
-<div class="viewcode-block" id="ProjectGenerator.generate"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.projectgen.ProjectGenerator.generate">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="n">schema_path</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">config</span><span class="p">:</span> <span class="n">ProjectConfiguration</span> <span class="o">=</span> <span class="n">ProjectConfiguration</span><span class="p">()):</span>
         <span class="k">if</span> <span class="n">config</span><span class="o">.</span><span class="n">directory</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">raise</span> <span class="ne">Exception</span><span class="p">(</span><span class="s2">&quot;Must pass directory&quot;</span><span class="p">)</span>
@@ -461,7 +486,7 @@
                     <span class="c1"># special handling for excel generator</span>
                     <span class="c1"># we do not need to route the output</span>
                     <span class="c1"># into a file like the other generators</span>
-                    <span class="n">gen</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="o">**</span><span class="n">serialize_args</span><span class="p">)</span></div></div>
+                    <span class="n">gen</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="o">**</span><span class="n">serialize_args</span><span class="p">)</span></div>
 
 
 <span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
@@ -503,25 +528,37 @@
 
 <span class="sd">    Generate all downstream artefacts using default configuration:</span>
 
-<span class="sd">       gen-project -d . personinfo.yaml</span>
+<span class="sd">    .. code-block: bash</span>
+
+<span class="sd">        gen-project -d . personinfo.yaml</span>
 
 <span class="sd">    Exclusion lists: all except ShEx:</span>
 
-<span class="sd">       gen-project --exclude shex -d . personinfo.yaml</span>
+<span class="sd">    .. code-block: bash</span>
+
+<span class="sd">        gen-project --exclude shex -d . personinfo.yaml</span>
 
 <span class="sd">    Inclusion lists: only jsonschema and python:</span>
+
+<span class="sd">    .. code-block: bash</span>
 
 <span class="sd">       gen-project -I python -I jsonschema -d . personinfo.yaml</span>
 
 <span class="sd">    Configuration, on command line:</span>
 
+<span class="sd">    .. code-block: bash</span>
+
 <span class="sd">        gen-project -A &#39;jsonschema: {top_class: Container}&#39; -d . personinfo.yaml</span>
 
 <span class="sd">    Configuration, via yaml file:</span>
 
+<span class="sd">    .. code-block: bash</span>
+
 <span class="sd">        gen-project --config config.yaml personinfo.yaml</span>
 
 <span class="sd">    config.yaml:</span>
+
+<span class="sd">    .. code-block: yaml</span>
 
 <span class="sd">        directory: .</span>
 <span class="sd">        generator_args:</span>
@@ -588,5 +625,8 @@
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     </body>
 </html>

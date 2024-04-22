@@ -8,7 +8,12 @@
         <title>linkml.generators.sqltablegen - linkml documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/common.css?v=b029f2e4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/notebooks.css?v=8a1ccf7d" />
     
     
 
@@ -170,6 +175,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial07.html">Part 7: Slots and inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial08.html">Part 8: Generating Projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial09.html">Part 9: Working with SQL databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial10.html">Part 10: Working with SQL databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../schemas/index.html">LinkML Schemas</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of LinkML Schemas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -177,6 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/metadata.html">Schema Element Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/inheritance.html">Inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/slots.html">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/uris-and-mappings.html">URIs and Mappings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/enums.html">Semantic Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/inlining.html">Inlining objects</a></li>
@@ -190,6 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/derived-models.html">Derived models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/annotations.html">Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/metamodel.html">The metamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/expression-language.html">Expression Language</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../data/index.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Working with Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -198,6 +206,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../data/rdf.html">Working with RDF and LinkML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data/csvs.html">CSVs and Tabular Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/sql-databases.html">Working with data in SQL Databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../generators/index.html">Generators</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Generators</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -205,24 +214,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/protobuf.html">ProtoBuf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/graphql.html">GraphQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/jsonld-context.html">JSON-LD Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/jsonld.html">JSON-LD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/rdf.html">RDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sparql.html">SPARQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/shex.html">ShEx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/shacl.html">SHACL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/markdown.html">Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/docgen.html">Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/erdiagram.html">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/yuml.html">YUML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/pydantic.html">Pydantic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/typescript.html">Typescript</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../generators/sqlddl.html">SQL DDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/sqltable.html">SQL DDL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sqlalchemy.html">SQL Alchemy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/linkml.html">LinkML Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/prefixmap.html">Prefix Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sssom.html">SSSOM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/terminusdb.html">TerminusDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/excel.html">Excel Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/csv.html">CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/yaml.html">Yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of How-to Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -249,6 +265,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/python.html">FAQ: Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/getting-help.html">FAQ: Getting Help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/contributing.html">FAQ: Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq/tricky_choices.html">FAQ: Tricky Choices</a></li>
 </ul>
 </li>
 </ul>
@@ -258,6 +275,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/organization.html">GitHub Organization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/manipulating-schemas.html">Manipulating Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/manage-releases.html">How to Manage Releases of your LinkML Schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/schemaview.html">SchemaView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/schemabuilder.html">SchemaBuilder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/loaders-and-dumpers.html">Data Conversion: Loaders and Dumpers</a></li>
@@ -266,9 +284,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/sqlstore.html">SQLStore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/contributing-code.html">Contributing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/deprecation.html">Deprecations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../code.html">Code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../code/index.html">Code</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/metamodel.html">MetaModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/validator.html">Validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/deprecation.html">Deprecation Log</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -363,22 +388,22 @@
 <span class="p">}</span>
 
 
-<div class="viewcode-block" id="SQLTableGenerator"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.SQLTableGenerator">[docs]</a><span class="nd">@dataclass</span>
+<div class="viewcode-block" id="SQLTableGenerator"><a class="viewcode-back" href="../../../generators/sqltable.html#linkml.generators.sqltablegen.SQLTableGenerator">[docs]</a><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">SQLTableGenerator</span><span class="p">(</span><span class="n">Generator</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
-<span class="sd">    A :ref:`Generator` for creating SQL DDL</span>
+<span class="sd">    A :class:`~linkml.utils.generator.Generator` for creating SQL DDL</span>
 
 <span class="sd">    The basic algorithm for mapping a linkml schema S is as follows:</span>
 
-<span class="sd">     - Each schema S corresponds to one database schema D (see SQLSchema)</span>
-<span class="sd">     - Each Class C in S is mapped to a table T (see SQLTable)</span>
-<span class="sd">     - Each slot S in each C is mapped to a column Col (see SQLColumn)</span>
+<span class="sd">    - Each schema S corresponds to one database schema D (see SQLSchema)</span>
+<span class="sd">    - Each Class C in S is mapped to a table T (see SQLTable)</span>
+<span class="sd">    - Each slot S in each C is mapped to a column Col (see SQLColumn)</span>
 
 <span class="sd">    if the direct_mapping attribute is set to true, then no further transformations</span>
 <span class="sd">    are applied. Note that this means:</span>
 
-<span class="sd">     - inline objects are modeled as Text strings</span>
-<span class="sd">     - multivalued fields are modeled as single Text strings</span>
+<span class="sd">    - inline objects are modeled as Text strings</span>
+<span class="sd">    - multivalued fields are modeled as single Text strings</span>
 
 <span class="sd">    this direct mapping is useful for simple spreadsheet/denormalized representations of complex data.</span>
 <span class="sd">    however, for other applications, additional transformations should occur. these are:</span>
@@ -400,22 +425,30 @@
 <span class="sd">    E.g. if a class User has a multivalues slot alias whose range is a string,</span>
 <span class="sd">    then create a table user_aliases, with two columns (1) alias [a string] and (2) a backref to user</span>
 
-<span class="sd">     Each mapped slot C.S has a range R</span>
+<span class="sd">    Each mapped slot C.S has a range R</span>
 
-<span class="sd">     ranges that are types (literals):</span>
-<span class="sd">       - If R is a type, and the slot is NOT multivalued, do a direct type conversion</span>
-<span class="sd">       - If R is a type, and the slot is multivalued:</span>
-<span class="sd">         * do not include the mapped column</span>
-<span class="sd">         * create a new table T_S, with 2 columns: S, and a backref to T</span>
-<span class="sd">      ranges that are classes:</span>
-<span class="sd">       Ref = map_class_to_table(R)</span>
-<span class="sd">       - if R is a class, and the slot is NOT multivalued, and Ref has a singular primary key:</span>
-<span class="sd">         * Col.type = ForeignKey(Ref.PK)</span>
-<span class="sd">       - if R is a class, and the slot is NOT multivalued, and Ref has NO singular primary key:</span>
-<span class="sd">         * add a foreign key C.pk to Ref</span>
-<span class="sd">         * add a backref C.S =&gt; Ref, C.pk</span>
-<span class="sd">         * remove Col from T</span>
-<span class="sd">       - If R is a class, and the slot IS multivalued</span>
+<span class="sd">    ranges that are types (literals):</span>
+
+<span class="sd">    * If R is a type, and the slot is NOT multivalued, do a direct type conversion</span>
+<span class="sd">    * If R is a type, and the slot is multivalued:</span>
+
+<span class="sd">        * do not include the mapped column</span>
+<span class="sd">        * create a new table T_S, with 2 columns: S, and a backref to T</span>
+
+<span class="sd">    ranges that are classes:</span>
+
+<span class="sd">    * Ref = map_class_to_table(R)</span>
+<span class="sd">    * if R is a class, and the slot is NOT multivalued, and Ref has a singular primary key:</span>
+
+<span class="sd">        * Col.type = ForeignKey(Ref.PK)</span>
+
+<span class="sd">    * if R is a class, and the slot is NOT multivalued, and Ref has NO singular primary key:</span>
+
+<span class="sd">        * add a foreign key C.pk to Ref</span>
+<span class="sd">        * add a backref C.S =&gt; Ref, C.pk</span>
+<span class="sd">        * remove Col from T</span>
+
+<span class="sd">    * If R is a class, and the slot IS multivalued</span>
 
 <span class="sd">    &quot;&quot;&quot;</span>
 
@@ -435,10 +468,10 @@
     <span class="n">direct_mapping</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">relative_slot_num</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 
-<div class="viewcode-block" id="SQLTableGenerator.serialize"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.SQLTableGenerator.serialize">[docs]</a>    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="SQLTableGenerator.serialize"><a class="viewcode-back" href="../../../generators/sqltable.html#linkml.generators.sqltablegen.SQLTableGenerator.serialize">[docs]</a>    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate_ddl</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span></div>
 
-<div class="viewcode-block" id="SQLTableGenerator.generate_ddl"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.SQLTableGenerator.generate_ddl">[docs]</a>    <span class="k">def</span> <span class="nf">generate_ddl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naming_policy</span><span class="p">:</span> <span class="n">SqlNamingPolicy</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">generate_ddl</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">naming_policy</span><span class="p">:</span> <span class="n">SqlNamingPolicy</span> <span class="o">=</span> <span class="kc">None</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">ddl_str</span> <span class="o">=</span> <span class="s2">&quot;&quot;</span>
 
         <span class="k">def</span> <span class="nf">dump</span><span class="p">(</span><span class="n">sql</span><span class="p">,</span> <span class="o">*</span><span class="n">multiparams</span><span class="p">,</span> <span class="o">**</span><span class="n">params</span><span class="p">):</span>
@@ -450,7 +483,9 @@
         <span class="n">sqltr</span> <span class="o">=</span> <span class="n">RelationalModelTransformer</span><span class="p">(</span><span class="n">SchemaView</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">))</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">self</span><span class="o">.</span><span class="n">use_foreign_keys</span><span class="p">:</span>
             <span class="n">sqltr</span><span class="o">.</span><span class="n">foreign_key_policy</span> <span class="o">=</span> <span class="n">ForeignKeyPolicy</span><span class="o">.</span><span class="n">NO_FOREIGN_KEYS</span>
-        <span class="n">tr_result</span> <span class="o">=</span> <span class="n">sqltr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
+        <span class="n">tr_result</span> <span class="o">=</span> <span class="n">sqltr</span><span class="o">.</span><span class="n">transform</span><span class="p">(</span>
+            <span class="n">tgt_schema_name</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;tgt_schema_name&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">),</span> <span class="n">top_class</span><span class="o">=</span><span class="n">kwargs</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;top_class&quot;</span><span class="p">,</span> <span class="kc">None</span><span class="p">)</span>
+        <span class="p">)</span>
         <span class="n">schema</span> <span class="o">=</span> <span class="n">tr_result</span><span class="o">.</span><span class="n">schema</span>
 
         <span class="k">def</span> <span class="nf">sql_name</span><span class="p">(</span><span class="n">n</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
@@ -506,14 +541,28 @@
                         <span class="n">col</span><span class="o">.</span><span class="n">comment</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">description</span>
                     <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">col</span><span class="p">)</span>
                 <span class="k">for</span> <span class="n">uc_name</span><span class="p">,</span> <span class="n">uc</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">unique_keys</span><span class="o">.</span><span class="n">items</span><span class="p">():</span>
-                    <span class="n">sql_uc</span> <span class="o">=</span> <span class="n">UniqueConstraint</span><span class="p">(</span><span class="o">*</span><span class="p">[</span><span class="n">sql_name</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span> <span class="k">for</span> <span class="n">sn</span> <span class="ow">in</span> <span class="n">uc</span><span class="o">.</span><span class="n">unique_key_slots</span><span class="p">])</span>
+
+                    <span class="k">def</span> <span class="nf">_sql_name</span><span class="p">(</span><span class="n">sn</span><span class="p">:</span> <span class="nb">str</span><span class="p">):</span>
+                        <span class="k">if</span> <span class="n">sn</span> <span class="ow">in</span> <span class="n">c</span><span class="o">.</span><span class="n">attributes</span><span class="p">:</span>
+                            <span class="k">return</span> <span class="n">sql_name</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="c1"># for candidate in c.attributes.values():</span>
+                            <span class="c1">#    if &quot;original_slot&quot; in candidate.annotations:</span>
+                            <span class="c1">#        original = candidate.annotations[&quot;original_slot&quot;]</span>
+                            <span class="c1">#        if original.value == sn:</span>
+                            <span class="c1">#            return sql_name(candidate.name)</span>
+                            <span class="k">return</span> <span class="kc">None</span>
+
+                    <span class="n">sql_names</span> <span class="o">=</span> <span class="p">[</span><span class="n">_sql_name</span><span class="p">(</span><span class="n">sn</span><span class="p">)</span> <span class="k">for</span> <span class="n">sn</span> <span class="ow">in</span> <span class="n">uc</span><span class="o">.</span><span class="n">unique_key_slots</span><span class="p">]</span>
+                    <span class="k">if</span> <span class="nb">any</span><span class="p">(</span><span class="n">sn</span> <span class="ow">is</span> <span class="kc">None</span> <span class="k">for</span> <span class="n">sn</span> <span class="ow">in</span> <span class="n">sql_names</span><span class="p">):</span>
+                        <span class="k">continue</span>
+                    <span class="n">sql_uc</span> <span class="o">=</span> <span class="n">UniqueConstraint</span><span class="p">(</span><span class="o">*</span><span class="n">sql_names</span><span class="p">)</span>
                     <span class="n">cols</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">sql_uc</span><span class="p">)</span>
                 <span class="n">Table</span><span class="p">(</span><span class="n">sql_name</span><span class="p">(</span><span class="n">cn</span><span class="p">),</span> <span class="n">schema_metadata</span><span class="p">,</span> <span class="o">*</span><span class="n">cols</span><span class="p">,</span> <span class="n">comment</span><span class="o">=</span><span class="nb">str</span><span class="p">(</span><span class="n">c</span><span class="o">.</span><span class="n">description</span><span class="p">))</span>
         <span class="n">schema_metadata</span><span class="o">.</span><span class="n">create_all</span><span class="p">(</span><span class="n">engine</span><span class="p">)</span>
-        <span class="k">return</span> <span class="n">ddl_str</span></div>
+        <span class="k">return</span> <span class="n">ddl_str</span>
 
-    <span class="c1"># TODO: merge with code from sqlddlgen</span>
-<div class="viewcode-block" id="SQLTableGenerator.get_sql_range"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.SQLTableGenerator.get_sql_range">[docs]</a>    <span class="k">def</span> <span class="nf">get_sql_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">SlotDefinition</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="n">SchemaDefinition</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
+    <span class="k">def</span> <span class="nf">get_sql_range</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">SlotDefinition</span><span class="p">,</span> <span class="n">schema</span><span class="p">:</span> <span class="n">SchemaDefinition</span> <span class="o">=</span> <span class="kc">None</span><span class="p">):</span>
 <span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">        returns a SQL Alchemy column type</span>
 <span class="sd">        &quot;&quot;&quot;</span>
@@ -540,6 +589,8 @@
             <span class="n">range_base</span> <span class="o">=</span> <span class="n">METAMODEL_TYPE_TO_BASE</span><span class="p">[</span><span class="nb">range</span><span class="p">]</span>
         <span class="k">elif</span> <span class="nb">range</span> <span class="ow">in</span> <span class="n">schema</span><span class="o">.</span><span class="n">types</span><span class="p">:</span>
             <span class="n">range_base</span> <span class="o">=</span> <span class="n">schema</span><span class="o">.</span><span class="n">types</span><span class="p">[</span><span class="nb">range</span><span class="p">]</span><span class="o">.</span><span class="n">base</span>
+        <span class="k">elif</span> <span class="nb">range</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
+            <span class="k">return</span> <span class="n">Text</span><span class="p">()</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;Unknown range: </span><span class="si">{</span><span class="nb">range</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
             <span class="k">return</span> <span class="n">Text</span><span class="p">()</span>
@@ -547,9 +598,9 @@
             <span class="k">return</span> <span class="n">RANGEMAP</span><span class="p">[</span><span class="n">range_base</span><span class="p">]</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;UNKNOWN range base: </span><span class="si">{</span><span class="n">range_base</span><span class="si">}</span><span class="s2"> for </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2"> = </span><span class="si">{</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-            <span class="k">return</span> <span class="n">Text</span><span class="p">()</span></div>
+            <span class="k">return</span> <span class="n">Text</span><span class="p">()</span>
 
-<div class="viewcode-block" id="SQLTableGenerator.get_foreign_key"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.SQLTableGenerator.get_foreign_key">[docs]</a>    <span class="nd">@staticmethod</span>
+    <span class="nd">@staticmethod</span>
     <span class="k">def</span> <span class="nf">get_foreign_key</span><span class="p">(</span><span class="n">cn</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">sv</span><span class="p">:</span> <span class="n">SchemaView</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">pk</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_identifier_slot</span><span class="p">(</span><span class="n">cn</span><span class="p">)</span>
         <span class="c1"># TODO: move this to SV</span>
@@ -565,7 +616,7 @@
             <span class="n">pk_name</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">alias</span>
         <span class="k">else</span><span class="p">:</span>
             <span class="n">pk_name</span> <span class="o">=</span> <span class="n">pk</span><span class="o">.</span><span class="n">name</span>
-        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cn</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">pk_name</span><span class="si">}</span><span class="s2">&quot;</span></div></div>
+        <span class="k">return</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="si">{</span><span class="n">cn</span><span class="si">}</span><span class="s2">.</span><span class="si">{</span><span class="n">pk_name</span><span class="si">}</span><span class="s2">&quot;</span></div>
 
 
 <span class="nd">@shared_arguments</span><span class="p">(</span><span class="n">SQLTableGenerator</span><span class="p">)</span>
@@ -653,5 +704,8 @@
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     </body>
 </html>

@@ -8,7 +8,12 @@
         <title>linkml.generators.shaclgen - linkml documentation</title>
       <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/common.css?v=b029f2e4" />
+    <link rel="stylesheet" type="text/css" href="../../../_static/css/notebooks.css?v=8a1ccf7d" />
     
     
 
@@ -170,6 +175,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial07.html">Part 7: Slots and inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial08.html">Part 8: Generating Projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial09.html">Part 9: Working with SQL databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../intro/tutorial10.html">Part 10: Working with SQL databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../schemas/index.html">LinkML Schemas</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of LinkML Schemas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -177,6 +183,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/metadata.html">Schema Element Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/inheritance.html">Inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/slots.html">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/uris-and-mappings.html">URIs and Mappings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/enums.html">Semantic Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/inlining.html">Inlining objects</a></li>
@@ -190,6 +197,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/derived-models.html">Derived models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/annotations.html">Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../schemas/metamodel.html">The metamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../schemas/expression-language.html">Expression Language</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../data/index.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Working with Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -198,6 +206,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../data/rdf.html">Working with RDF and LinkML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data/csvs.html">CSVs and Tabular Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../data/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../data/sql-databases.html">Working with data in SQL Databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../generators/index.html">Generators</a><input class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Generators</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -205,24 +214,31 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/protobuf.html">ProtoBuf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/graphql.html">GraphQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/jsonld-context.html">JSON-LD Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/jsonld.html">JSON-LD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/rdf.html">RDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sparql.html">SPARQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/shex.html">ShEx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/shacl.html">SHACL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/markdown.html">Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/docgen.html">Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/erdiagram.html">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/yuml.html">YUML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/pydantic.html">Pydantic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/typescript.html">Typescript</a></li>
-<li class="toctree-l2"><a class="reference internal" href="../../../generators/sqlddl.html">SQL DDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/sqltable.html">SQL DDL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sqlalchemy.html">SQL Alchemy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/linkml.html">LinkML Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/prefixmap.html">Prefix Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/sssom.html">SSSOM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/terminusdb.html">TerminusDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/excel.html">Excel Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/csv.html">CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../generators/yaml.html">Yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../../../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of How-to Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -249,6 +265,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/python.html">FAQ: Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/getting-help.html">FAQ: Getting Help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/contributing.html">FAQ: Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../faq/tricky_choices.html">FAQ: Tricky Choices</a></li>
 </ul>
 </li>
 </ul>
@@ -258,6 +275,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/organization.html">GitHub Organization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/manipulating-schemas.html">Manipulating Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/manage-releases.html">How to Manage Releases of your LinkML Schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/schemaview.html">SchemaView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/schemabuilder.html">SchemaBuilder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/loaders-and-dumpers.html">Data Conversion: Loaders and Dumpers</a></li>
@@ -266,9 +284,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/sqlstore.html">SQLStore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/contributing-code.html">Contributing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../developers/deprecation.html">Deprecations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../../../code.html">Code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../code/index.html">Code</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/metamodel.html">MetaModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/validator.html">Validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../code/deprecation.html">Deprecation Log</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -306,8 +331,10 @@
 <span></span><span class="kn">import</span> <span class="nn">logging</span>
 <span class="kn">import</span> <span class="nn">os</span>
 <span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Callable</span>
 
 <span class="kn">import</span> <span class="nn">click</span>
+<span class="kn">from</span> <span class="nn">linkml_runtime.linkml_model.meta</span> <span class="kn">import</span> <span class="n">ElementName</span>
 <span class="kn">from</span> <span class="nn">linkml_runtime.utils.formatutils</span> <span class="kn">import</span> <span class="n">underscore</span>
 <span class="kn">from</span> <span class="nn">linkml_runtime.utils.schemaview</span> <span class="kn">import</span> <span class="n">SchemaView</span>
 <span class="kn">from</span> <span class="nn">rdflib</span> <span class="kn">import</span> <span class="n">BNode</span><span class="p">,</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">Literal</span><span class="p">,</span> <span class="n">URIRef</span>
@@ -315,30 +342,18 @@
 <span class="kn">from</span> <span class="nn">rdflib.namespace</span> <span class="kn">import</span> <span class="n">RDF</span><span class="p">,</span> <span class="n">SH</span>
 
 <span class="kn">from</span> <span class="nn">linkml._version</span> <span class="kn">import</span> <span class="n">__version__</span>
+<span class="kn">from</span> <span class="nn">linkml.generators.shacl.ifabsent_processor</span> <span class="kn">import</span> <span class="n">IfAbsentProcessor</span>
+<span class="kn">from</span> <span class="nn">linkml.generators.shacl.shacl_data_type</span> <span class="kn">import</span> <span class="n">ShaclDataType</span>
 <span class="kn">from</span> <span class="nn">linkml.utils.generator</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">shared_arguments</span>
 
-<span class="n">LINK_ML_TYPES_STRING</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#string&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_BOOL</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#boolean&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_DECIMAL</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#decimal&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_INTEGER</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#integer&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_FLOAT</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#float&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_DOUBLE</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#double&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_DURATION</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#duration&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_DATETIME</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#dateTime&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_DATE</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#date&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_TIME</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#time&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_DATE_TIME</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#datetime&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_URI</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/2001/XMLSchema#anyURI&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_OBJECT_ID</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/ns/shex#iri&quot;</span><span class="p">)</span>
-<span class="n">LINK_ML_TYPES_NODE_ID</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="s2">&quot;http://www.w3.org/ns/shex#nonLiteral&quot;</span><span class="p">)</span>
 
-
-<div class="viewcode-block" id="ShaclGenerator"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.shaclgen.ShaclGenerator">[docs]</a><span class="nd">@dataclass</span>
+<div class="viewcode-block" id="ShaclGenerator"><a class="viewcode-back" href="../../../generators/shacl.html#linkml.generators.shaclgen.ShaclGenerator">[docs]</a><span class="nd">@dataclass</span>
 <span class="k">class</span> <span class="nc">ShaclGenerator</span><span class="p">(</span><span class="n">Generator</span><span class="p">):</span>
     <span class="c1"># ClassVars</span>
     <span class="n">closed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;True means add &#39;sh:closed=true&#39; to all shapes, except of mixin shapes and shapes, that have parents&quot;&quot;&quot;</span>
-
+    <span class="n">suffix</span><span class="p">:</span> <span class="nb">str</span> <span class="o">=</span> <span class="kc">None</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;parameterized suffix to be appended. No suffix per default.&quot;&quot;&quot;</span>
     <span class="n">generatorname</span> <span class="o">=</span> <span class="n">os</span><span class="o">.</span><span class="n">path</span><span class="o">.</span><span class="n">basename</span><span class="p">(</span><span class="vm">__file__</span><span class="p">)</span>
     <span class="n">generatorversion</span> <span class="o">=</span> <span class="s2">&quot;0.0.1&quot;</span>
     <span class="n">valid_formats</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;ttl&quot;</span><span class="p">]</span>
@@ -351,20 +366,24 @@
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">()</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">generate_header</span><span class="p">()</span>
 
-<div class="viewcode-block" id="ShaclGenerator.generate_header"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.shaclgen.ShaclGenerator.generate_header">[docs]</a>    <span class="k">def</span> <span class="nf">generate_header</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# metamodel_version: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">metamodel_version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+    <span class="k">def</span> <span class="nf">generate_header</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="n">out</span> <span class="o">=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># metamodel_version: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">metamodel_version</span><span class="si">}</span><span class="s2">&quot;</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">version</span><span class="p">:</span>
-            <span class="nb">print</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;# version: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+            <span class="n">out</span> <span class="o">+=</span> <span class="sa">f</span><span class="s2">&quot;</span><span class="se">\n</span><span class="s2"># version: </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">version</span><span class="si">}</span><span class="s2">&quot;</span>
+        <span class="k">return</span> <span class="n">out</span>
 
-<div class="viewcode-block" id="ShaclGenerator.serialize"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.shaclgen.ShaclGenerator.serialize">[docs]</a>    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+<div class="viewcode-block" id="ShaclGenerator.serialize"><a class="viewcode-back" href="../../../generators/shacl.html#linkml.generators.shaclgen.ShaclGenerator.serialize">[docs]</a>    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="n">g</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">as_graph</span><span class="p">()</span>
         <span class="n">data</span> <span class="o">=</span> <span class="n">g</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="nb">format</span><span class="o">=</span><span class="s2">&quot;turtle&quot;</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span> <span class="ow">in</span> <span class="p">[</span><span class="s2">&quot;owl&quot;</span><span class="p">,</span> <span class="s2">&quot;ttl&quot;</span><span class="p">]</span> <span class="k">else</span> <span class="bp">self</span><span class="o">.</span><span class="n">format</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">data</span></div>
 
-<div class="viewcode-block" id="ShaclGenerator.as_graph"><a class="viewcode-back" href="../../../linkml.generators.html#linkml.generators.shaclgen.ShaclGenerator.as_graph">[docs]</a>    <span class="k">def</span> <span class="nf">as_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Graph</span><span class="p">:</span>
+    <span class="k">def</span> <span class="nf">as_graph</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Graph</span><span class="p">:</span>
         <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
         <span class="n">g</span> <span class="o">=</span> <span class="n">Graph</span><span class="p">()</span>
         <span class="n">g</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="s2">&quot;sh&quot;</span><span class="p">,</span> <span class="n">SH</span><span class="p">)</span>
+
+        <span class="n">ifabsent_processor</span> <span class="o">=</span> <span class="n">IfAbsentProcessor</span><span class="p">(</span><span class="n">sv</span><span class="p">)</span>
+
         <span class="k">for</span> <span class="n">pfx</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="o">.</span><span class="n">prefixes</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
             <span class="n">g</span><span class="o">.</span><span class="n">bind</span><span class="p">(</span><span class="nb">str</span><span class="p">(</span><span class="n">pfx</span><span class="o">.</span><span class="n">prefix_prefix</span><span class="p">),</span> <span class="n">pfx</span><span class="o">.</span><span class="n">prefix_reference</span><span class="p">)</span>
 
@@ -372,9 +391,12 @@
 
             <span class="k">def</span> <span class="nf">shape_pv</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
                 <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                    <span class="n">g</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">class_uri</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+                    <span class="n">g</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">class_uri_with_suffix</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
 
             <span class="n">class_uri</span> <span class="o">=</span> <span class="n">URIRef</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">get_uri</span><span class="p">(</span><span class="n">c</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">))</span>
+            <span class="n">class_uri_with_suffix</span> <span class="o">=</span> <span class="n">class_uri</span>
+            <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">suffix</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                <span class="n">class_uri_with_suffix</span> <span class="o">+=</span> <span class="bp">self</span><span class="o">.</span><span class="n">suffix</span>
             <span class="n">shape_pv</span><span class="p">(</span><span class="n">RDF</span><span class="o">.</span><span class="n">type</span><span class="p">,</span> <span class="n">SH</span><span class="o">.</span><span class="n">NodeShape</span><span class="p">)</span>
             <span class="n">shape_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">targetClass</span><span class="p">,</span> <span class="n">class_uri</span><span class="p">)</span>  <span class="c1"># TODO</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">closed</span><span class="p">:</span>
@@ -421,86 +443,124 @@
                     <span class="n">prop_pv_literal</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">minCount</span><span class="p">,</span> <span class="mi">1</span><span class="p">)</span>
                 <span class="n">prop_pv_literal</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">minInclusive</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">minimum_value</span><span class="p">)</span>
                 <span class="n">prop_pv_literal</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">maxInclusive</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">maximum_value</span><span class="p">)</span>
-                <span class="n">prop_pv_literal</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">hasValue</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">equals_number</span><span class="p">)</span>
-                <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">range</span>
-                <span class="k">if</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_classes</span><span class="p">():</span>
-                    <span class="n">range_ref</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_uri</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-                    <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">],</span> <span class="n">URIRef</span><span class="p">(</span><span class="n">range_ref</span><span class="p">))</span>
-                    <span class="k">if</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_identifier_slot</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">nodeKind</span><span class="p">,</span> <span class="n">SH</span><span class="o">.</span><span class="n">IRI</span><span class="p">)</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">nodeKind</span><span class="p">,</span> <span class="n">SH</span><span class="o">.</span><span class="n">BlankNode</span><span class="p">)</span>
-                <span class="k">elif</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_types</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-                    <span class="n">rt</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-                    <span class="k">if</span> <span class="n">rt</span><span class="o">.</span><span class="n">uri</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">rt</span><span class="o">.</span><span class="n">uri</span><span class="p">)</span>
-                    <span class="k">else</span><span class="p">:</span>
-                        <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No URI for type </span><span class="si">{</span><span class="n">rt</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
-                <span class="k">elif</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_enums</span><span class="p">():</span>
-                    <span class="n">e</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_enum</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
-                    <span class="n">pv_node</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">()</span>
-                    <span class="n">Collection</span><span class="p">(</span>
-                        <span class="n">g</span><span class="p">,</span>
-                        <span class="n">pv_node</span><span class="p">,</span>
-                        <span class="p">[</span>
-                            <span class="n">URIRef</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">expand_curie</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">meaning</span><span class="p">))</span> <span class="k">if</span> <span class="n">pv</span><span class="o">.</span><span class="n">meaning</span> <span class="k">else</span> <span class="n">Literal</span><span class="p">(</span><span class="n">pv_name</span><span class="p">)</span>
-                            <span class="k">for</span> <span class="n">pv_name</span><span class="p">,</span> <span class="n">pv</span> <span class="ow">in</span> <span class="n">e</span><span class="o">.</span><span class="n">permissible_values</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
-                        <span class="p">],</span>
-                    <span class="p">)</span>
-                    <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">],</span> <span class="n">pv_node</span><span class="p">)</span>
+
+                <span class="n">all_classes</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_classes</span><span class="p">()</span>
+                <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">any_of</span><span class="p">:</span>
+                    <span class="n">or_node</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">()</span>
+                    <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="p">[</span><span class="s2">&quot;or&quot;</span><span class="p">],</span> <span class="n">or_node</span><span class="p">)</span>
+                    <span class="n">range_list</span> <span class="o">=</span> <span class="p">[]</span>
+                    <span class="k">for</span> <span class="nb">any</span> <span class="ow">in</span> <span class="n">s</span><span class="o">.</span><span class="n">any_of</span><span class="p">:</span>
+                        <span class="n">r</span> <span class="o">=</span> <span class="nb">any</span><span class="o">.</span><span class="n">range</span>
+                        <span class="k">if</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">all_classes</span><span class="p">:</span>
+                            <span class="n">class_node</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">()</span>
+
+                            <span class="k">def</span> <span class="nf">cl_node_pv</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+                                <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                    <span class="n">g</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">class_node</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_add_class</span><span class="p">(</span><span class="n">cl_node_pv</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                            <span class="n">range_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">class_node</span><span class="p">)</span>
+                        <span class="k">elif</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_types</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                            <span class="n">t_node</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">()</span>
+
+                            <span class="k">def</span> <span class="nf">t_node_pv</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+                                <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                    <span class="n">g</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">t_node</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_add_type</span><span class="p">(</span><span class="n">t_node_pv</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                            <span class="n">range_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">t_node</span><span class="p">)</span>
+                        <span class="k">elif</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_enums</span><span class="p">():</span>
+                            <span class="n">en_node</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">()</span>
+
+                            <span class="k">def</span> <span class="nf">en_node_pv</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+                                <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                    <span class="n">g</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">en_node</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+
+                            <span class="bp">self</span><span class="o">.</span><span class="n">_add_enum</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">en_node_pv</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                            <span class="n">range_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">en_node</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">st_node</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">()</span>
+
+                            <span class="k">def</span> <span class="nf">st_node_pv</span><span class="p">(</span><span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">):</span>
+                                <span class="k">if</span> <span class="n">v</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                                    <span class="n">g</span><span class="o">.</span><span class="n">add</span><span class="p">((</span><span class="n">st_node</span><span class="p">,</span> <span class="n">p</span><span class="p">,</span> <span class="n">v</span><span class="p">))</span>
+
+                            <span class="n">add_simple_data_type</span><span class="p">(</span><span class="n">st_node_pv</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                            <span class="n">range_list</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">st_node</span><span class="p">)</span>
+                    <span class="n">Collection</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">or_node</span><span class="p">,</span> <span class="n">range_list</span><span class="p">)</span>
+
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;string&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_STRING</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;boolean&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_BOOL</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;duration&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_DURATION</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;datetime&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_DATETIME</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;date&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_DATE</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;time&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_TIME</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;datetime&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_DATE_TIME</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;decimal&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_DECIMAL</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;integer&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_INTEGER</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;float&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_FLOAT</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;double&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_DOUBLE</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;uri&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_URI</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;curi&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_STRING</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;ncname&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_STRING</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;objectidentifier&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_OBJECT_ID</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;nodeidentifier&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_NODE_ID</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;jsonpointer&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_STRING</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;jsonpath&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_STRING</span><span class="p">)</span>
-                    <span class="k">elif</span> <span class="n">r</span> <span class="o">==</span> <span class="s2">&quot;sparqlpath&quot;</span><span class="p">:</span>
-                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">LINK_ML_TYPES_STRING</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">pattern</span><span class="p">:</span>
-                    <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">pattern</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pattern</span><span class="p">))</span>
-        <span class="k">return</span> <span class="n">g</span></div></div>
+                    <span class="n">prop_pv_literal</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">hasValue</span><span class="p">,</span> <span class="n">s</span><span class="o">.</span><span class="n">equals_number</span><span class="p">)</span>
+                    <span class="n">r</span> <span class="o">=</span> <span class="n">s</span><span class="o">.</span><span class="n">range</span>
+                    <span class="k">if</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">all_classes</span><span class="p">:</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_add_class</span><span class="p">(</span><span class="n">prop_pv</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                        <span class="k">if</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_identifier_slot</span><span class="p">(</span><span class="n">r</span><span class="p">)</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
+                            <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">nodeKind</span><span class="p">,</span> <span class="n">SH</span><span class="o">.</span><span class="n">IRI</span><span class="p">)</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">nodeKind</span><span class="p">,</span> <span class="n">SH</span><span class="o">.</span><span class="n">BlankNodeOrIRI</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_types</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_add_type</span><span class="p">(</span><span class="n">prop_pv</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                    <span class="k">elif</span> <span class="n">r</span> <span class="ow">in</span> <span class="n">sv</span><span class="o">.</span><span class="n">all_enums</span><span class="p">():</span>
+                        <span class="bp">self</span><span class="o">.</span><span class="n">_add_enum</span><span class="p">(</span><span class="n">g</span><span class="p">,</span> <span class="n">prop_pv</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                    <span class="k">else</span><span class="p">:</span>
+                        <span class="n">add_simple_data_type</span><span class="p">(</span><span class="n">prop_pv</span><span class="p">,</span> <span class="n">r</span><span class="p">)</span>
+                    <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">pattern</span><span class="p">:</span>
+                        <span class="n">prop_pv</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">pattern</span><span class="p">,</span> <span class="n">Literal</span><span class="p">(</span><span class="n">s</span><span class="o">.</span><span class="n">pattern</span><span class="p">))</span>
+
+                <span class="n">ifabsent_processor</span><span class="o">.</span><span class="n">process_slot</span><span class="p">(</span><span class="n">prop_pv</span><span class="p">,</span> <span class="n">s</span><span class="p">,</span> <span class="n">class_uri</span><span class="p">)</span>
+
+        <span class="k">return</span> <span class="n">g</span>
+
+    <span class="k">def</span> <span class="nf">_add_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">ElementName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="n">range_ref</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_uri</span><span class="p">(</span><span class="n">r</span><span class="p">,</span> <span class="n">expand</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+        <span class="n">func</span><span class="p">(</span><span class="n">SH</span><span class="p">[</span><span class="s2">&quot;class&quot;</span><span class="p">],</span> <span class="n">URIRef</span><span class="p">(</span><span class="n">range_ref</span><span class="p">))</span>
+
+    <span class="k">def</span> <span class="nf">_add_enum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">g</span><span class="p">:</span> <span class="n">Graph</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">ElementName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="n">enum</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_enum</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="n">pv_node</span> <span class="o">=</span> <span class="n">BNode</span><span class="p">()</span>
+        <span class="n">Collection</span><span class="p">(</span>
+            <span class="n">g</span><span class="p">,</span>
+            <span class="n">pv_node</span><span class="p">,</span>
+            <span class="p">[</span>
+                <span class="n">URIRef</span><span class="p">(</span><span class="n">sv</span><span class="o">.</span><span class="n">expand_curie</span><span class="p">(</span><span class="n">pv</span><span class="o">.</span><span class="n">meaning</span><span class="p">))</span> <span class="k">if</span> <span class="n">pv</span><span class="o">.</span><span class="n">meaning</span> <span class="k">else</span> <span class="n">Literal</span><span class="p">(</span><span class="n">pv_name</span><span class="p">)</span>
+                <span class="k">for</span> <span class="n">pv_name</span><span class="p">,</span> <span class="n">pv</span> <span class="ow">in</span> <span class="n">enum</span><span class="o">.</span><span class="n">permissible_values</span><span class="o">.</span><span class="n">items</span><span class="p">()</span>
+            <span class="p">],</span>
+        <span class="p">)</span>
+        <span class="n">func</span><span class="p">(</span><span class="n">SH</span><span class="p">[</span><span class="s2">&quot;in&quot;</span><span class="p">],</span> <span class="n">pv_node</span><span class="p">)</span>
+
+    <span class="k">def</span> <span class="nf">_add_type</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">ElementName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">sv</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="n">rt</span> <span class="o">=</span> <span class="n">sv</span><span class="o">.</span><span class="n">get_type</span><span class="p">(</span><span class="n">r</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">rt</span><span class="o">.</span><span class="n">uri</span><span class="p">:</span>
+            <span class="n">func</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">rt</span><span class="o">.</span><span class="n">uri</span><span class="p">)</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">logging</span><span class="o">.</span><span class="n">error</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No URI for type </span><span class="si">{</span><span class="n">rt</span><span class="o">.</span><span class="n">name</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span></div>
+
+
+<span class="k">def</span> <span class="nf">add_simple_data_type</span><span class="p">(</span><span class="n">func</span><span class="p">:</span> <span class="n">Callable</span><span class="p">,</span> <span class="n">r</span><span class="p">:</span> <span class="n">ElementName</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">for</span> <span class="n">datatype</span> <span class="ow">in</span> <span class="nb">list</span><span class="p">(</span><span class="n">ShaclDataType</span><span class="p">):</span>
+        <span class="k">if</span> <span class="n">datatype</span><span class="o">.</span><span class="n">linkml_type</span> <span class="o">==</span> <span class="n">r</span><span class="p">:</span>
+            <span class="n">func</span><span class="p">(</span><span class="n">SH</span><span class="o">.</span><span class="n">datatype</span><span class="p">,</span> <span class="n">datatype</span><span class="o">.</span><span class="n">uri_ref</span><span class="p">)</span>
 
 
 <span class="nd">@shared_arguments</span><span class="p">(</span><span class="n">ShaclGenerator</span><span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
     <span class="s2">&quot;--closed/--non-closed&quot;</span><span class="p">,</span>
     <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
     <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use &#39;--closed&#39; to generate closed SHACL shapes. Use &#39;--non-closed&#39; to generate open SHACL shapes.&quot;</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;-s&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--suffix&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">None</span><span class="p">,</span>
+    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;Use --suffix to append given string to SHACL class name (e. g. --suffix Shape: Person becomes PersonShape).&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">(</span><span class="n">__version__</span><span class="p">,</span> <span class="s2">&quot;-V&quot;</span><span class="p">,</span> <span class="s2">&quot;--version&quot;</span><span class="p">)</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
 <span class="k">def</span> <span class="nf">cli</span><span class="p">(</span><span class="n">yamlfile</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate SHACL turtle from a LinkML model&quot;&quot;&quot;</span>
     <span class="n">gen</span> <span class="o">=</span> <span class="n">ShaclGenerator</span><span class="p">(</span><span class="n">yamlfile</span><span class="p">,</span> <span class="o">**</span><span class="n">args</span><span class="p">)</span>
@@ -545,5 +605,8 @@
     <script src="../../../_static/doctools.js?v=888ff710"></script>
     <script src="../../../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../../../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../../../_static/design-tabs.js?v=36754332"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     </body>
 </html>

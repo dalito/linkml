@@ -3,13 +3,18 @@
   <head><meta charset="utf-8"/>
     <meta name="viewport" content="width=device-width,initial-scale=1"/>
     <meta name="color-scheme" content="light dark"><meta name="viewport" content="width=device-width, initial-scale=1" />
-<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="LinkML Generators" href="linkml.html" /><link rel="prev" title="SQL DDL" href="sqlddl.html" />
+<link rel="index" title="Index" href="../genindex.html" /><link rel="search" title="Search" href="../search.html" /><link rel="next" title="LinkML Generators" href="linkml.html" /><link rel="prev" title="SQL DDL" href="sqltable.html" />
 
     <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
         <title>SQL Alchemy - linkml documentation</title>
       <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
+    <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
+    <link rel="stylesheet" type="text/css" href="../_static/design-style.1e8bd061cd6da7fc9cf755528e8ffc24.min.css?v=0a3b3ea7" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo-extensions.css?v=36a5483c" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/common.css?v=b029f2e4" />
+    <link rel="stylesheet" type="text/css" href="../_static/css/notebooks.css?v=8a1ccf7d" />
     
     
 
@@ -171,6 +176,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../intro/tutorial07.html">Part 7: Slots and inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/tutorial08.html">Part 8: Generating Projects</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../intro/tutorial09.html">Part 9: Working with SQL databases</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../intro/tutorial10.html">Part 10: Working with SQL databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../schemas/index.html">LinkML Schemas</a><input class="toctree-checkbox" id="toctree-checkbox-2" name="toctree-checkbox-2" role="switch" type="checkbox"/><label for="toctree-checkbox-2"><div class="visually-hidden">Toggle navigation of LinkML Schemas</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -178,6 +184,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../schemas/metadata.html">Schema Element Metadata</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../schemas/inheritance.html">Inheritance</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../schemas/slots.html">Slots</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../schemas/arrays.html">Arrays</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../schemas/uris-and-mappings.html">URIs and Mappings</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../schemas/enums.html">Semantic Enumerations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../schemas/inlining.html">Inlining objects</a></li>
@@ -191,6 +198,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../schemas/derived-models.html">Derived models</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../schemas/annotations.html">Annotations</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../schemas/metamodel.html">The metamodel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../schemas/expression-language.html">Expression Language</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../data/index.html">Working with Data</a><input class="toctree-checkbox" id="toctree-checkbox-3" name="toctree-checkbox-3" role="switch" type="checkbox"/><label for="toctree-checkbox-3"><div class="visually-hidden">Toggle navigation of Working with Data</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -199,6 +207,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../data/rdf.html">Working with RDF and LinkML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data/csvs.html">CSVs and Tabular Data</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../data/python.html">Python</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../data/sql-databases.html">Working with data in SQL Databases</a></li>
 </ul>
 </li>
 <li class="toctree-l1 current has-children"><a class="reference internal" href="index.html">Generators</a><input checked="" class="toctree-checkbox" id="toctree-checkbox-4" name="toctree-checkbox-4" role="switch" type="checkbox"/><label for="toctree-checkbox-4"><div class="visually-hidden">Toggle navigation of Generators</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul class="current">
@@ -206,24 +215,31 @@
 <li class="toctree-l2"><a class="reference internal" href="protobuf.html">ProtoBuf</a></li>
 <li class="toctree-l2"><a class="reference internal" href="graphql.html">GraphQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="jsonld-context.html">JSON-LD Contexts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="jsonld.html">JSON-LD</a></li>
+<li class="toctree-l2"><a class="reference internal" href="rdf.html">RDF</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sparql.html">SPARQL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shex.html">ShEx</a></li>
 <li class="toctree-l2"><a class="reference internal" href="shacl.html">SHACL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="owl.html">OWL</a></li>
 <li class="toctree-l2"><a class="reference internal" href="markdown.html">Markdown</a></li>
+<li class="toctree-l2"><a class="reference internal" href="docgen.html">Docs</a></li>
 <li class="toctree-l2"><a class="reference internal" href="erdiagram.html">ER Diagrams</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yuml.html">YUML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="plantumlgen.html">PlantUML Diagram Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="project-generator.html">Project Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="python.html">Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="pydantic.html">Pydantic</a></li>
 <li class="toctree-l2"><a class="reference internal" href="java.html">Java</a></li>
 <li class="toctree-l2"><a class="reference internal" href="typescript.html">Typescript</a></li>
-<li class="toctree-l2"><a class="reference internal" href="sqlddl.html">SQL DDL</a></li>
+<li class="toctree-l2"><a class="reference internal" href="sqltable.html">SQL DDL</a></li>
 <li class="toctree-l2 current current-page"><a class="current reference internal" href="#">SQL Alchemy</a></li>
 <li class="toctree-l2"><a class="reference internal" href="linkml.html">LinkML Generators</a></li>
+<li class="toctree-l2"><a class="reference internal" href="prefixmap.html">Prefix Generator</a></li>
 <li class="toctree-l2"><a class="reference internal" href="sssom.html">SSSOM</a></li>
 <li class="toctree-l2"><a class="reference internal" href="terminusdb.html">TerminusDB</a></li>
 <li class="toctree-l2"><a class="reference internal" href="excel.html">Excel Spreadsheet</a></li>
+<li class="toctree-l2"><a class="reference internal" href="csv.html">CSV</a></li>
+<li class="toctree-l2"><a class="reference internal" href="yaml.html">Yaml</a></li>
 </ul>
 </li>
 <li class="toctree-l1 has-children"><a class="reference internal" href="../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of How-to Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
@@ -250,6 +266,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../faq/python.html">FAQ: Python</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/getting-help.html">FAQ: Getting Help</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/contributing.html">FAQ: Contributing</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../faq/tricky_choices.html">FAQ: Tricky Choices</a></li>
 </ul>
 </li>
 </ul>
@@ -259,6 +276,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/organization.html">GitHub Organization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/manipulating-schemas.html">Manipulating Schemas</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/manage-releases.html">How to Manage Releases of your LinkML Schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/schemaview.html">SchemaView</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/schemabuilder.html">SchemaBuilder</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/loaders-and-dumpers.html">Data Conversion: Loaders and Dumpers</a></li>
@@ -267,9 +285,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/sqlstore.html">SQLStore</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/tool-developer-guide.html">Tool Implementer Guide</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/contributing-code.html">Contributing Code</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../developers/deprecation.html">Deprecations</a></li>
 </ul>
 </li>
-<li class="toctree-l1"><a class="reference internal" href="../code.html">Code</a></li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../code/index.html">Code</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../code/metamodel.html">MetaModel</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/utils.html">Utils</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/validator.html">Validator</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../code/deprecation.html">Deprecation Log</a></li>
+</ul>
+</li>
 </ul>
 
 </div>
@@ -310,7 +335,7 @@
 Mapper (ORM) for Python</p>
 <p>The SQL Alchemy generator will generate Python code for mapping an
 Object Model to a SQL Database. The structure of the SQL Database
-structure is consistent with the one generated by <a class="reference internal" href="sqlddl.html"><span class="doc">SQL DDL</span></a></p>
+structure is consistent with the one generated by <a class="reference internal" href="sqltable.html"><span class="doc">SQL DDL</span></a></p>
 <p>In principle, two styles of mappings are possible:</p>
 <ol class="arabic simple">
 <li><p>Declarative, in which SQLA-style classes are generated, with
@@ -324,7 +349,7 @@ python or pydantic generators</p></li>
 <h2>Overview<a class="headerlink" href="#overview" title="Permalink to this heading">#</a></h2>
 <section id="declarative-mode">
 <h3>Declarative Mode<a class="headerlink" href="#declarative-mode" title="Permalink to this heading">#</a></h3>
-<p>See <a href="#id2"><span class="problematic" id="id3">`declarative mapping docs&lt;https://docs.sqlalchemy.org/en/latest/orm/declarative_mapping.html&gt;`_</span></a> on SQL Alchemy site</p>
+<p>See <a class="reference external" href="https://docs.sqlalchemy.org/en/latest/orm/declarative_mapping.html">declarative mapping docs</a> on SQL Alchemy site</p>
 <p>Given input such as:</p>
 <div class="highlight-yaml notranslate"><div class="highlight"><pre><span></span><span class="nt">Person</span><span class="p">:</span>
 <span class="w">  </span><span class="nt">is_a</span><span class="p">:</span><span class="w"> </span><span class="l l-Scalar l-Scalar-Plain">NamedThing</span>
@@ -396,22 +421,22 @@ section of the SQLA docs.</p>
 <h2>Docs<a class="headerlink" href="#docs" title="Permalink to this heading">#</a></h2>
 <section id="command-line">
 <h3>Command Line<a class="headerlink" href="#command-line" title="Permalink to this heading">#</a></h3>
-<section id="gen-sqlddl">
-<h4>gen-sqlddl<a class="headerlink" href="#gen-sqlddl" title="Permalink to this heading">#</a></h4>
+<section id="gen-sqla">
+<h4>gen-sqla<a class="headerlink" href="#gen-sqla" title="Permalink to this heading">#</a></h4>
 <p>Generate SQL DDL representation</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gen-sqlddl<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>YAMLFILE
+<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>gen-sqla<span class="w"> </span><span class="o">[</span>OPTIONS<span class="o">]</span><span class="w"> </span>YAMLFILE
 </pre></div>
 </div>
 <p class="rubric">Options</p>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-V">
-<span id="cmdoption-gen-sqlddl-version"></span><span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-V" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-V">
+<span id="cmdoption-gen-sqla-version"></span><span class="sig-name descname"><span class="pre">-V</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--version</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-V" title="Permalink to this definition">#</a></dt>
 <dd><p>Show the version and exit.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-use-foreign-keys">
-<span id="cmdoption-gen-sqlddl-no-use-foreign-keys"></span><span class="sig-name descname"><span class="pre">--use-foreign-keys</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-use-foreign-keys</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-use-foreign-keys" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-use-foreign-keys">
+<span id="cmdoption-gen-sqla-no-use-foreign-keys"></span><span class="sig-name descname"><span class="pre">--use-foreign-keys</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-use-foreign-keys</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-use-foreign-keys" title="Permalink to this definition">#</a></dt>
 <dd><p>Emit FK declarations</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -421,8 +446,8 @@ section of the SQLA docs.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-pydantic">
-<span id="cmdoption-gen-sqlddl-no-pydantic"></span><span class="sig-name descname"><span class="pre">--pydantic</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-pydantic</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-pydantic" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-pydantic">
+<span id="cmdoption-gen-sqla-no-pydantic"></span><span class="sig-name descname"><span class="pre">--pydantic</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-pydantic</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-pydantic" title="Permalink to this definition">#</a></dt>
 <dd><p>If True, generate Pydantic classes (imperative mode only)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -432,8 +457,8 @@ section of the SQLA docs.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-generate-classes">
-<span id="cmdoption-gen-sqlddl-no-generate-classes"></span><span class="sig-name descname"><span class="pre">--generate-classes</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-generate-classes</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-generate-classes" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-generate-classes">
+<span id="cmdoption-gen-sqla-no-generate-classes"></span><span class="sig-name descname"><span class="pre">--generate-classes</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-generate-classes</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-generate-classes" title="Permalink to this definition">#</a></dt>
 <dd><p>If True, generate Python datamodel (imperative mode only)</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -443,8 +468,8 @@ section of the SQLA docs.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-declarative">
-<span id="cmdoption-gen-sqlddl-no-declarative"></span><span class="sig-name descname"><span class="pre">--declarative</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-declarative</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-declarative" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-declarative">
+<span id="cmdoption-gen-sqla-no-declarative"></span><span class="sig-name descname"><span class="pre">--declarative</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-declarative</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-declarative" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate SQL Alchemy declarative vs imperative</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -454,8 +479,8 @@ section of the SQLA docs.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-f">
-<span id="cmdoption-gen-sqlddl-format"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--format</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;format&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sqlddl-f" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-f">
+<span id="cmdoption-gen-sqla-format"></span><span class="sig-name descname"><span class="pre">-f</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--format</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;format&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sqla-f" title="Permalink to this definition">#</a></dt>
 <dd><p>Output format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -468,8 +493,8 @@ section of the SQLA docs.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-metadata">
-<span id="cmdoption-gen-sqlddl-no-metadata"></span><span class="sig-name descname"><span class="pre">--metadata</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-metadata</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-metadata" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-metadata">
+<span id="cmdoption-gen-sqla-no-metadata"></span><span class="sig-name descname"><span class="pre">--metadata</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-metadata</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-metadata" title="Permalink to this definition">#</a></dt>
 <dd><p>Include metadata in output</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -479,8 +504,8 @@ section of the SQLA docs.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-useuris">
-<span id="cmdoption-gen-sqlddl-metauris"></span><span class="sig-name descname"><span class="pre">--useuris</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--metauris</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-useuris" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-useuris">
+<span id="cmdoption-gen-sqla-metauris"></span><span class="sig-name descname"><span class="pre">--useuris</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--metauris</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-useuris" title="Permalink to this definition">#</a></dt>
 <dd><p>Use class and slot URIs over model uris</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -490,14 +515,14 @@ section of the SQLA docs.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-im">
-<span id="cmdoption-gen-sqlddl-importmap"></span><span class="sig-name descname"><span class="pre">-im</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--importmap</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;importmap&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sqlddl-im" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-im">
+<span id="cmdoption-gen-sqla-importmap"></span><span class="sig-name descname"><span class="pre">-im</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--importmap</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;importmap&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sqla-im" title="Permalink to this definition">#</a></dt>
 <dd><p>Import mapping file</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-log_level">
-<span class="sig-name descname"><span class="pre">--log_level</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;log_level&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sqlddl-log_level" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-log_level">
+<span class="sig-name descname"><span class="pre">--log_level</span></span><span class="sig-prename descclassname"> <span class="pre">&lt;log_level&gt;</span></span><a class="headerlink" href="#cmdoption-gen-sqla-log_level" title="Permalink to this definition">#</a></dt>
 <dd><p>Logging level</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -510,20 +535,20 @@ section of the SQLA docs.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-v">
-<span id="cmdoption-gen-sqlddl-verbose"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-v" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-v">
+<span id="cmdoption-gen-sqla-verbose"></span><span class="sig-name descname"><span class="pre">-v</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--verbose</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-v" title="Permalink to this definition">#</a></dt>
 <dd><p>Verbosity. Takes precedence over –log_level.</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-mergeimports">
-<span id="cmdoption-gen-sqlddl-no-mergeimports"></span><span class="sig-name descname"><span class="pre">--mergeimports</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-mergeimports</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-mergeimports" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-mergeimports">
+<span id="cmdoption-gen-sqla-no-mergeimports"></span><span class="sig-name descname"><span class="pre">--mergeimports</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-mergeimports</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-mergeimports" title="Permalink to this definition">#</a></dt>
 <dd><p>Merge imports into source file (default=mergeimports)</p>
 </dd></dl>
 
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-stacktrace">
-<span id="cmdoption-gen-sqlddl-no-stacktrace"></span><span class="sig-name descname"><span class="pre">--stacktrace</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-stacktrace</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-stacktrace" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-stacktrace">
+<span id="cmdoption-gen-sqla-no-stacktrace"></span><span class="sig-name descname"><span class="pre">--stacktrace</span></span><span class="sig-prename descclassname"></span><span class="sig-prename descclassname"><span class="pre">,</span> </span><span class="sig-name descname"><span class="pre">--no-stacktrace</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-stacktrace" title="Permalink to this definition">#</a></dt>
 <dd><p>Print a stack trace when an error occurs</p>
 <dl class="field-list simple">
 <dt class="field-odd">Default<span class="colon">:</span></dt>
@@ -534,8 +559,8 @@ section of the SQLA docs.</p>
 
 <p class="rubric">Arguments</p>
 <dl class="std option">
-<dt class="sig sig-object std" id="cmdoption-gen-sqlddl-arg-YAMLFILE">
-<span class="sig-name descname"><span class="pre">YAMLFILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqlddl-arg-YAMLFILE" title="Permalink to this definition">#</a></dt>
+<dt class="sig sig-object std" id="cmdoption-gen-sqla-arg-YAMLFILE">
+<span class="sig-name descname"><span class="pre">YAMLFILE</span></span><span class="sig-prename descclassname"></span><a class="headerlink" href="#cmdoption-gen-sqla-arg-YAMLFILE" title="Permalink to this definition">#</a></dt>
 <dd><p>Required argument</p>
 </dd></dl>
 
@@ -545,12 +570,12 @@ section of the SQLA docs.</p>
 <h3>Code<a class="headerlink" href="#code" title="Permalink to this heading">#</a></h3>
 <dl class="py class">
 <dt class="sig sig-object py" id="linkml.generators.sqlalchemygen.SQLAlchemyGenerator">
-<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">linkml.generators.sqlalchemygen.</span></span><span class="sig-name descname"><span class="pre">SQLAlchemyGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~typing.TextIO</span> <span class="pre">|</span> <span class="pre">~linkml_runtime.linkml_model.meta.SchemaDefinition</span> <span class="pre">|</span> <span class="pre">~linkml.utils.generator.Generator</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schemaview:</span> <span class="pre">~linkml_runtime.utils.schemaview.SchemaView</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">useuris:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level:</span> <span class="pre">int</span> <span class="pre">=</span> <span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mergeimports:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_file_date:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_file_size:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger:</span> <span class="pre">~logging.Logger</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespaces:</span> <span class="pre">~linkml_runtime.utils.namespaces.Namespaces</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory_output:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dir:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metamodel_name_map:</span> <span class="pre">~typing.Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importmap:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~typing.Mapping[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emit_prefixes:</span> <span class="pre">~typing.Set[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metamodel:</span> <span class="pre">~linkml.utils.schemaloader.SchemaLoader</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stacktrace:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template:</span> <span class="pre">~linkml.generators.sqlalchemygen.TemplateEnum</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_schema:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~linkml_runtime.linkml_model.meta.SchemaDefinition</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/linkml/generators/sqlalchemygen.html#SQLAlchemyGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#linkml.generators.sqlalchemygen.SQLAlchemyGenerator" title="Permalink to this definition">#</a></dt>
+<em class="property"><span class="pre">class</span><span class="w"> </span></em><span class="sig-prename descclassname"><span class="pre">linkml.generators.sqlalchemygen.</span></span><span class="sig-name descname"><span class="pre">SQLAlchemyGenerator</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="n"><span class="pre">schema:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~typing.TextIO</span> <span class="pre">|</span> <span class="pre">~linkml_runtime.linkml_model.meta.SchemaDefinition</span> <span class="pre">|</span> <span class="pre">~linkml.utils.generator.Generator</span> <span class="pre">|</span> <span class="pre">~pathlib.Path</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">schemaview:</span> <span class="pre">~linkml_runtime.utils.schemaview.SchemaView</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">format:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metadata:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">useuris:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">log_level:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">30</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">mergeimports:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">True</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_file_date:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">source_file_size:</span> <span class="pre">int</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">logger:</span> <span class="pre">~logging.Logger</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">verbose:</span> <span class="pre">bool</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">output:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">namespaces:</span> <span class="pre">~linkml_runtime.utils.namespaces.Namespaces</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">directory_output:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">base_dir:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metamodel_name_map:</span> <span class="pre">~typing.Dict[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">importmap:</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">~typing.Mapping[str</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">str]</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">emit_prefixes:</span> <span class="pre">~typing.Set[str]</span> <span class="pre">=</span> <span class="pre">&lt;factory&gt;</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">metamodel:</span> <span class="pre">~linkml.utils.schemaloader.SchemaLoader</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">stacktrace:</span> <span class="pre">bool</span> <span class="pre">=</span> <span class="pre">False</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">template:</span> <span class="pre">~linkml.generators.sqlalchemygen.TemplateEnum</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">original_schema:</span> <span class="pre">~linkml_runtime.linkml_model.meta.SchemaDefinition</span> <span class="pre">|</span> <span class="pre">str</span> <span class="pre">|</span> <span class="pre">None</span> <span class="pre">=</span> <span class="pre">None</span></span></em>, <em class="sig-param"><span class="n"><span class="pre">**_kwargs</span></span></em><span class="sig-paren">)</span><a class="reference internal" href="../_modules/linkml/generators/sqlalchemygen.html#SQLAlchemyGenerator"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#linkml.generators.sqlalchemygen.SQLAlchemyGenerator" title="Permalink to this definition">#</a></dt>
 <dd><p>Generates SQL Alchemy classes</p>
-<p>See also: <span class="xref std std-ref">SQLTableGenerator</span></p>
+<p>See also: <a class="reference internal" href="sqltable.html#linkml.generators.sqltablegen.SQLTableGenerator" title="linkml.generators.sqltablegen.SQLTableGenerator"><code class="xref py py-class docutils literal notranslate"><span class="pre">SQLTableGenerator</span></code></a></p>
 <dl class="py method">
 <dt class="sig sig-object py" id="linkml.generators.sqlalchemygen.SQLAlchemyGenerator.serialize">
-<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><span class="pre">str</span></span></span><a class="reference internal" href="../_modules/linkml/generators/sqlalchemygen.html#SQLAlchemyGenerator.serialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#linkml.generators.sqlalchemygen.SQLAlchemyGenerator.serialize" title="Permalink to this definition">#</a></dt>
+<span class="sig-name descname"><span class="pre">serialize</span></span><span class="sig-paren">(</span><em class="sig-param"><span class="o"><span class="pre">**</span></span><span class="n"><span class="pre">kwargs</span></span></em><span class="sig-paren">)</span> <span class="sig-return"><span class="sig-return-icon">&#x2192;</span> <span class="sig-return-typehint"><a class="reference external" href="https://docs.python.org/3/library/stdtypes.html#str" title="(in Python v3.12)"><span class="pre">str</span></a></span></span><a class="reference internal" href="../_modules/linkml/generators/sqlalchemygen.html#SQLAlchemyGenerator.serialize"><span class="viewcode-link"><span class="pre">[source]</span></span></a><a class="headerlink" href="#linkml.generators.sqlalchemygen.SQLAlchemyGenerator.serialize" title="Permalink to this definition">#</a></dt>
 <dd><p>Generate output in the required format</p>
 <dl class="field-list simple">
 <dt class="field-odd">Parameters<span class="colon">:</span></dt>
@@ -582,7 +607,7 @@ section of the SQLA docs.</p>
               </div>
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
             </a>
-          <a class="prev-page" href="sqlddl.html">
+          <a class="prev-page" href="sqltable.html">
               <svg class="furo-related-icon"><use href="#svg-arrow-right"></use></svg>
               <div class="page-info">
                 <div class="context">
@@ -630,7 +655,7 @@ section of the SQLA docs.</p>
 </li>
 <li><a class="reference internal" href="#docs">Docs</a><ul>
 <li><a class="reference internal" href="#command-line">Command Line</a><ul>
-<li><a class="reference internal" href="#gen-sqlddl">gen-sqlddl</a></li>
+<li><a class="reference internal" href="#gen-sqla">gen-sqla</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#code">Code</a><ul>
@@ -657,5 +682,8 @@ section of the SQLA docs.</p>
     <script src="../_static/doctools.js?v=888ff710"></script>
     <script src="../_static/sphinx_highlight.js?v=4825356b"></script>
     <script src="../_static/scripts/furo.js?v=32e29ea5"></script>
+    <script src="../_static/design-tabs.js?v=36754332"></script>
+    <script src="https://unpkg.com/mermaid/dist/mermaid.min.js"></script>
+    <script>mermaid.initialize({startOnLoad:true});</script>
     </body>
 </html>
