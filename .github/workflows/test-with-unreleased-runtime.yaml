@@ -131,16 +131,6 @@ jobs:
           path: linkml/.venv
           key: venv-${{ matrix.python-version }}-${{ runner.os }}-${{ hashFiles('**/poetry.lock') }}
 
-      # make extra sure we're removing any old version of linkml that exists
-      - name: uninstall potentially cached linkml
-        working-directory: linkml-runtime
-        run: poetry run pip uninstall -y linkml
-
-      # Simulate what will happen when we merge this and update linkml-runtime's lockfile
-      - name: add linkml to lockfile
-        working-directory: linkml-runtime
-        run: poetry add ../linkml
-
       # note that we run the installation step always, even if we restore a venv,
       # the cache will restore the old version of linkml, but the lockfile
       # will only store the directory dependency (and thus will reinstall it)
@@ -154,7 +144,7 @@ jobs:
         run: poetry install --no-interaction -E tests
 
       - name: print linkml-runtime version
-        working-directory: linkml-runtime
+        working-directory: linkml
         run: poetry run python -c 'from importlib.metadata import version; print(version("linkml-runtime"))'
 
       - name: run tests
