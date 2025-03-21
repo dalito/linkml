@@ -7,7 +7,7 @@
 
     <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
         <title>Contribution Guidelines - linkml documentation</title>
-      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../_static/plot_directive.css" />
@@ -240,9 +240,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../generators/excel.html">Excel Spreadsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generators/csv.html">CSV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../generators/yaml.html">Yaml</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../generators/common/index.html">Common</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Common</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../generators/common/build.html">Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generators/common/lifecycle.html">Lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../generators/common/type_designators.html">Type Designators</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of How-to Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of How-to Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/collaborative-development.html">How to run a collaborative data modeling project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/recognize-structural-forms.html">How to recognize and work with different structural forms</a></li>
@@ -251,14 +257,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../howtos/model-measurements.html">How to model quantities and measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/multidimensional-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howtos/model-property-graphs.html">How to make a property graph schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../howtos/generate-ai-prompts.html">How to Generate AI prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../howtos/deprecating-elements.html">Deprecating elements while maintaining PURLs and other URIs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../examples.html">Examples of use</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../ecosystem.html">The LinkML Ecosystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../specifications/linkml-spec.html">LinkML specification</a></li>
 <li class="toctree-l1 current current-page"><a class="current reference internal" href="#">Contribution Guidelines</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../faq/index.html">FAQ</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of FAQ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../faq/index.html">FAQ</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of FAQ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../faq/general.html">FAQ: General</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/why-linkml.html">FAQ: Why LinkML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../faq/modeling.html">FAQ: Modeling</a></li>
@@ -272,7 +280,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developers guide:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../developers/index.html">Developers guide</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Developers guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../cli/index.html">CLI</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of CLI</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../cli/linkml.html"><code class="docutils literal notranslate"><span class="pre">linkml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/generate.html"><code class="docutils literal notranslate"><span class="pre">linkml</span> <span class="pre">generate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/lint.html"><code class="docutils literal notranslate"><span class="pre">linkml</span> <span class="pre">lint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/validate.html"><code class="docutils literal notranslate"><span class="pre">linkml</span> <span class="pre">validate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../cli/entrypoints.html">Entrypoints</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../developers/index.html">Developers guide</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Developers guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../developers/organization.html">GitHub Organization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../developers/manipulating-schemas.html">Manipulating Schemas</a></li>
@@ -288,7 +304,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../developers/deprecation.html">Deprecations</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../code/index.html">Code</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../code/index.html">Code</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../code/metamodel.html">MetaModel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../code/utils.html">Utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../code/validator.html">Validator</a></li>
@@ -466,29 +482,19 @@ work without running <code class="docutils literal notranslate"><span class="pre
 </div>
 <p>You would access <code class="docutils literal notranslate"><span class="pre">schema_a.yaml</span></code> within your test like:</p>
 <div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="c1"># test_foo_feature_a.py</span>
-<span class="k">def</span> <span class="nf">test_feature_a</span><span class="p">(</span><span class="n">input_path</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">test_feature_a</span><span class="p">(</span><span class="n">input_path</span><span class="p">):</span>
   <span class="n">path_to_schema</span> <span class="o">=</span> <span class="n">input_path</span><span class="p">(</span><span class="s2">&quot;schema_a.yaml&quot;</span><span class="p">)</span>
 </pre></div>
 </div>
 </li>
 <li><p><code class="docutils literal notranslate"><span class="pre">snapshot</span></code> This fixture provides a way of comparing a string, temporary file, or temporary directory to a known, good artifact. The artifacts are stored in a directory called <code class="docutils literal notranslate"><span class="pre">__snapshots__</span></code> alongside the test.</p>
 <p><strong>Warning</strong>: snapshot testing can be very powerful, but it can also lead to brittle tests. You should <strong>seriously consider alternatives</strong> before writing this type of test.</p>
-<p>If you make a change that intentionally causes some output to not match the saved snapshot file(s), you should update the snapshots by running <code class="docutils literal notranslate"><span class="pre">pytest</span></code> with the <code class="docutils literal notranslate"><span class="pre">--generate-snapshots</span></code> flag. You should try to run only a single or small group of tests with this flag (as opposed to the entire test suite). The updated snapshot files should be checked in to Git alongside your other code changes.</p>
+<p>If you make a change that intentionally causes some output to not match the saved snapshot file(s), you should update the snapshots by running <code class="docutils literal notranslate"><span class="pre">pytest</span></code> with the <code class="docutils literal notranslate"><span class="pre">--generate-snapshots</span></code> flag. You should try to run only a single or small group of tests with this flag (as opposed to the entire test suite). An exception to this rule is when preparing a new minor version of linkml after the metamodel changes, changes to the metamodel can have many (inconsequential) changes to multiple snapshots.
+The updated snapshot files should be checked in to Git alongside your other code changes.</p>
+<p>Debugging tip: sometimes a snapshot-based test may fail on GitHub actions, but may appear to pass locally. This can happen if the test is marked as a slow test,
+in which case you may need to use <code class="docutils literal notranslate"><span class="pre">--generate-snapshots</span></code> in combination with <code class="docutils literal notranslate"><span class="pre">--with-slow</span></code> (see below).</p>
 </li>
 </ul>
-</section>
-<section id="testing-multiple-pydantic-versions">
-<h3>Testing multiple Pydantic versions<a class="headerlink" href="#testing-multiple-pydantic-versions" title="Permalink to this heading">#</a></h3>
-<p>LinkML both generates and depends on Pydantic. <a class="reference external" href="https://docs.pydantic.dev/2.4/migration/">Pydantic V2</a> brought a number of breaking changes, but we intend to support both V1 and V2. By default, the <code class="docutils literal notranslate"><span class="pre">PydanticGenerator</span></code> class will generate code compatible with the version of Pydantic that is installed in your environment. This can be overridden by explicitly setting the <code class="docutils literal notranslate"><span class="pre">pydantic_version</span></code> field.</p>
-<p>As of March 2024, our default development environment specifies Pydantic 2 (as determined by the <code class="docutils literal notranslate"><span class="pre">poetry.lock</span></code> file). But since we also support Pydantic 1 (as specified in <code class="docutils literal notranslate"><span class="pre">pyproject.toml</span></code>), it is important to test with Pydantic 1 in your environment. To facilitate that there is a <code class="docutils literal notranslate"><span class="pre">tox</span></code> environment called <code class="docutils literal notranslate"><span class="pre">pydantic1</span></code>. To run all tests with Pydantic 1 installed:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>tox<span class="w"> </span>-e<span class="w"> </span>pydantic1
-</pre></div>
-</div>
-<p>Additional arguments will be passed to <code class="docutils literal notranslate"><span class="pre">pytest</span></code>. For example, to run a specific test:</p>
-<div class="highlight-shell notranslate"><div class="highlight"><pre><span></span>poetry<span class="w"> </span>run<span class="w"> </span>tox<span class="w"> </span>-e<span class="w"> </span>pydantic1<span class="w"> </span>--<span class="w"> </span>--<span class="w"> </span>tests/test_compliance/test_core_compliance.py
-</pre></div>
-</div>
-<p>Our main GitHub Actions testing workflow will also automatically perform at least one test run with Pydantic 1 in the environment.</p>
 </section>
 </section>
 <section id="code-formatting-and-linting">
@@ -629,7 +635,6 @@ insight into your work and allows them to provide feedback early on.</p></li>
 <li><a class="reference internal" href="#ide-tips">IDE Tips</a></li>
 <li><a class="reference internal" href="#unittest-to-pytest-conversion">Unittest to pytest conversion</a></li>
 <li><a class="reference internal" href="#custom-pytest-fixtures">Custom pytest fixtures</a></li>
-<li><a class="reference internal" href="#testing-multiple-pydantic-versions">Testing multiple Pydantic versions</a></li>
 </ul>
 </li>
 <li><a class="reference internal" href="#code-formatting-and-linting">Code formatting and linting</a></li>

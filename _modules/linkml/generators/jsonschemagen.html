@@ -6,7 +6,7 @@
 
     <link rel="shortcut icon" href="https://linkml.io/uploads/linkml-logo_color-no-words.png"/><!-- Generated with Sphinx 7.1.2 and Furo 2023.09.10 -->
         <title>linkml.generators.jsonschemagen - linkml documentation</title>
-      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=a746c00c" />
+      <link rel="stylesheet" type="text/css" href="../../../_static/pygments.css?v=8f2a1f02" />
     <link rel="stylesheet" type="text/css" href="../../../_static/styles/furo.css?v=135e06be" />
     <link rel="stylesheet" type="text/css" href="../../../_static/mystnb.4510f1fc1dee50b3e5859aac5469c37c29e427902b24a333a5f9fcb2f0b3ac41.css" />
     <link rel="stylesheet" type="text/css" href="../../../_static/plot_directive.css" />
@@ -239,9 +239,15 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/excel.html">Excel Spreadsheet</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/csv.html">CSV</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../generators/yaml.html">Yaml</a></li>
+<li class="toctree-l2 has-children"><a class="reference internal" href="../../../generators/common/index.html">Common</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of Common</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l3"><a class="reference internal" href="../../../generators/common/build.html">Build</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generators/common/lifecycle.html">Lifecycle</a></li>
+<li class="toctree-l3"><a class="reference internal" href="../../../generators/common/type_designators.html">Type Designators</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-5" name="toctree-checkbox-5" role="switch" type="checkbox"/><label for="toctree-checkbox-5"><div class="visually-hidden">Toggle navigation of How-to Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../howtos/index.html">How-to Guides</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of How-to Guides</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/linkml-project-cookiecutter.html">LinkML Project Cookiecutter</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/collaborative-development.html">How to run a collaborative data modeling project</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/recognize-structural-forms.html">How to recognize and work with different structural forms</a></li>
@@ -250,14 +256,16 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/model-measurements.html">How to model quantities and measurements</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/port-linkml.html">Porting LinkML tools to other programming languages</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/multidimensional-arrays.html">Multidimensional Arrays</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/model-property-graphs.html">How to make a property graph schema</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../howtos/generate-ai-prompts.html">How to Generate AI prompts</a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../howtos/deprecating-elements.html">Deprecating elements while maintaining PURLs and other URIs</a></li>
 </ul>
 </li>
 <li class="toctree-l1"><a class="reference internal" href="../../../examples.html">Examples of use</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../ecosystem.html">The LinkML Ecosystem</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../specifications/linkml-spec.html">LinkML specification</a></li>
 <li class="toctree-l1"><a class="reference internal" href="../../../contributing/contributing.html">Contribution Guidelines</a></li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../faq/index.html">FAQ</a><input class="toctree-checkbox" id="toctree-checkbox-6" name="toctree-checkbox-6" role="switch" type="checkbox"/><label for="toctree-checkbox-6"><div class="visually-hidden">Toggle navigation of FAQ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../faq/index.html">FAQ</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of FAQ</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/general.html">FAQ: General</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/why-linkml.html">FAQ: Why LinkML</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../faq/modeling.html">FAQ: Modeling</a></li>
@@ -271,7 +279,15 @@
 </ul>
 <p class="caption" role="heading"><span class="caption-text">Developers guide:</span></p>
 <ul>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../developers/index.html">Developers guide</a><input class="toctree-checkbox" id="toctree-checkbox-7" name="toctree-checkbox-7" role="switch" type="checkbox"/><label for="toctree-checkbox-7"><div class="visually-hidden">Toggle navigation of Developers guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../cli/index.html">CLI</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of CLI</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l2"><a class="reference internal" href="../../../cli/linkml.html"><code class="docutils literal notranslate"><span class="pre">linkml</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cli/generate.html"><code class="docutils literal notranslate"><span class="pre">linkml</span> <span class="pre">generate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cli/lint.html"><code class="docutils literal notranslate"><span class="pre">linkml</span> <span class="pre">lint</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cli/validate.html"><code class="docutils literal notranslate"><span class="pre">linkml</span> <span class="pre">validate</span></code></a></li>
+<li class="toctree-l2"><a class="reference internal" href="../../../cli/entrypoints.html">Entrypoints</a></li>
+</ul>
+</li>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../developers/index.html">Developers guide</a><input class="toctree-checkbox" id="toctree-checkbox-9" name="toctree-checkbox-9" role="switch" type="checkbox"/><label for="toctree-checkbox-9"><div class="visually-hidden">Toggle navigation of Developers guide</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/organization.html">GitHub Organization</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/notebooks.html">Jupyter Notebooks</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/manipulating-schemas.html">Manipulating Schemas</a></li>
@@ -287,7 +303,7 @@
 <li class="toctree-l2"><a class="reference internal" href="../../../developers/deprecation.html">Deprecations</a></li>
 </ul>
 </li>
-<li class="toctree-l1 has-children"><a class="reference internal" href="../../../code/index.html">Code</a><input class="toctree-checkbox" id="toctree-checkbox-8" name="toctree-checkbox-8" role="switch" type="checkbox"/><label for="toctree-checkbox-8"><div class="visually-hidden">Toggle navigation of Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
+<li class="toctree-l1 has-children"><a class="reference internal" href="../../../code/index.html">Code</a><input class="toctree-checkbox" id="toctree-checkbox-10" name="toctree-checkbox-10" role="switch" type="checkbox"/><label for="toctree-checkbox-10"><div class="visually-hidden">Toggle navigation of Code</div><i class="icon"><svg><use href="#svg-arrow-right"></use></svg></i></label><ul>
 <li class="toctree-l2"><a class="reference internal" href="../../../code/metamodel.html">MetaModel</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../code/utils.html">Utils</a></li>
 <li class="toctree-l2"><a class="reference internal" href="../../../code/validator.html">Validator</a></li>
@@ -328,15 +344,15 @@
         </div>
         <article role="main">
           <h1>Source code for linkml.generators.jsonschemagen</h1><div class="highlight"><pre>
-<span></span><span class="kn">import</span> <span class="nn">json</span>
-<span class="kn">import</span> <span class="nn">logging</span>
-<span class="kn">import</span> <span class="nn">os</span>
-<span class="kn">from</span> <span class="nn">copy</span> <span class="kn">import</span> <span class="n">deepcopy</span>
-<span class="kn">from</span> <span class="nn">dataclasses</span> <span class="kn">import</span> <span class="n">dataclass</span>
-<span class="kn">from</span> <span class="nn">typing</span> <span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
+<span></span><span class="kn">import</span><span class="w"> </span><span class="nn">json</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">logging</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">os</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">copy</span><span class="w"> </span><span class="kn">import</span> <span class="n">deepcopy</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">dataclasses</span><span class="w"> </span><span class="kn">import</span> <span class="n">dataclass</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">typing</span><span class="w"> </span><span class="kn">import</span> <span class="n">Any</span><span class="p">,</span> <span class="n">Dict</span><span class="p">,</span> <span class="n">List</span><span class="p">,</span> <span class="n">Optional</span><span class="p">,</span> <span class="n">Tuple</span><span class="p">,</span> <span class="n">Union</span>
 
-<span class="kn">import</span> <span class="nn">click</span>
-<span class="kn">from</span> <span class="nn">linkml_runtime.linkml_model.meta</span> <span class="kn">import</span> <span class="p">(</span>
+<span class="kn">import</span><span class="w"> </span><span class="nn">click</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">linkml_runtime.linkml_model.meta</span><span class="w"> </span><span class="kn">import</span> <span class="p">(</span>
     <span class="n">AnonymousClassExpression</span><span class="p">,</span>
     <span class="n">AnonymousSlotExpression</span><span class="p">,</span>
     <span class="n">ClassDefinition</span><span class="p">,</span>
@@ -348,11 +364,16 @@
     <span class="n">SlotDefinition</span><span class="p">,</span>
     <span class="n">metamodel_version</span><span class="p">,</span>
 <span class="p">)</span>
-<span class="kn">from</span> <span class="nn">linkml_runtime.utils.formatutils</span> <span class="kn">import</span> <span class="n">be</span><span class="p">,</span> <span class="n">camelcase</span><span class="p">,</span> <span class="n">underscore</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">linkml_runtime.utils.formatutils</span><span class="w"> </span><span class="kn">import</span> <span class="n">be</span><span class="p">,</span> <span class="n">camelcase</span><span class="p">,</span> <span class="n">underscore</span>
 
-<span class="kn">from</span> <span class="nn">linkml._version</span> <span class="kn">import</span> <span class="n">__version__</span>
-<span class="kn">from</span> <span class="nn">linkml.generators.common.type_designators</span> <span class="kn">import</span> <span class="n">get_type_designator_value</span>
-<span class="kn">from</span> <span class="nn">linkml.utils.generator</span> <span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">shared_arguments</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">linkml._version</span><span class="w"> </span><span class="kn">import</span> <span class="n">__version__</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">linkml.generators.common</span><span class="w"> </span><span class="kn">import</span> <span class="n">build</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">linkml.generators.common.lifecycle</span><span class="w"> </span><span class="kn">import</span> <span class="n">LifecycleMixin</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">linkml.generators.common.type_designators</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_type_designator_value</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">linkml.utils.generator</span><span class="w"> </span><span class="kn">import</span> <span class="n">Generator</span><span class="p">,</span> <span class="n">shared_arguments</span>
+<span class="kn">from</span><span class="w"> </span><span class="nn">linkml.utils.helpers</span><span class="w"> </span><span class="kn">import</span> <span class="n">get_range_associated_slots</span>
+
+<span class="n">logger</span> <span class="o">=</span> <span class="n">logging</span><span class="o">.</span><span class="n">getLogger</span><span class="p">(</span><span class="vm">__name__</span><span class="p">)</span>
 
 <span class="c1"># Map from underlying python data type to json equivalent</span>
 <span class="c1"># Note: The underlying types are a union of any built-in python datatype + any type defined in</span>
@@ -372,14 +393,14 @@
 <span class="p">}</span>
 
 
-<span class="k">class</span> <span class="nc">JsonSchema</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">JsonSchema</span><span class="p">(</span><span class="nb">dict</span><span class="p">):</span>
     <span class="n">OPTIONAL_IDENTIFIER_SUFFIX</span> <span class="o">=</span> <span class="s2">&quot;__identifier_optional&quot;</span>
 
-    <span class="k">def</span> <span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="fm">__init__</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="fm">__init__</span><span class="p">(</span><span class="o">*</span><span class="n">args</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">_lax_forward_refs</span> <span class="o">=</span> <span class="p">{}</span>
 
-    <span class="k">def</span> <span class="nf">add_def</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">subschema</span><span class="p">:</span> <span class="s2">&quot;JsonSchema&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_def</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">subschema</span><span class="p">:</span> <span class="s2">&quot;JsonSchema&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">canonical_name</span> <span class="o">=</span> <span class="n">camelcase</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="s2">&quot;$defs&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="p">:</span>
@@ -394,7 +415,7 @@
             <span class="n">identifier_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_lax_forward_refs</span><span class="o">.</span><span class="n">pop</span><span class="p">(</span><span class="n">canonical_name</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">add_lax_def</span><span class="p">(</span><span class="n">canonical_name</span><span class="p">,</span> <span class="n">identifier_name</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">add_lax_def</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">identifier_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_lax_def</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">names</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">identifier_name</span><span class="p">:</span> <span class="nb">str</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># JSON-Schema does not have inheritance,</span>
         <span class="c1"># so we duplicate slots from inherited parents and mixins</span>
         <span class="c1"># Maps e.g. Person --&gt; Person__identifier_optional</span>
@@ -412,7 +433,7 @@
                 <span class="n">lax_cls</span><span class="p">[</span><span class="s2">&quot;required&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">remove</span><span class="p">(</span><span class="n">identifier_name</span><span class="p">)</span>
                 <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;$defs&quot;</span><span class="p">][</span><span class="n">canonical_name</span> <span class="o">+</span> <span class="bp">self</span><span class="o">.</span><span class="n">OPTIONAL_IDENTIFIER_SUFFIX</span><span class="p">]</span> <span class="o">=</span> <span class="n">lax_cls</span>
 
-    <span class="k">def</span> <span class="nf">add_property</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_property</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">name</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">subschema</span><span class="p">:</span> <span class="s2">&quot;JsonSchema&quot;</span><span class="p">,</span> <span class="o">*</span><span class="p">,</span> <span class="n">value_required</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">value_disallowed</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="n">canonical_name</span> <span class="o">=</span> <span class="n">underscore</span><span class="p">(</span><span class="n">name</span><span class="p">)</span>
@@ -448,47 +469,89 @@
 
             <span class="bp">self</span><span class="p">[</span><span class="s2">&quot;not&quot;</span><span class="p">][</span><span class="s2">&quot;required&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">canonical_name</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">add_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">add_keyword</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">keyword</span><span class="p">:</span> <span class="nb">str</span><span class="p">,</span> <span class="n">value</span><span class="p">:</span> <span class="n">Any</span><span class="p">):</span>
         <span class="k">if</span> <span class="n">value</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span>
 
         <span class="bp">self</span><span class="p">[</span><span class="n">keyword</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">is_array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;array&quot;</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_array</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+        <span class="n">typ</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
+            <span class="k">return</span> <span class="n">typ</span> <span class="o">==</span> <span class="s2">&quot;array&quot;</span>
+        <span class="k">elif</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
+            <span class="k">return</span> <span class="s2">&quot;array&quot;</span> <span class="ow">in</span> <span class="n">typ</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="k">return</span> <span class="kc">False</span>
 
     <span class="nd">@property</span>
-    <span class="k">def</span> <span class="nf">is_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">is_object</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;type&quot;</span><span class="p">)</span> <span class="o">==</span> <span class="s2">&quot;object&quot;</span>
 
-    <span class="k">def</span> <span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">to_json</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
         <span class="k">return</span> <span class="n">json</span><span class="o">.</span><span class="n">dumps</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">ref_for</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">identifier_optional</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
-        <span class="k">def</span> <span class="nf">_ref</span><span class="p">(</span><span class="n">class_name</span><span class="p">):</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">ref_for</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">class_name</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]],</span> <span class="n">identifier_optional</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">required</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">_ref</span><span class="p">(</span><span class="n">class_name</span><span class="p">):</span>
             <span class="n">def_name</span> <span class="o">=</span> <span class="n">camelcase</span><span class="p">(</span><span class="n">class_name</span><span class="p">)</span>
             <span class="n">def_suffix</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">OPTIONAL_IDENTIFIER_SUFFIX</span> <span class="k">if</span> <span class="n">identifier_optional</span> <span class="k">else</span> <span class="s2">&quot;&quot;</span>
             <span class="k">return</span> <span class="n">JsonSchema</span><span class="p">({</span><span class="s2">&quot;$ref&quot;</span><span class="p">:</span> <span class="sa">f</span><span class="s2">&quot;#/$defs/</span><span class="si">{</span><span class="n">def_name</span><span class="si">}{</span><span class="n">def_suffix</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">})</span>
 
         <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">class_name</span><span class="p">,</span> <span class="nb">list</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">class_name</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">_ref</span><span class="p">(</span><span class="n">class_name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
+                <span class="n">ref</span> <span class="o">=</span> <span class="n">_ref</span><span class="p">(</span><span class="n">class_name</span><span class="p">[</span><span class="mi">0</span><span class="p">])</span>
             <span class="k">else</span><span class="p">:</span>
-                <span class="k">return</span> <span class="n">JsonSchema</span><span class="p">({</span><span class="s2">&quot;anyOf&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">_ref</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">class_name</span><span class="p">]})</span>
+                <span class="n">ref</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">({</span><span class="s2">&quot;anyOf&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">_ref</span><span class="p">(</span><span class="n">name</span><span class="p">)</span> <span class="k">for</span> <span class="n">name</span> <span class="ow">in</span> <span class="n">class_name</span><span class="p">]})</span>
         <span class="k">else</span><span class="p">:</span>
-            <span class="k">return</span> <span class="n">_ref</span><span class="p">(</span><span class="n">class_name</span><span class="p">)</span>
+            <span class="n">ref</span> <span class="o">=</span> <span class="n">_ref</span><span class="p">(</span><span class="n">class_name</span><span class="p">)</span>
+
+        <span class="k">if</span> <span class="ow">not</span> <span class="n">required</span><span class="p">:</span>
+            <span class="k">if</span> <span class="s2">&quot;anyOf&quot;</span> <span class="ow">in</span> <span class="n">ref</span><span class="p">:</span>
+                <span class="n">ref</span><span class="p">[</span><span class="s2">&quot;anyOf&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;null&quot;</span><span class="p">})</span>
+            <span class="k">else</span><span class="p">:</span>
+                <span class="n">ref</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">({</span><span class="s2">&quot;anyOf&quot;</span><span class="p">:</span> <span class="p">[</span><span class="n">ref</span><span class="p">,</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;null&quot;</span><span class="p">}]})</span>
+        <span class="k">return</span> <span class="n">ref</span>
 
     <span class="nd">@classmethod</span>
-    <span class="k">def</span> <span class="nf">array_of</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">subschema</span><span class="p">:</span> <span class="s2">&quot;JsonSchema&quot;</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;JsonSchema&quot;</span><span class="p">:</span>
-        <span class="n">schema</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="n">subschema</span><span class="p">}</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">array_of</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="n">subschema</span><span class="p">:</span> <span class="s2">&quot;JsonSchema&quot;</span><span class="p">,</span> <span class="n">required</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="s2">&quot;JsonSchema&quot;</span><span class="p">:</span>
+        <span class="k">if</span> <span class="n">required</span><span class="p">:</span>
+            <span class="n">typ</span> <span class="o">=</span> <span class="s2">&quot;array&quot;</span>
+        <span class="k">else</span><span class="p">:</span>
+            <span class="n">typ</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">]</span>
+
+        <span class="n">schema</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">typ</span><span class="p">,</span> <span class="s2">&quot;items&quot;</span><span class="p">:</span> <span class="n">subschema</span><span class="p">}</span>
 
         <span class="k">return</span> <span class="n">JsonSchema</span><span class="p">(</span><span class="n">schema</span><span class="p">)</span>
 
 
+<span class="k">class</span><span class="w"> </span><span class="nc">SchemaResult</span><span class="p">(</span><span class="n">build</span><span class="o">.</span><span class="n">SchemaResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Top-level result of building a json schema&quot;&quot;&quot;</span>
+
+    <span class="n">schema_</span><span class="p">:</span> <span class="n">JsonSchema</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">EnumResult</span><span class="p">(</span><span class="n">build</span><span class="o">.</span><span class="n">EnumResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A single built enum&quot;&quot;&quot;</span>
+
+    <span class="n">schema_</span><span class="p">:</span> <span class="n">JsonSchema</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">ClassResult</span><span class="p">(</span><span class="n">build</span><span class="o">.</span><span class="n">ClassResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A single built class&quot;&quot;&quot;</span>
+
+    <span class="n">schema_</span><span class="p">:</span> <span class="n">JsonSchema</span>
+
+
+<span class="k">class</span><span class="w"> </span><span class="nc">SlotResult</span><span class="p">(</span><span class="n">build</span><span class="o">.</span><span class="n">SlotResult</span><span class="p">):</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;A slot within the context of a class&quot;&quot;&quot;</span>
+
+    <span class="n">schema_</span><span class="p">:</span> <span class="n">JsonSchema</span>
+
+
 <div class="viewcode-block" id="JsonSchemaGenerator"><a class="viewcode-back" href="../../../generators/json-schema.html#linkml.generators.jsonschemagen.JsonSchemaGenerator">[docs]</a><span class="nd">@dataclass</span>
-<span class="k">class</span> <span class="nc">JsonSchemaGenerator</span><span class="p">(</span><span class="n">Generator</span><span class="p">):</span>
+<span class="k">class</span><span class="w"> </span><span class="nc">JsonSchemaGenerator</span><span class="p">(</span><span class="n">Generator</span><span class="p">,</span> <span class="n">LifecycleMixin</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;</span>
 <span class="sd">    Generates JSONSchema documents from a LinkML SchemaDefinition</span>
 
@@ -497,6 +560,21 @@
 <span class="sd">    - Composition not yet implemented</span>
 <span class="sd">    - Enumerations treated as strings</span>
 <span class="sd">    - Foreign key references are treated as semantics-free strings</span>
+
+<span class="sd">    This generator implements the following :class:`.LifecycleMixin` methods:</span>
+
+<span class="sd">    * :meth:`.LifecycleMixin.before_generate_schema`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.after_generate_schema`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.before_generate_classes`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.before_generate_enums`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.before_generate_class_slots`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.before_generate_class`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.after_generate_class`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.before_generate_class_slot`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.after_generate_class_slot`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.before_generate_enum`</span>
+<span class="sd">    * :meth:`.LifecycleMixin.after_generate_enum`</span>
+
 <span class="sd">    &quot;&quot;&quot;</span>
 
     <span class="c1"># ClassVars</span>
@@ -505,6 +583,7 @@
     <span class="n">valid_formats</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;json&quot;</span><span class="p">]</span>
     <span class="n">uses_schemaloader</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="n">file_extension</span> <span class="o">=</span> <span class="s2">&quot;schema.json&quot;</span>
+    <span class="n">materialize_patterns</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
 
     <span class="c1"># @deprecated(&quot;Use top_class&quot;)</span>
     <span class="n">topClass</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="nb">str</span><span class="p">]</span> <span class="o">=</span> <span class="kc">None</span>
@@ -515,6 +594,7 @@
     <span class="n">indent</span><span class="p">:</span> <span class="nb">int</span> <span class="o">=</span> <span class="mi">4</span>
 
     <span class="n">inline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
+
     <span class="n">top_class</span><span class="p">:</span> <span class="n">Optional</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">ClassDefinitionName</span><span class="p">,</span> <span class="nb">str</span><span class="p">]]</span> <span class="o">=</span> <span class="kc">None</span>  <span class="c1"># JSON object is one instance of this</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Class instantiated by the root node of the document tree&quot;&quot;&quot;</span>
 
@@ -528,18 +608,21 @@
 
     <span class="n">top_level_schema</span><span class="p">:</span> <span class="n">JsonSchema</span> <span class="o">=</span> <span class="kc">None</span>
 
-    <span class="k">def</span> <span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
+    <span class="n">include_null</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+<span class="w">    </span><span class="sd">&quot;&quot;&quot;Whether to include a &quot;null&quot; type in optional slots&quot;&quot;&quot;</span>
+
+    <span class="k">def</span><span class="w"> </span><span class="nf">__post_init__</span><span class="p">(</span><span class="bp">self</span><span class="p">):</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">topClass</span><span class="p">:</span>
-            <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;topClass is deprecated - use top_class&quot;</span><span class="p">)</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="s2">&quot;topClass is deprecated - use top_class&quot;</span><span class="p">)</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">top_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">topClass</span>
 
         <span class="nb">super</span><span class="p">()</span><span class="o">.</span><span class="n">__post_init__</span><span class="p">()</span>
 
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">top_class</span><span class="p">:</span>
             <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">get_class</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top_class</span><span class="p">)</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-                <span class="n">logging</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No class in schema named </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top_class</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
+                <span class="n">logger</span><span class="o">.</span><span class="n">warning</span><span class="p">(</span><span class="sa">f</span><span class="s2">&quot;No class in schema named </span><span class="si">{</span><span class="bp">self</span><span class="o">.</span><span class="n">top_class</span><span class="si">}</span><span class="s2">&quot;</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">start_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonSchema</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">start_schema</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">inline</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">):</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">inline</span> <span class="o">=</span> <span class="n">inline</span>
 
         <span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">(</span>
@@ -554,7 +637,9 @@
             <span class="p">}</span>
         <span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">handle_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">ClassDefinition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_class</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">ClassDefinition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="bp">cls</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">before_generate_class</span><span class="p">(</span><span class="bp">cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="p">)</span>
+
         <span class="k">if</span> <span class="bp">cls</span><span class="o">.</span><span class="n">mixin</span> <span class="ow">or</span> <span class="bp">cls</span><span class="o">.</span><span class="n">abstract</span><span class="p">:</span>
             <span class="k">return</span>
 
@@ -574,7 +659,10 @@
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">title_from</span> <span class="o">==</span> <span class="s2">&quot;title&quot;</span> <span class="ow">and</span> <span class="bp">cls</span><span class="o">.</span><span class="n">title</span><span class="p">:</span>
             <span class="n">class_subschema</span><span class="p">[</span><span class="s2">&quot;title&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="bp">cls</span><span class="o">.</span><span class="n">title</span>
 
-        <span class="k">for</span> <span class="n">slot_definition</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">class_induced_slots</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">name</span><span class="p">):</span>
+        <span class="n">class_slots</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">before_generate_class_slots</span><span class="p">(</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">class_induced_slots</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">name</span><span class="p">),</span> <span class="bp">cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="p">)</span>
+        <span class="k">for</span> <span class="n">slot_definition</span> <span class="ow">in</span> <span class="n">class_slots</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">handle_class_slot</span><span class="p">(</span><span class="n">subschema</span><span class="o">=</span><span class="n">class_subschema</span><span class="p">,</span> <span class="bp">cls</span><span class="o">=</span><span class="bp">cls</span><span class="p">,</span> <span class="n">slot</span><span class="o">=</span><span class="n">slot_definition</span><span class="p">)</span>
 
         <span class="n">rule_subschemas</span> <span class="o">=</span> <span class="p">[]</span>
@@ -624,6 +712,10 @@
                 <span class="n">class_subschema</span><span class="p">[</span><span class="s2">&quot;allOf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[]</span>
             <span class="n">class_subschema</span><span class="p">[</span><span class="s2">&quot;allOf&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">extend</span><span class="p">(</span><span class="n">rule_subschemas</span><span class="p">)</span>
 
+        <span class="n">class_subschema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">after_generate_class</span><span class="p">(</span>
+            <span class="n">ClassResult</span><span class="o">.</span><span class="n">model_construct</span><span class="p">(</span><span class="n">schema_</span><span class="o">=</span><span class="n">class_subschema</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="bp">cls</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">schema_</span>
+
         <span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span><span class="o">.</span><span class="n">add_def</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">class_subschema</span><span class="p">)</span>
 
         <span class="k">if</span> <span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top_class</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="n">camelcase</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">top_class</span><span class="p">)</span> <span class="o">==</span> <span class="n">camelcase</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">name</span><span class="p">))</span> <span class="ow">or</span> <span class="p">(</span>
@@ -636,7 +728,7 @@
                 <span class="k">if</span> <span class="n">key</span> <span class="ow">not</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span><span class="p">:</span>
                     <span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span><span class="p">[</span><span class="n">key</span><span class="p">]</span> <span class="o">=</span> <span class="n">value</span>
 
-    <span class="k">def</span> <span class="nf">get_subschema_for_anonymous_class</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_subschema_for_anonymous_class</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">AnonymousClassExpression</span><span class="p">,</span> <span class="n">properties_required</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Union</span><span class="p">[</span><span class="kc">None</span><span class="p">,</span> <span class="n">JsonSchema</span><span class="p">]:</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="bp">cls</span><span class="p">:</span>
@@ -644,7 +736,7 @@
 
         <span class="n">subschema</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">()</span>
         <span class="k">for</span> <span class="n">slot</span> <span class="ow">in</span> <span class="bp">cls</span><span class="o">.</span><span class="n">slot_conditions</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
-            <span class="n">prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">omit_type</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
+            <span class="n">prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">omit_type</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">include_null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
             <span class="n">value_required</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="n">value_disallowed</span> <span class="o">=</span> <span class="kc">False</span>
             <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">value_presence</span><span class="p">:</span>
@@ -678,11 +770,12 @@
 
         <span class="k">return</span> <span class="n">subschema</span>
 
-    <span class="k">def</span> <span class="nf">handle_enum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enum</span><span class="p">:</span> <span class="n">EnumDefinition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_enum</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">enum</span><span class="p">:</span> <span class="n">EnumDefinition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
         <span class="c1"># TODO: this only works with explicitly permitted values. It will need to be extended to</span>
         <span class="c1"># support other pv_formula</span>
+        <span class="n">enum</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">before_generate_enum</span><span class="p">(</span><span class="n">enum</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="p">)</span>
 
-        <span class="k">def</span> <span class="nf">extract_permissible_text</span><span class="p">(</span><span class="n">pv</span><span class="p">):</span>
+        <span class="k">def</span><span class="w"> </span><span class="nf">extract_permissible_text</span><span class="p">(</span><span class="n">pv</span><span class="p">):</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pv</span><span class="p">,</span> <span class="nb">str</span><span class="p">):</span>
                 <span class="k">return</span> <span class="n">pv</span>
             <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">pv</span><span class="p">,</span> <span class="n">PermissibleValue</span><span class="p">):</span>
@@ -704,9 +797,13 @@
 
         <span class="k">if</span> <span class="n">permissible_values_texts</span><span class="p">:</span>
             <span class="n">enum_schema</span><span class="p">[</span><span class="s2">&quot;enum&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="n">permissible_values_texts</span>
+
+        <span class="n">enum_schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">after_generate_enum</span><span class="p">(</span>
+            <span class="n">EnumResult</span><span class="o">.</span><span class="n">model_construct</span><span class="p">(</span><span class="n">schema_</span><span class="o">=</span><span class="n">enum_schema</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">enum</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">schema_</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span><span class="o">.</span><span class="n">add_def</span><span class="p">(</span><span class="n">enum</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">enum_schema</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_type_info_for_slot_subschema</span><span class="p">(</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_type_info_for_slot_subschema</span><span class="p">(</span>
         <span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">,</span> <span class="n">AnonymousSlotExpression</span><span class="p">]</span>
     <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="nb">str</span><span class="p">,</span> <span class="n">Union</span><span class="p">[</span><span class="nb">str</span><span class="p">,</span> <span class="n">List</span><span class="p">[</span><span class="nb">str</span><span class="p">]]]:</span>
         <span class="c1"># JSON Schema type (https://json-schema.org/understanding-json-schema/reference/type.html)</span>
@@ -744,7 +841,7 @@
 
         <span class="k">return</span> <span class="p">(</span><span class="n">typ</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">reference</span><span class="p">)</span>
 
-    <span class="k">def</span> <span class="nf">get_value_constraints_for_slot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">,</span> <span class="n">AnonymousSlotExpression</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">JsonSchema</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_value_constraints_for_slot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">,</span> <span class="n">AnonymousSlotExpression</span><span class="p">,</span> <span class="kc">None</span><span class="p">])</span> <span class="o">-&gt;</span> <span class="n">JsonSchema</span><span class="p">:</span>
         <span class="k">if</span> <span class="n">slot</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
             <span class="k">return</span> <span class="n">JsonSchema</span><span class="p">()</span>
 
@@ -762,12 +859,31 @@
         <span class="n">constraints</span><span class="o">.</span><span class="n">add_keyword</span><span class="p">(</span><span class="s2">&quot;maximum&quot;</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">maximum_value</span><span class="p">)</span>
         <span class="n">constraints</span><span class="o">.</span><span class="n">add_keyword</span><span class="p">(</span><span class="s2">&quot;const&quot;</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">equals_string</span><span class="p">)</span>
         <span class="n">constraints</span><span class="o">.</span><span class="n">add_keyword</span><span class="p">(</span><span class="s2">&quot;const&quot;</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">equals_number</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">equals_string_in</span><span class="p">:</span>
+            <span class="n">constraints</span><span class="o">.</span><span class="n">add_keyword</span><span class="p">(</span><span class="s2">&quot;enum&quot;</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">equals_string_in</span><span class="p">)</span>
         <span class="k">return</span> <span class="n">constraints</span>
 
-    <span class="k">def</span> <span class="nf">get_subschema_for_slot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">SlotDefinition</span><span class="p">,</span> <span class="n">omit_type</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonSchema</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">get_subschema_for_slot</span><span class="p">(</span>
+        <span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">Union</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">,</span> <span class="n">AnonymousSlotExpression</span><span class="p">],</span> <span class="n">omit_type</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">False</span><span class="p">,</span> <span class="n">include_null</span><span class="p">:</span> <span class="nb">bool</span> <span class="o">=</span> <span class="kc">True</span>
+    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonSchema</span><span class="p">:</span>
+<span class="w">        </span><span class="sd">&quot;&quot;&quot;</span>
+<span class="sd">        Args:</span>
+<span class="sd">            include_null: Include ``type: null`` when generating ranges that are not required</span>
+<span class="sd">        &quot;&quot;&quot;</span>
         <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">()</span>
+        <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">SlotDefinition</span><span class="p">)</span> <span class="ow">and</span> <span class="n">slot</span><span class="o">.</span><span class="n">array</span><span class="p">:</span>
+            <span class="c1"># TODO: this is currently too lax, in that it will validate ANY array.</span>
+            <span class="c1"># see https://github.com/linkml/linkml/issues/2188</span>
+            <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">(</span>
+                <span class="p">{</span>
+                    <span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="p">[</span><span class="s2">&quot;null&quot;</span><span class="p">,</span> <span class="s2">&quot;boolean&quot;</span><span class="p">,</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;number&quot;</span><span class="p">,</span> <span class="s2">&quot;string&quot;</span><span class="p">,</span> <span class="s2">&quot;array&quot;</span><span class="p">],</span>
+                    <span class="s2">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="kc">True</span><span class="p">,</span>
+                <span class="p">}</span>
+            <span class="p">)</span>
+            <span class="k">return</span> <span class="n">JsonSchema</span><span class="o">.</span><span class="n">array_of</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="n">slot</span><span class="o">.</span><span class="n">required</span><span class="p">)</span>
         <span class="n">slot_is_multivalued</span> <span class="o">=</span> <span class="s2">&quot;multivalued&quot;</span> <span class="ow">in</span> <span class="n">slot</span> <span class="ow">and</span> <span class="n">slot</span><span class="o">.</span><span class="n">multivalued</span>
         <span class="n">slot_is_inlined</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">is_inlined</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+        <span class="n">slot_is_boolean</span> <span class="o">=</span> <span class="nb">any</span><span class="p">([</span><span class="n">slot</span><span class="o">.</span><span class="n">any_of</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">all_of</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">none_of</span><span class="p">])</span>
         <span class="k">if</span> <span class="ow">not</span> <span class="n">omit_type</span><span class="p">:</span>
             <span class="n">typ</span><span class="p">,</span> <span class="n">fmt</span><span class="p">,</span> <span class="n">reference</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_type_info_for_slot_subschema</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
             <span class="k">if</span> <span class="n">slot_is_inlined</span><span class="p">:</span>
@@ -777,7 +893,7 @@
                         <span class="n">range_id_slot</span><span class="p">,</span>
                         <span class="n">range_simple_dict_value_slot</span><span class="p">,</span>
                         <span class="n">range_required_slots</span><span class="p">,</span>
-                    <span class="p">)</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">_get_range_associated_slots</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+                    <span class="p">)</span> <span class="o">=</span> <span class="n">get_range_associated_slots</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="p">)</span>
                     <span class="c1"># if the range class has an ID and the slot is not inlined as a list, then we need to consider</span>
                     <span class="c1"># various inlined as dict formats</span>
                     <span class="k">if</span> <span class="n">range_id_slot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">slot</span><span class="o">.</span><span class="n">inlined_as_list</span><span class="p">:</span>
@@ -788,7 +904,9 @@
                         <span class="c1"># If the range can be collected as a simple dict, then we can also accept the value</span>
                         <span class="c1"># of that simple dict directly.</span>
                         <span class="k">if</span> <span class="n">range_simple_dict_value_slot</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
-                            <span class="n">additionalProps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">range_simple_dict_value_slot</span><span class="p">))</span>
+                            <span class="n">additionalProps</span><span class="o">.</span><span class="n">append</span><span class="p">(</span>
+                                <span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">range_simple_dict_value_slot</span><span class="p">,</span> <span class="n">include_null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span>
+                            <span class="p">)</span>
 
                         <span class="c1"># If the range has no required slots, then null is acceptable</span>
                         <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">range_required_slots</span><span class="p">)</span> <span class="o">==</span> <span class="mi">0</span><span class="p">:</span>
@@ -800,12 +918,17 @@
                             <span class="n">additionalProps</span> <span class="o">=</span> <span class="n">additionalProps</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
                         <span class="k">else</span><span class="p">:</span>
                             <span class="n">additionalProps</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">({</span><span class="s2">&quot;anyOf&quot;</span><span class="p">:</span> <span class="n">additionalProps</span><span class="p">})</span>
-                        <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="n">additionalProps</span><span class="p">})</span>
+                        <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">required</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">include_null</span><span class="p">:</span>
+                            <span class="n">typ</span> <span class="o">=</span> <span class="s2">&quot;object&quot;</span>
+                        <span class="k">else</span><span class="p">:</span>
+                            <span class="n">typ</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;object&quot;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">]</span>
+                        <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">typ</span><span class="p">,</span> <span class="s2">&quot;additionalProperties&quot;</span><span class="p">:</span> <span class="n">additionalProps</span><span class="p">})</span>
                         <span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span><span class="o">.</span><span class="n">add_lax_def</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">aliased_slot_name</span><span class="p">(</span><span class="n">range_id_slot</span><span class="p">))</span>
                     <span class="k">else</span><span class="p">:</span>
-                        <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="o">.</span><span class="n">array_of</span><span class="p">(</span><span class="n">JsonSchema</span><span class="o">.</span><span class="n">ref_for</span><span class="p">(</span><span class="n">reference</span><span class="p">))</span>
+                        <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="o">.</span><span class="n">array_of</span><span class="p">(</span><span class="n">JsonSchema</span><span class="o">.</span><span class="n">ref_for</span><span class="p">(</span><span class="n">reference</span><span class="p">),</span> <span class="n">required</span><span class="o">=</span><span class="n">slot</span><span class="o">.</span><span class="n">required</span><span class="p">)</span>
                 <span class="k">else</span><span class="p">:</span>
-                    <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="o">.</span><span class="n">ref_for</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span>
+                    <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="o">.</span><span class="n">ref_for</span><span class="p">(</span><span class="n">reference</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="n">slot</span><span class="o">.</span><span class="n">required</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">include_null</span><span class="p">)</span>
+
             <span class="k">else</span><span class="p">:</span>
                 <span class="k">if</span> <span class="n">reference</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span><span class="p">:</span>
                     <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="o">.</span><span class="n">ref_for</span><span class="p">(</span><span class="n">reference</span><span class="p">)</span>
@@ -815,7 +938,12 @@
                     <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="n">typ</span><span class="p">,</span> <span class="s2">&quot;format&quot;</span><span class="p">:</span> <span class="n">fmt</span><span class="p">})</span>
 
                 <span class="k">if</span> <span class="n">slot_is_multivalued</span><span class="p">:</span>
-                    <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="o">.</span><span class="n">array_of</span><span class="p">(</span><span class="n">prop</span><span class="p">)</span>
+                    <span class="n">prop</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="o">.</span><span class="n">array_of</span><span class="p">(</span><span class="n">prop</span><span class="p">,</span> <span class="n">required</span><span class="o">=</span><span class="n">slot</span><span class="o">.</span><span class="n">required</span><span class="p">)</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="c1"># handle optionals - bools like any_of, etc. below as they call this method recursively</span>
+                    <span class="k">if</span> <span class="ow">not</span> <span class="n">slot</span><span class="o">.</span><span class="n">required</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">slot_is_boolean</span> <span class="ow">and</span> <span class="n">include_null</span><span class="p">:</span>
+                        <span class="k">if</span> <span class="s2">&quot;type&quot;</span> <span class="ow">in</span> <span class="n">prop</span><span class="p">:</span>
+                            <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">],</span> <span class="s2">&quot;null&quot;</span><span class="p">]</span>
 
         <span class="n">prop</span><span class="o">.</span><span class="n">add_keyword</span><span class="p">(</span><span class="s2">&quot;description&quot;</span><span class="p">,</span> <span class="n">slot</span><span class="o">.</span><span class="n">description</span><span class="p">)</span>
         <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">title_from</span> <span class="o">==</span> <span class="s2">&quot;title&quot;</span> <span class="ow">and</span> <span class="n">slot</span><span class="o">.</span><span class="n">title</span><span class="p">:</span>
@@ -841,29 +969,37 @@
 
         <span class="n">bool_subschema</span> <span class="o">=</span> <span class="n">JsonSchema</span><span class="p">()</span>
         <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">any_of</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">any_of</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;anyOf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">any_of</span><span class="p">]</span>
+            <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;anyOf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">include_null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">any_of</span><span class="p">]</span>
+            <span class="k">if</span> <span class="ow">not</span> <span class="n">slot</span><span class="o">.</span><span class="n">required</span> <span class="ow">and</span> <span class="ow">not</span> <span class="n">prop</span><span class="o">.</span><span class="n">is_array</span> <span class="ow">and</span> <span class="n">include_null</span><span class="p">:</span>
+                <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;anyOf&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">append</span><span class="p">({</span><span class="s2">&quot;type&quot;</span><span class="p">:</span> <span class="s2">&quot;null&quot;</span><span class="p">})</span>
 
         <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">all_of</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">all_of</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;allOf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">all_of</span><span class="p">]</span>
+            <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;allOf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">include_null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">all_of</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;oneOf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">]</span>
+            <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;oneOf&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">include_null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">exactly_one_of</span><span class="p">]</span>
 
         <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">none_of</span> <span class="ow">is</span> <span class="ow">not</span> <span class="kc">None</span> <span class="ow">and</span> <span class="nb">len</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">none_of</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">0</span><span class="p">:</span>
-            <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;not&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span><span class="s2">&quot;anyOf&quot;</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">s</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">none_of</span><span class="p">]}</span>
+            <span class="n">bool_subschema</span><span class="p">[</span><span class="s2">&quot;not&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{</span>
+                <span class="s2">&quot;anyOf&quot;</span><span class="p">:</span> <span class="p">[</span><span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">s</span><span class="p">,</span> <span class="n">include_null</span><span class="o">=</span><span class="kc">False</span><span class="p">)</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">slot</span><span class="o">.</span><span class="n">none_of</span><span class="p">]</span>
+            <span class="p">}</span>
 
         <span class="k">if</span> <span class="n">bool_subschema</span><span class="p">:</span>
             <span class="k">if</span> <span class="n">prop</span><span class="o">.</span><span class="n">is_array</span><span class="p">:</span>
                 <span class="k">if</span> <span class="s2">&quot;items&quot;</span> <span class="ow">not</span> <span class="ow">in</span> <span class="n">prop</span><span class="p">:</span>
                     <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">{}</span>
-                <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;array&quot;</span>
+                <span class="k">if</span> <span class="n">slot</span><span class="o">.</span><span class="n">required</span> <span class="ow">or</span> <span class="ow">not</span> <span class="n">include_null</span><span class="p">:</span>
+                    <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="s2">&quot;array&quot;</span>
+                <span class="k">else</span><span class="p">:</span>
+                    <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;type&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="s2">&quot;array&quot;</span><span class="p">,</span> <span class="s2">&quot;null&quot;</span><span class="p">]</span>
                 <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;items&quot;</span><span class="p">]</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bool_subschema</span><span class="p">)</span>
             <span class="k">else</span><span class="p">:</span>
                 <span class="n">prop</span><span class="o">.</span><span class="n">update</span><span class="p">(</span><span class="n">bool_subschema</span><span class="p">)</span>
 
         <span class="k">return</span> <span class="n">prop</span>
 
-    <span class="k">def</span> <span class="nf">handle_class_slot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subschema</span><span class="p">:</span> <span class="n">JsonSchema</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">ClassDefinition</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">SlotDefinition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">handle_class_slot</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="n">subschema</span><span class="p">:</span> <span class="n">JsonSchema</span><span class="p">,</span> <span class="bp">cls</span><span class="p">:</span> <span class="n">ClassDefinition</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">SlotDefinition</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="kc">None</span><span class="p">:</span>
+        <span class="n">slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">before_generate_class_slot</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="bp">cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="p">)</span>
         <span class="n">class_id_slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">get_identifier_slot</span><span class="p">(</span><span class="bp">cls</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">use_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
         <span class="n">value_required</span> <span class="o">=</span> <span class="p">(</span>
             <span class="n">slot</span><span class="o">.</span><span class="n">required</span> <span class="ow">or</span> <span class="n">slot</span> <span class="o">==</span> <span class="n">class_id_slot</span> <span class="ow">or</span> <span class="n">slot</span><span class="o">.</span><span class="n">value_presence</span> <span class="o">==</span> <span class="n">PresenceEnum</span><span class="p">(</span><span class="n">PresenceEnum</span><span class="o">.</span><span class="n">PRESENT</span><span class="p">)</span>
@@ -871,7 +1007,10 @@
         <span class="n">value_disallowed</span> <span class="o">=</span> <span class="n">slot</span><span class="o">.</span><span class="n">value_presence</span> <span class="o">==</span> <span class="n">PresenceEnum</span><span class="p">(</span><span class="n">PresenceEnum</span><span class="o">.</span><span class="n">ABSENT</span><span class="p">)</span>
 
         <span class="n">aliased_slot_name</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">aliased_slot_name</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
-        <span class="n">prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">slot</span><span class="p">)</span>
+        <span class="n">prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">get_subschema_for_slot</span><span class="p">(</span><span class="n">slot</span><span class="p">,</span> <span class="n">include_null</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">include_null</span><span class="p">)</span>
+        <span class="n">prop</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">after_generate_class_slot</span><span class="p">(</span>
+            <span class="n">SlotResult</span><span class="o">.</span><span class="n">model_construct</span><span class="p">(</span><span class="n">schema_</span><span class="o">=</span><span class="n">prop</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="n">slot</span><span class="p">),</span> <span class="bp">cls</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">schema_</span>
         <span class="n">subschema</span><span class="o">.</span><span class="n">add_property</span><span class="p">(</span>
             <span class="n">aliased_slot_name</span><span class="p">,</span> <span class="n">prop</span><span class="p">,</span> <span class="n">value_required</span><span class="o">=</span><span class="n">value_required</span><span class="p">,</span> <span class="n">value_disallowed</span><span class="o">=</span><span class="n">value_disallowed</span>
         <span class="p">)</span>
@@ -880,69 +1019,33 @@
             <span class="n">type_value</span> <span class="o">=</span> <span class="n">get_type_designator_value</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="p">,</span> <span class="n">slot</span><span class="p">,</span> <span class="bp">cls</span><span class="p">)</span>
             <span class="n">prop</span><span class="p">[</span><span class="s2">&quot;enum&quot;</span><span class="p">]</span> <span class="o">=</span> <span class="p">[</span><span class="n">type_value</span><span class="p">]</span>
 
-    <span class="k">def</span> <span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonSchema</span><span class="p">:</span>
+    <span class="k">def</span><span class="w"> </span><span class="nf">generate</span><span class="p">(</span><span class="bp">self</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="n">JsonSchema</span><span class="p">:</span>
+        <span class="bp">self</span><span class="o">.</span><span class="n">schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">before_generate_schema</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">,</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="p">)</span>
         <span class="bp">self</span><span class="o">.</span><span class="n">start_schema</span><span class="p">()</span>
-        <span class="k">for</span> <span class="n">enum_definition</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">all_enums</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+
+        <span class="n">all_enums</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">before_generate_enums</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">all_enums</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">enum_definition</span> <span class="ow">in</span> <span class="n">all_enums</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">handle_enum</span><span class="p">(</span><span class="n">enum_definition</span><span class="p">)</span>
 
-        <span class="k">for</span> <span class="n">class_definition</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">all_classes</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">():</span>
+        <span class="n">all_classes</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">before_generate_classes</span><span class="p">(</span><span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">all_classes</span><span class="p">()</span><span class="o">.</span><span class="n">values</span><span class="p">(),</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="p">)</span>
+        <span class="k">for</span> <span class="n">class_definition</span> <span class="ow">in</span> <span class="n">all_classes</span><span class="p">:</span>
             <span class="bp">self</span><span class="o">.</span><span class="n">handle_class</span><span class="p">(</span><span class="n">class_definition</span><span class="p">)</span>
 
+        <span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">after_generate_schema</span><span class="p">(</span>
+            <span class="n">SchemaResult</span><span class="o">.</span><span class="n">model_construct</span><span class="p">(</span><span class="n">schema_</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span><span class="p">,</span> <span class="n">source</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">schema</span><span class="p">),</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span>
+        <span class="p">)</span><span class="o">.</span><span class="n">schema_</span>
         <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">top_level_schema</span>
 
-<div class="viewcode-block" id="JsonSchemaGenerator.serialize"><a class="viewcode-back" href="../../../generators/json-schema.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.serialize">[docs]</a>    <span class="k">def</span> <span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
-        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span></div>
+<div class="viewcode-block" id="JsonSchemaGenerator.serialize"><a class="viewcode-back" href="../../../generators/json-schema.html#linkml.generators.jsonschemagen.JsonSchemaGenerator.serialize">[docs]</a>    <span class="k">def</span><span class="w"> </span><span class="nf">serialize</span><span class="p">(</span><span class="bp">self</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span> <span class="o">-&gt;</span> <span class="nb">str</span><span class="p">:</span>
+        <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">materialize_patterns</span><span class="p">:</span>
+            <span class="n">logger</span><span class="o">.</span><span class="n">info</span><span class="p">(</span><span class="s2">&quot;Materializing patterns in the schema before serialization&quot;</span><span class="p">)</span>
+            <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">materialize_patterns</span><span class="p">()</span>
 
-    <span class="k">def</span> <span class="nf">_get_range_associated_slots</span><span class="p">(</span>
-        <span class="bp">self</span><span class="p">,</span> <span class="n">slot</span><span class="p">:</span> <span class="n">SlotDefinition</span>
-    <span class="p">)</span> <span class="o">-&gt;</span> <span class="n">Tuple</span><span class="p">[</span><span class="n">Union</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">,</span> <span class="kc">None</span><span class="p">],</span> <span class="n">Union</span><span class="p">[</span><span class="n">List</span><span class="p">[</span><span class="n">SlotDefinition</span><span class="p">],</span> <span class="kc">None</span><span class="p">]]:</span>
-        <span class="n">range_class</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">get_class</span><span class="p">(</span><span class="n">slot</span><span class="o">.</span><span class="n">range</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">range_class</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
-
-        <span class="n">range_class_id_slot</span> <span class="o">=</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">get_identifier_slot</span><span class="p">(</span><span class="n">range_class</span><span class="o">.</span><span class="n">name</span><span class="p">,</span> <span class="n">use_key</span><span class="o">=</span><span class="kc">True</span><span class="p">)</span>
-        <span class="k">if</span> <span class="n">range_class_id_slot</span> <span class="ow">is</span> <span class="kc">None</span><span class="p">:</span>
-            <span class="k">return</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span><span class="p">,</span> <span class="kc">None</span>
-
-        <span class="n">non_id_slots</span> <span class="o">=</span> <span class="p">[</span>
-            <span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="bp">self</span><span class="o">.</span><span class="n">schemaview</span><span class="o">.</span><span class="n">class_induced_slots</span><span class="p">(</span><span class="n">range_class</span><span class="o">.</span><span class="n">name</span><span class="p">)</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">name</span> <span class="o">!=</span> <span class="n">range_class_id_slot</span><span class="o">.</span><span class="n">name</span>
-        <span class="p">]</span>
-        <span class="n">non_id_required_slots</span> <span class="o">=</span> <span class="p">[</span><span class="n">s</span> <span class="k">for</span> <span class="n">s</span> <span class="ow">in</span> <span class="n">non_id_slots</span> <span class="k">if</span> <span class="n">s</span><span class="o">.</span><span class="n">required</span><span class="p">]</span>
-
-        <span class="c1"># Some lists of objects can be serialized as SimpleDicts.</span>
-        <span class="c1"># A SimpleDict is serialized as simple key-value pairs where the value is atomic.</span>
-        <span class="c1"># The key must be declared as a key, and the value must satisfy one of the following conditions:</span>
-        <span class="c1"># 1. The value slot is the only other slot in the object other than the key</span>
-        <span class="c1"># 2. The value slot is explicitly annotated as a simple_dict_value</span>
-        <span class="c1"># 3. The value slot is the only non-key that is required</span>
-        <span class="c1"># See also: https://github.com/linkml/linkml/issues/1250</span>
-        <span class="n">range_simple_dict_value_slot</span> <span class="o">=</span> <span class="kc">None</span>
-        <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_id_slots</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">range_simple_dict_value_slot</span> <span class="o">=</span> <span class="n">non_id_slots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-        <span class="k">elif</span> <span class="nb">len</span><span class="p">(</span><span class="n">non_id_slots</span><span class="p">)</span> <span class="o">&gt;</span> <span class="mi">1</span><span class="p">:</span>
-            <span class="n">candidate_non_id_slots</span> <span class="o">=</span> <span class="p">[]</span>
-            <span class="k">for</span> <span class="n">non_id_slot</span> <span class="ow">in</span> <span class="n">non_id_slots</span><span class="p">:</span>
-                <span class="k">if</span> <span class="nb">isinstance</span><span class="p">(</span><span class="n">non_id_slot</span><span class="o">.</span><span class="n">annotations</span><span class="p">,</span> <span class="nb">dict</span><span class="p">):</span>
-                    <span class="n">is_simple_dict_value</span> <span class="o">=</span> <span class="n">non_id_slot</span><span class="o">.</span><span class="n">annotations</span><span class="o">.</span><span class="n">get</span><span class="p">(</span><span class="s2">&quot;simple_dict_value&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-                <span class="k">else</span><span class="p">:</span>
-                    <span class="n">is_simple_dict_value</span> <span class="o">=</span> <span class="nb">getattr</span><span class="p">(</span><span class="n">non_id_slot</span><span class="o">.</span><span class="n">annotations</span><span class="p">,</span> <span class="s2">&quot;simple_dict_value&quot;</span><span class="p">,</span> <span class="kc">False</span><span class="p">)</span>
-                <span class="k">if</span> <span class="n">is_simple_dict_value</span><span class="p">:</span>
-                    <span class="n">candidate_non_id_slots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">non_id_slot</span><span class="p">)</span>
-            <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidate_non_id_slots</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                <span class="n">range_simple_dict_value_slot</span> <span class="o">=</span> <span class="n">candidate_non_id_slots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-            <span class="k">else</span><span class="p">:</span>
-                <span class="n">candidate_non_id_slots</span> <span class="o">=</span> <span class="p">[]</span>
-                <span class="k">for</span> <span class="n">non_id_slot</span> <span class="ow">in</span> <span class="n">non_id_slots</span><span class="p">:</span>
-                    <span class="k">if</span> <span class="n">non_id_slot</span><span class="o">.</span><span class="n">required</span><span class="p">:</span>
-                        <span class="n">candidate_non_id_slots</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">non_id_slot</span><span class="p">)</span>
-                <span class="k">if</span> <span class="nb">len</span><span class="p">(</span><span class="n">candidate_non_id_slots</span><span class="p">)</span> <span class="o">==</span> <span class="mi">1</span><span class="p">:</span>
-                    <span class="n">range_simple_dict_value_slot</span> <span class="o">=</span> <span class="n">candidate_non_id_slots</span><span class="p">[</span><span class="mi">0</span><span class="p">]</span>
-
-        <span class="k">return</span> <span class="n">range_class_id_slot</span><span class="p">,</span> <span class="n">range_simple_dict_value_slot</span><span class="p">,</span> <span class="n">non_id_required_slots</span></div>
+        <span class="k">return</span> <span class="bp">self</span><span class="o">.</span><span class="n">generate</span><span class="p">()</span><span class="o">.</span><span class="n">to_json</span><span class="p">(</span><span class="n">sort_keys</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span> <span class="n">indent</span><span class="o">=</span><span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="k">if</span> <span class="bp">self</span><span class="o">.</span><span class="n">indent</span> <span class="o">&gt;</span> <span class="mi">0</span> <span class="k">else</span> <span class="kc">None</span><span class="p">)</span></div></div>
 
 
 <span class="nd">@shared_arguments</span><span class="p">(</span><span class="n">JsonSchemaGenerator</span><span class="p">)</span>
-<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">()</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">command</span><span class="p">(</span><span class="n">name</span><span class="o">=</span><span class="s2">&quot;json-schema&quot;</span><span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
     <span class="s2">&quot;-i&quot;</span><span class="p">,</span>
     <span class="s2">&quot;--inline&quot;</span><span class="p">,</span>
@@ -992,8 +1095,22 @@
 <span class="s2">Specify from which slot are JSON Schema &#39;title&#39; annotations generated.</span>
 <span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
 <span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;-d&quot;</span><span class="p">,</span>
+    <span class="s2">&quot;--include&quot;</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;&quot;&quot;</span>
+<span class="s2">Include LinkML Schema outside of imports mechanism.  Helpful in including deprecated classes and slots in a separate</span>
+<span class="s2">YAML, and including it when necessary but not by default (e.g. in documentation or for backwards compatibility)</span>
+<span class="s2">&quot;&quot;&quot;</span><span class="p">,</span>
+<span class="p">)</span>
+<span class="nd">@click</span><span class="o">.</span><span class="n">option</span><span class="p">(</span>
+    <span class="s2">&quot;--materialize-patterns/--no-materialize-patterns&quot;</span><span class="p">,</span>
+    <span class="n">default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>  <span class="c1"># Default set to True</span>
+    <span class="n">show_default</span><span class="o">=</span><span class="kc">True</span><span class="p">,</span>
+    <span class="n">help</span><span class="o">=</span><span class="s2">&quot;If set, patterns will be materialized in the generated JSON Schema.&quot;</span><span class="p">,</span>
+<span class="p">)</span>
 <span class="nd">@click</span><span class="o">.</span><span class="n">version_option</span><span class="p">(</span><span class="n">__version__</span><span class="p">,</span> <span class="s2">&quot;-V&quot;</span><span class="p">,</span> <span class="s2">&quot;--version&quot;</span><span class="p">)</span>
-<span class="k">def</span> <span class="nf">cli</span><span class="p">(</span><span class="n">yamlfile</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
+<span class="k">def</span><span class="w"> </span><span class="nf">cli</span><span class="p">(</span><span class="n">yamlfile</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">):</span>
 <span class="w">    </span><span class="sd">&quot;&quot;&quot;Generate JSON Schema representation of a LinkML model&quot;&quot;&quot;</span>
     <span class="nb">print</span><span class="p">(</span><span class="n">JsonSchemaGenerator</span><span class="p">(</span><span class="n">yamlfile</span><span class="p">,</span> <span class="o">**</span><span class="n">kwargs</span><span class="p">)</span><span class="o">.</span><span class="n">serialize</span><span class="p">(</span><span class="o">**</span><span class="n">kwargs</span><span class="p">))</span>
 
